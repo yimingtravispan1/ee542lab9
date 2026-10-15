@@ -50,7 +50,7 @@ Study and document questions do not require a question mark.
 
 ## Knowledge and Private Documents
 
-Keep these PDFs in the repository root, one directory above this README:
+Keep these PDFs in `knowledge/dmv/sources/`:
 
 | File | Edition | Pages |
 |---|---|---:|
@@ -78,7 +78,7 @@ not include private uploads or the earlier lab8/lab9 test documents.
 
 Android Studio project: `twa_android_src`. Launcher name: **CA Driving Study**.
 Package: `com.helloworld.groupchat.twa`. Local APK:
-`artifacts/CA-Driving-Study-debug.apk` (ignored by Git).
+`artifacts/apks/CA-Driving-Study-debug.apk` (ignored by Git).
 
 The current temporary HTTPS origin is in `logs/tunnel-url.txt`. Keep the computer,
 Docker services, backend, and tunnel running. To replace the temporary tunnel,
@@ -120,5 +120,7 @@ Opt-in checks using the configured OpenAI account:
 UI checks additionally require Playwright and installed Edge. Android UI checks
 use `validate_part4_ui.py --android` after forwarding the active Chrome debugging
 socket to localhost:9223. Remove the forward after testing. Sanitized validation
-reports are in `artifacts/`; APKs and screenshots are local ignored outputs.
+reports are in `artifacts/reports/`; APKs in `artifacts/apks/` and screenshots in
+`artifacts/screenshots/` are local ignored outputs. The lab8/lab9 validation inputs
+are in the repository's `docs/labs/` directory.
 Part 5 custom Word2Vec embeddings are outside the current scope.
