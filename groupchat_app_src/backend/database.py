@@ -7,11 +7,15 @@ from dotenv import load_dotenv
 from sqlalchemy import Boolean, DateTime, ForeignKey, Integer, JSON, String, Text, UniqueConstraint
 from sqlalchemy.dialects.mysql import LONGTEXT
 from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine
+from sqlalchemy.engine import URL
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
 ROOT = Path(__file__).resolve().parent.parent
 load_dotenv(ROOT / '.env')
-engine = create_async_engine(os.environ['DATABASE_URL'], pool_pre_ping=True)
+database_url = os.environ.get('DATABASE_URL')
+if os.getenv('DATABASE_HOST'):
+    database_url = URL.create('mysql+asyncmy', username='chatuser', password=os.environ['MYSQL_PASSWORD'], host=os.environ['DATABASE_HOST'], port=3306, database='groupchat')
+engine = create_async_engine(database_url, pool_pre_ping=True)
 sessions = async_sessionmaker(engine, expire_on_commit=False)
 
 
@@ -80,3 +84,10 @@ class RagTurn(Base):
     answer: Mapped[str] = mapped_column(Text)
     sources: Mapped[list] = mapped_column(JSON)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)
+
+
+class LibraryImport(Base):
+    __tablename__ = 'library_imports'
+    id: Mapped[str] = mapped_column(String(100), primary_key=True)
+    checksum: Mapped[str] = mapped_column(String(64))
+    status: Mapped[str] = mapped_column(String(20), default='pending')

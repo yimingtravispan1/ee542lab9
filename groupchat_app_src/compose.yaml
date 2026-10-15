@@ -1,10 +1,52 @@
 name: ee542-lab9
 services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${APP_PORT:-8000}:8000"
+    environment:
+      DATABASE_HOST: mysql
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:?Set MYSQL_PASSWORD in .env}
+      JWT_SECRET: ${JWT_SECRET:?Set JWT_SECRET in .env}
+      JWT_EXPIRE_MINUTES: ${JWT_EXPIRE_MINUTES:-43200}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_EMBEDDING_MODEL: ${OPENAI_EMBEDDING_MODEL:-text-embedding-3-small}
+      OPENAI_CHAT_MODEL: ${OPENAI_CHAT_MODEL:-gpt-4.1-mini}
+      OPENAI_REASONING_EFFORT: ${OPENAI_REASONING_EFFORT:-}
+      QDRANT_URL: http://qdrant:6333
+      QDRANT_COLLECTION: ${QDRANT_COLLECTION:-ee542_documents}
+      RAG_TOP_K: ${RAG_TOP_K:-4}
+      RAG_MIN_SCORE: ${RAG_MIN_SCORE:-0.25}
+      RAG_MAX_OUTPUT_TOKENS: ${RAG_MAX_OUTPUT_TOKENS:-1200}
+      LLM_API_BASE: http://llama:8001/v1
+      LLM_MODEL: ${LLM_MODEL:-llama-3.2-3b-instruct}
+      LLM_API_KEY: ${LLM_API_KEY:-}
+      WATCHFILES_FORCE_POLLING: "true"
+    volumes:
+      - ./backend:/workspace/groupchat_app_src/backend
+      - ./frontend:/workspace/groupchat_app_src/frontend:ro
+      - ./knowledge:/workspace/groupchat_app_src/knowledge:ro
+      - ../docs/labs:/workspace/docs/labs:ro
+      - ./artifacts:/workspace/groupchat_app_src/artifacts
+    depends_on:
+      mysql:
+        condition: service_healthy
+      qdrant:
+        condition: service_started
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=5)"]
+      interval: 5s
+      timeout: 6s
+      retries: 36
+      start_period: 30s
   mysql:
     image: mysql:8.4.11
     restart: unless-stopped
     ports:
-      - "127.0.0.1:3306:3306"
+      - "127.0.0.1:${MYSQL_PORT:-3306}:3306"
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Set MYSQL_ROOT_PASSWORD in .env}
       MYSQL_DATABASE: groupchat
@@ -24,7 +66,7 @@ services:
     image: qdrant/qdrant:v1.19.2
     restart: unless-stopped
     ports:
-      - "127.0.0.1:6333:6333"
+      - "127.0.0.1:${QDRANT_PORT:-6333}:6333"
     volumes:
       - qdrant_data:/qdrant/storage
   llama:

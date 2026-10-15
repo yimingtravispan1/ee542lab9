@@ -1,0 +1,25 @@
+{
+  "format_version": 1,
+  "library_id": "california-dmv-class-c-v1",
+  "collection": "ee542_driving",
+  "embedding_model": "text-embedding-3-small",
+  "dimensions": 1536,
+  "sha256": "149deef3fe1025baa3ef38e6be3e6963ca722b9b98fe67e3217efac097ec9569",
+  "documents": 3,
+  "chunks": 483,
+  "vectors": 483,
+  "source_files": [
+    {
+      "filename": "Driver_Handbook.pdf",
+      "sha256": "b29cbf3566b0886e208cdea6aa8eb82af96db61ed72a8b965d7ff4843016fefd"
+    },
+    {
+      "filename": "Driving_Test_Criteria.pdf",
+      "sha256": "60b1b31f479944c976ba76707f8ab66c88970ae0749e57f97694f900d37162c8"
+    },
+    {
+      "filename": "Additional Testing Materials.pdf",
+      "sha256": "3c40191b4075f6019bcacb5e241de39c8057c803711c9e3db9f4a0dd0638e932"
+    }
+  ]
+}
