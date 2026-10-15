@@ -6,47 +6,57 @@ Group Chat uses local Llama inference; Document Q&A supports private uploads.
 
 ## Configuration
 
+For a new teammate's clone, the recommended workflow from the repository root is:
+
+```powershell
+Copy-Item groupchat_app_src/.env.example groupchat_app_src/.env
+# Fill OPENAI_API_KEY and select an available OPENAI_CHAT_MODEL in the .env file.
+.\scripts\setup-dev.ps1
+```
+
+Do not overwrite an existing `.env`. The setup script generates missing database
+passwords and JWT secrets, then builds and starts the complete backend. No host
+Python installation, model download, manual SQL import, or re-embedding is needed.
+The backend and its Python dependencies run in Docker. No local `.venv` is used.
+
 Edit the existing local `.env` next to `compose.yaml`. For a fresh installation,
 copy `.env.example` to `.env` and configure:
 
-- `MYSQL_ROOT_PASSWORD` and `MYSQL_PASSWORD`: database credentials. Set
-  `DATABASE_URL` to the matching `chatuser` password and `groupchat` database.
+- `MYSQL_ROOT_PASSWORD` and `MYSQL_PASSWORD`: database credentials, generated
+  automatically by the setup script when blank.
 - `JWT_SECRET`: a random secret of at least 32 characters.
 - `OPENAI_API_KEY`: the key for backend embeddings and study answers.
 - `OPENAI_EMBEDDING_MODEL` and `OPENAI_CHAT_MODEL`: the current installation uses
   `text-embedding-3-small` and `gpt-6-luna`.
-- `QDRANT_URL`: `http://127.0.0.1:6333`.
-- `LLM_API_BASE`: `http://127.0.0.1:8001/v1`; `LLM_MODEL`: `llama-3.2-3b-instruct`.
+- `LLM_MODEL`: `llama-3.2-3b-instruct` for the optional local group-chat model.
+
+Compose configures the internal MySQL, Qdrant, and Llama hostnames automatically;
+`DATABASE_URL`, `QDRANT_URL`, and `LLM_API_BASE` in the template are compatibility
+settings and do not need changing for the container workflow.
 
 Restart the backend after changing settings. The actual `.env` is ignored by Git;
 never put credentials in frontend files or Android resources. MySQL credentials
 initialize on first volume creation; later changes must also update the database.
 
-## Run on Windows
+## Run and Maintain the Backend
 
-From `groupchat_app_src`, with Docker Desktop running:
+Use `scripts/setup-dev.ps1` from the repository root for initial setup or after
+changing the local environment configuration. From `groupchat_app_src`:
 
 ```powershell
-docker compose up -d mysql qdrant
-.\start-backend.ps1
+docker compose up -d --build --wait mysql qdrant backend
+docker compose logs -f backend
+docker compose stop
 ```
 
 Open http://localhost:8000 and register or log in. Driving Study opens by default.
-Keep Docker volumes to preserve accounts, documents, and vectors.
+Keep Docker volumes to preserve accounts, documents, and vectors. Container logs
+are available through Docker; no host Python server or virtual environment is used.
 
-To restore dependencies or start the backend directly, run from `backend`:
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.lock.txt
-.\.venv\Scripts\python.exe -m uvicorn app:app --host 127.0.0.1 --port 8000
-```
-
-Run only one backend on port 8000. Background-server logs are in `logs/`.
 For Group Chat, obtain the model using [models/README.md](models/README.md), then
-run `docker compose --profile llm up -d mysql qdrant llama`. Include a question
-mark to trigger a group-chat bot reply; CPU inference can take over a minute.
-Study and document questions do not require a question mark.
+run `docker compose --profile llm up -d mysql qdrant backend llama`. Include a
+question mark to trigger a group-chat bot reply; CPU inference can take over a
+minute. Study and document questions do not require a question mark.
 
 ## Knowledge and Private Documents
 
@@ -58,11 +68,26 @@ Keep these PDFs in `knowledge/dmv/sources/`:
 | Driving_Test_Criteria.pdf | DL 955, October 2017 | 40 |
 | Additional Testing Materials.pdf | DL 80, March 2022 | 2 |
 
-From `backend`, run `.\.venv\Scripts\python.exe seed_driving.py` to prepare the
-shared library. This uses real OpenAI embeddings and reuses identical indexed
-sources. The Docker Qdrant collection `ee542_driving` contains 483 chunks of at
+The container restores the shared library automatically from
+`knowledge/dmv/bootstrap/library.json.gz` (approximately 3.36 MiB), checking its
+SHA-256 and the original PDFs. It contains only the three DMV documents, text
+chunks, and existing vectors; account IDs are remapped to a fresh internal library
+owner with a randomly generated password. No original accounts or conversations
+are shipped. The Docker Qdrant collection `ee542_driving` contains 483 chunks of at
 most 500 characters with 100-character overlap. Official URLs, editions, and
 file fingerprints are recorded in `knowledge/dmv/`.
+
+Repeated starts preserve existing data. Interrupted first imports can resume;
+conflicting records or changed bundles cause a clear error rather than overwrite
+work. Docker volumes retain data across container rebuilds and `docker compose
+down`; `down -v` deletes volumes and must not be used to stop normal development.
+Restoration requires no API key, but each question still calls OpenAI for its
+query embedding and answer. Keep `OPENAI_EMBEDDING_MODEL=text-embedding-3-small`
+for the restored baseline.
+
+To intentionally generate fresh OpenAI embeddings instead, the existing
+`docker compose exec backend python seed_driving.py` command remains available;
+it uses real API credits. Do not run it as part of a normal teammate setup.
 
 Source documents are credited to the California Department of Motor Vehicles.
 This independent study project is not affiliated with DMV. Historical editions
@@ -90,7 +115,9 @@ run from `groupchat_app_src`:
 
 If the origin changes, run `configure_site.py` from `twa_android_src` with
 `--url NEW_HTTPS_ORIGIN --sha256 SIGNING_CERTIFICATE_SHA256`, then rebuild and
-reinstall the APK. Use the matching signing certificate and keep private keys
+reinstall the APK. This optional Android configuration helper uses only the
+Python standard library and does not require a virtual environment. Use the
+matching signing certificate and keep private keys
 out of Git. Website-only changes do not require rebuilding the APK.
 
 From `twa_android_src`:
@@ -106,21 +133,99 @@ cited study answers and restored login/history after reopening the app.
 
 ## Validation
 
-From `backend`, run `.\.venv\Scripts\python.exe -m unittest -v test_rag` for the
-regression suite using real MySQL/Qdrant and test-only AI doubles.
+From `groupchat_app_src`, the normal checks run inside the backend container:
+
+```powershell
+docker compose exec backend python -m unittest -v test_rag
+docker compose exec backend python smoke_test.py --expect-model
+```
+
+The regression suite uses real MySQL/Qdrant and test-only AI doubles. The smoke
+test needs the optional Llama service running and cleans up its temporary records.
 
 Opt-in checks using the configured OpenAI account:
 
 ```powershell
-.\.venv\Scripts\python.exe validate_part3_real.py
-.\.venv\Scripts\python.exe validate_part4_real.py
-.\.venv\Scripts\python.exe validate_part4_ui.py
+docker compose exec backend python validate_part3_real.py
+docker compose exec backend python validate_part4_real.py
 ```
 
-UI checks additionally require Playwright and installed Edge. Android UI checks
-use `validate_part4_ui.py --android` after forwarding the active Chrome debugging
-socket to localhost:9223. Remove the forward after testing. Sanitized validation
-reports are in `artifacts/reports/`; APKs in `artifacts/apks/` and screenshots in
-`artifacts/screenshots/` are local ignored outputs. The lab8/lab9 validation inputs
-are in the repository's `docs/labs/` directory.
+These maintainer checks expect the existing `admin` account. A fresh teammate
+installation does not need to run them or create an admin account to use the app.
+Validation reports are in `artifacts/reports/`; APKs in `artifacts/apks/` and final
+screenshots in `artifacts/screenshots/` are local ignored outputs. The lab8/lab9
+inputs are in the repository's `docs/labs/` directory, mounted into the container.
+
+`validate_part4_ui.py` is an optional advanced browser check. It requires a
+separate Playwright/Chrome test environment; browser tooling is not installed in
+the application image. Android checks additionally need an emulator and a Chrome
+debugging connection. These tools are not required for normal Part 5 development.
 Part 5 custom Word2Vec embeddings are outside the current scope.
+
+## Part 5 Development
+
+The initial baseline is ready for comparison; Word2Vec and histogram embeddings
+are the teammate's implementation task, not part of the bootstrap bundle.
+
+- Reuse `document_processing.py` and the imported `DocumentChunk` records for the
+  same curated text and 500-character chunks.
+- Implement Word2Vec, word clustering, centroids, and normalized histograms in a
+  separate backend module. Transform questions with the same trained pipeline.
+- Use a separate Qdrant collection, for example `ee542_driving_word2vec`, with
+  dimension K. Preserve the existing 1536-dimensional `ee542_driving` baseline.
+  Keep the restored document IDs, text, and baseline index metadata unchanged;
+  use separate Word2Vec index metadata or an adapter that selects the shared
+  chunks independently of the baseline's `vector_collection` field.
+- `rag_service.py` supplies the embedding, retrieval, and answer-chain extension
+  points; `driving.py` connects the curated library to the authenticated API.
+  The Word2Vec version must change both document and question embedding paths.
+- Modify local backend files: the bind-mounted source reloads automatically.
+  Frontend edits also appear after refreshing. Python dependencies are installed
+  in the image; update the dependency files and rebuild
+  with `docker compose up -d --build backend` when adding packages.
+
+From `groupchat_app_src`:
+
+```powershell
+docker compose logs -f backend
+docker compose exec backend python -m unittest -v test_rag
+docker compose stop
+```
+
+All services bind to loopback by default. `APP_PORT`, `MYSQL_PORT`, and
+`QDRANT_PORT` in `.env` change host ports without changing container connections.
+The container derives its MySQL URL from `MYSQL_PASSWORD` and the service hostname,
+so passwords with URL-reserved characters are supported. It uses `qdrant:6333`
+internally. The host only needs Docker for backend development.
+
+If another backend already occupies port 8000, stop that backend or choose a
+different `APP_PORT` before setup. Do not change initialized database passwords
+without also changing them inside MySQL. Rerunning setup preserves nonempty
+credentials and restarts services with updated OpenAI configuration.
+
+On Linux/macOS without PowerShell, copy `.env.example` to `.env`, fill strong
+`MYSQL_ROOT_PASSWORD`, `MYSQL_PASSWORD`, `JWT_SECRET` (32+ characters), and your
+OpenAI key, then run `docker compose up -d --build --wait mysql qdrant backend`
+from this directory. With either workflow, Llama remains behind the optional
+`llm` profile and is not downloaded during the default Part 5 setup.
+
+## Maintainer Data Export and Handoff Checks
+
+`export_library.py` exports only the internal curated library from SQL and Qdrant.
+It uses explicit fields and excludes users, credentials, private uploads, and
+conversations. Run it against the source installation only when intentionally
+refreshing the baseline, then review the bundle and `manifest.json` before sharing.
+The importer refuses an updated checksum on a previously initialized installation;
+test a changed baseline with fresh, separately named development volumes.
+
+The sanitized acceptance report is
+`artifacts/reports/Backend-handoff-validation.json`. It records successful fresh
+restoration, repeat initialization, interrupted-import recovery, preservation of
+existing data, exact vectors, and automatic source reload.
+
+`validate_handoff.py` is an optional maintainer orchestration tool for a fresh,
+disposable `ee542-part5-check*` Compose project. It requires Docker CLI plus a
+separate Python tooling environment with `httpx` and `python-dotenv`; it is not
+part of the application startup or the normal container regression suite. The
+recorded handoff checks have already passed. No local tooling environment needs
+to be kept just to run the backend or begin Part 5.

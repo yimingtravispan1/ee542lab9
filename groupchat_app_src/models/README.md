@@ -8,8 +8,15 @@
 - License: Llama 3.2, as specified by the provider; see its model card and license.
 
 Downloaded and checksum verified locally. Weights are ignored by Git.
-To restore the exact model, run `python models/download_model.py` from
-`groupchat_app_src`; the script supports resuming partial downloads.
+To restore the exact model after the backend image is built, run from
+`groupchat_app_src`:
+
+```powershell
+docker compose run --rm --no-deps --volume "${PWD}/models:/models" backend python /models/download_model.py
+```
+
+The script supports resuming partial downloads and validates the checksum.
+It does not need host Python or a virtual environment.
 
 Compose profile `llm` runs llama.cpp on CPU and exposes localhost port 8001.
 The model alias is `llama-3.2-3b-instruct`.
