@@ -1,0 +1,17 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.tmp_pdf_tools/
+groupchat_app_src/logs/
+groupchat_app_src/models/*.gguf
+groupchat_app_src/models/*.gguf.part
+groupchat_app_src/tools/*.exe
+**/local.properties
+**/.gradle/
+**/build/
+**/*.jks
+**/*.keystore
+**/.idea/
+groupchat_app_src/artifacts/*.apk
+groupchat_app_src/artifacts/*.png
