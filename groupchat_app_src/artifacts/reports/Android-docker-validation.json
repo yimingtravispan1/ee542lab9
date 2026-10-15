@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-15",
+  "device": "Android Studio emulator-5554",
+  "origin": "https://everything-betty-brook-elected.trycloudflare.com",
+  "backend": "Docker FastAPI + MySQL + Qdrant",
+  "fresh_signup_and_login": true,
+  "group_message_persisted": true,
+  "real_openai_driving_answer": true,
+  "citations_valid": true,
+  "no_horizontal_overflow": true,
+  "question": "What steps should I take before changing lanes?",
+  "answer": "Before changing lanes:\n\n- Signal.\n- Check your mirrors and traffic behind and beside you.\n- Look over your shoulder toward the lane you plan to enter.\n- Check your blind spots for vehicles, motorcyclists, and bicyclists.\n- Make sure there\u2019s enough space, and avoid letting the vehicle drift into the other lane. [1][2]",
+  "sources": [
+    {
+      "filename": "Driver_Handbook.pdf",
+      "page": 21
+    },
+    {
+      "filename": "Driver_Handbook.pdf",
+      "page": 21
+    },
+    {
+      "filename": "Driver_Handbook.pdf",
+      "page": 21
+    },
+    {
+      "filename": "Driver_Handbook.pdf",
+      "page": 21
+    },
+    {
+      "filename": "Driver_Handbook.pdf",
+      "page": 22
+    },
+    {
+      "filename": "Driver_Handbook.pdf",
+      "page": 22
+    },
+    {
+      "filename": "Driver_Handbook.pdf",
+      "page": 22
+    },
+    {
+      "filename": "Driver_Handbook.pdf",
+      "page": 22
+    },
+    {
+      "filename": "Driver_Handbook.pdf",
+      "page": 29
+    },
+    {
+      "filename": "Driver_Handbook.pdf",
+      "page": 29
+    },
+    {
+      "filename": "Driver_Handbook.pdf",
+      "page": 29
+    },
+    {
+      "filename": "Driver_Handbook.pdf",
+      "page": 29
+    },
+    {
+      "filename": "Driver_Handbook.pdf",
+      "page": 30
+    },
+    {
+      "filename": "Driver_Handbook.pdf",
+      "page": 30
+    },
+    {
+      "filename": "Driver_Handbook.pdf",
+      "page": 30
+    },
+    {
+      "filename": "Driver_Handbook.pdf",
+      "page": 30
+    }
+  ],
+  "history_after_app_reopen": true,
+  "login_after_app_reopen": true,
+  "apk_rebuilt": true,
+  "gradle_build_and_lint": true,
+  "no_browser_address_bar": true,
+  "passed": true,
+  "screenshot_method": "Chrome DevTools capture of emulator page",
+  "native_screenshot_limit": "ADB screencap produced a black image; visual native screenshot evidence is unavailable in this run."
+}
