@@ -1,0 +1,379 @@
+{
+  "documents": [
+    {
+      "id": "88458f96-fbdd-40fa-9522-1707c4fbc5c5",
+      "filename": "lab8.pdf",
+      "pages": 10,
+      "chunks": 71,
+      "status": "indexed",
+      "error": null,
+      "embedding_model": "text-embedding-3-small",
+      "created_at": "2026-10-15T18:58:27Z",
+      "source_sha256": "22ac6a193f8294ce0fefec928be80ec49315ad5983979dcfb6127f85c26cc641"
+    },
+    {
+      "id": "f4ebdd22-0df1-4a1b-b4ed-57dee2f56fd1",
+      "filename": "lab9.pdf",
+      "pages": 6,
+      "chunks": 26,
+      "status": "indexed",
+      "error": null,
+      "embedding_model": "text-embedding-3-small",
+      "created_at": "2026-10-15T18:58:27Z",
+      "source_sha256": "867bc2f8eebf2d35f4884c644c0f9755a070f591512677c53521958e981aff4c"
+    }
+  ],
+  "cases": [
+    {
+      "name": "lab8_setup",
+      "question": "In Step 1.1 of the CNN and DOCA lab, which GPU, operating system, and boot disk size are suggested?",
+      "passed": true,
+      "conversation_id": "f3ecc1e5-8c79-47e9-83fa-5ed12a287f31",
+      "answer": "Step 1.1 suggests an NVIDIA L4 GPU (a T4 also works), Ubuntu 22.04 LTS, and a 100 GB boot disk. [5]",
+      "sources": [
+        {
+          "document_id": "88458f96-fbdd-40fa-9522-1707c4fbc5c5",
+          "filename": "lab8.pdf",
+          "page": 7,
+          "chunk_index": 48,
+          "text": "from \napt. \n\u25cf GDRCopy v2.5.2 built in /opt/mellanox/gdrcopy, with its gdrdrv module loaded by its insmod.sh \nscript: https://github.com/NVIDIA/gdrcopy. The commands later in Part 7 expect this path. \n\u25cf 2,048 hugepages of 2 MB for gpunetio_simple_receive in Step 7.5, and GPU persistence mode \n(nvidia-smi -pm 1). \n\u25cf ACS turned off on the PCIe bridges above the GPU and the network card. You cannot reach the \nBIOS on CloudLab, so use the setpci method from the installation guide. \n\u25cf Docker and the N",
+          "score": null,
+          "match_type": "adjacent"
+        },
+        {
+          "document_id": "88458f96-fbdd-40fa-9522-1707c4fbc5c5",
+          "filename": "lab8.pdf",
+          "page": 7,
+          "chunk_index": 49,
+          "text": "ach the \nBIOS on CloudLab, so use the setpci method from the installation guide. \n\u25cf Docker and the NVIDIA Container Toolkit from Step 6.1, with Docker's data-root on /mydata, \nbecause the root disk is 64 GB and the DOCA image from Step 6.2 is about 22 GB. \nThe hugepages, the gdrdrv module, persistence mode, and the ACS settings are lost when a node reboots, \nso set them again after every reboot. Do not flash the network card's firmware or change its settings with \nmlxconfig, because the change s",
+          "score": 0.6214
+        },
+        {
+          "document_id": "88458f96-fbdd-40fa-9522-1707c4fbc5c5",
+          "filename": "lab8.pdf",
+          "page": 7,
+          "chunk_index": 50,
+          "text": "o not flash the network card's firmware or change its settings with \nmlxconfig, because the change stays on the node after your experiment ends. \nStep 7.4: Check the Hardware \nCheck each node against the GPUNetIO installation guide from Step 6.3. Find the network interface with \nthe 10.10.1.x address, its PCI address and firmware, the RDMA devices, the NVIDIA network cards, the \nkernel version, and the PCIe path between the GPU and the network card: \nip -br addr \nethtool -i <interface> \nibv_devi",
+          "score": null,
+          "match_type": "adjacent"
+        },
+        {
+          "document_id": "88458f96-fbdd-40fa-9522-1707c4fbc5c5",
+          "filename": "lab8.pdf",
+          "page": 1,
+          "chunk_index": 2,
+          "text": "t data directly \ninto GPU memory, and CUDA kernels receive the packets. DOCA GPUNetIO overview: \nhttps://networking-docs.nvidia.com/doca/archive/3-5-0/doca-gpunetio \nParts 1 to 6 run on a GPU instance that you create and pay for on a Cloud, as in Laboratory #6. Part 7 \nneeds the network card and runs on CloudLab in a time slot reserved for your team. \nPart 1: Setting Up the Environment \nStep 1.1: Create a GPU Instance \nCreate a Linux virtual machine with an NVIDIA GPU on a Cloud. Part 6 runs Doc",
+          "score": null,
+          "match_type": "adjacent"
+        },
+        {
+          "document_id": "88458f96-fbdd-40fa-9522-1707c4fbc5c5",
+          "filename": "lab8.pdf",
+          "page": 1,
+          "chunk_index": 3,
+          "text": "Create a GPU Instance \nCreate a Linux virtual machine with an NVIDIA GPU on a Cloud. Part 6 runs Docker, so you need a full \nvirtual machine, not a GPU container. On Google Cloud we suggest: \n\u25cf GPU: NVIDIA L4 (G2 machine type, such as g2-standard-4). A T4 from Laboratory #6 also \nworks for Parts 1 to 6. \n\u25cf OS: Ubuntu 22.04 LTS \n\u25cf Boot disk: 100 GB, because the DOCA container in Part 6 is large \n \nInstall the NVIDIA driver with Google's guide: https://cloud.google.com/compute/docs/gpus/install-\nd",
+          "score": 0.5873
+        },
+        {
+          "document_id": "88458f96-fbdd-40fa-9522-1707c4fbc5c5",
+          "filename": "lab8.pdf",
+          "page": 1,
+          "chunk_index": 4,
+          "text": "Install the NVIDIA driver with Google's guide: https://cloud.google.com/compute/docs/gpus/install-\ndrivers-gpu. Use driver 580 or newer, because the default pip builds of PyTorch and TensorRT use \nCUDA 13, which requires it. Stop the instance whenever you are not using it, because you pay for every \nhour it runs. \nCUDA, TensorRT, and DPDK do not run on macOS, so Mac users, including M1 and other Apple Silicon \nMacs, must use the Cloud instance. On Windows with an NVIDIA GPU, you can do Parts 1 t",
+          "score": null,
+          "match_type": "adjacent"
+        },
+        {
+          "document_id": "88458f96-fbdd-40fa-9522-1707c4fbc5c5",
+          "filename": "lab8.pdf",
+          "page": 5,
+          "chunk_index": 31,
+          "text": "els.html \nCheck that each received image gets the same class as its original. Measure the CPU-to-GPU copy time \nwith pinned memory. This is the copy GPUNetIO removes. \nPart 6: NVIDIA DOCA Container \nDOCA is NVIDIA's SDK for its ConnectX network cards and BlueField DPUs. NVIDIA publishes it as a \ncontainer: https://catalog.ngc.nvidia.com/orgs/nvidia/teams/doca/containers/doca \nStep 6.1: Docker with GPU Access \nInstall Docker and the NVIDIA Container Toolkit: https://docs.nvidia.com/datacenter/clo",
+          "score": null,
+          "match_type": "adjacent"
+        },
+        {
+          "document_id": "88458f96-fbdd-40fa-9522-1707c4fbc5c5",
+          "filename": "lab8.pdf",
+          "page": 5,
+          "chunk_index": 32,
+          "text": " GPU Access \nInstall Docker and the NVIDIA Container Toolkit: https://docs.nvidia.com/datacenter/cloud-\nnative/container-toolkit/latest/install-guide.html. Check GPU access: \nsudo docker run --rm --gpus all ubuntu nvidia-smi -L \nStep 6.2: Explore DOCA \nIMG=nvcr.io/nvidia/doca/doca:devel-cuda13.0.0-3.5.0-devel-host \nsudo docker pull $IMG \nsudo docker run --rm -it --gpus all --privileged --net=host $IMG bash \n# inside the container: \ndoca_caps --version \ndoca_caps --list-libs \ndoca_caps --list-dev",
+          "score": 0.5647
+        },
+        {
+          "document_id": "88458f96-fbdd-40fa-9522-1707c4fbc5c5",
+          "filename": "lab8.pdf",
+          "page": 5,
+          "chunk_index": 33,
+          "text": "$IMG bash \n# inside the container: \ndoca_caps --version \ndoca_caps --list-libs \ndoca_caps --list-devs \nThis image needs NVIDIA driver 580 or newer: https://docs.nvidia.com/deploy/cuda-\ncompatibility/index.html. DOCA 3.5 has no CUDA 12 image, so update an older driver. Record the \ninstalled DOCA libraries and the devices DOCA finds. \nStep 6.3: GPUNetIO Receive Sample \ngpunetio_simple_receive receives UDP packets into GPU memory with a CUDA kernel. Before building, \nadd your GPU's architecture to ",
+          "score": null,
+          "match_type": "adjacent"
+        },
+        {
+          "document_id": "88458f96-fbdd-40fa-9522-1707c4fbc5c5",
+          "filename": "lab8.pdf",
+          "page": 7,
+          "chunk_index": 46,
+          "text": "luster, in your team's group. A reservation holds \nthe nodes for your slot but does not start an experiment, so schedule yours to start when your slot begins. \nStep 7.3: Set Up Both Nodes \nSet up node0 and node1 for GPUNetIO with the installation guide from Step 6.3. DOCA itself runs in the \ncontainer, so we did not install DOCA on the hosts. On our nodes, the setup needed: \n\u25cf The NVIDIA open kernel module driver from the 580 branch and the CUDA 13.0 toolkit: \nhttps://docs.nvidia.com/datacenter/",
+          "score": null,
+          "match_type": "adjacent"
+        },
+        {
+          "document_id": "88458f96-fbdd-40fa-9522-1707c4fbc5c5",
+          "filename": "lab8.pdf",
+          "page": 7,
+          "chunk_index": 47,
+          "text": "el module driver from the 580 branch and the CUDA 13.0 toolkit: \nhttps://docs.nvidia.com/datacenter/tesla/driver-installation-guide/ubuntu.html. The DOCA image \nneeds driver 580 or newer (Step 6.2), and GPUNetIO's dmabuf path needs the open kernel \nmodule. Reboot if nvidia-smi fails after the install. \n\u25cf build-essential, git, linux-headers-$(uname -r), rdma-core, ibverbs-utils, and libibverbs-dev from \napt. \n\u25cf GDRCopy v2.5.2 built in /opt/mellanox/gdrcopy, with its gdrdrv module loaded by its in",
+          "score": 0.563
+        }
+      ]
+    },
+    {
+      "name": "lab8_followup",
+      "question": "Why does that setup need a full virtual machine rather than a GPU container?",
+      "passed": true,
+      "conversation_id": "f3ecc1e5-8c79-47e9-83fa-5ed12a287f31",
+      "answer": "The setup needs a full virtual machine because Part 6 runs Docker. [2]",
+      "sources": [
+        {
+          "document_id": "88458f96-fbdd-40fa-9522-1707c4fbc5c5",
+          "filename": "lab8.pdf",
+          "page": 1,
+          "chunk_index": 2,
+          "text": "t data directly \ninto GPU memory, and CUDA kernels receive the packets. DOCA GPUNetIO overview: \nhttps://networking-docs.nvidia.com/doca/archive/3-5-0/doca-gpunetio \nParts 1 to 6 run on a GPU instance that you create and pay for on a Cloud, as in Laboratory #6. Part 7 \nneeds the network card and runs on CloudLab in a time slot reserved for your team. \nPart 1: Setting Up the Environment \nStep 1.1: Create a GPU Instance \nCreate a Linux virtual machine with an NVIDIA GPU on a Cloud. Part 6 runs Doc",
+          "score": null,
+          "match_type": "adjacent"
+        },
+        {
+          "document_id": "88458f96-fbdd-40fa-9522-1707c4fbc5c5",
+          "filename": "lab8.pdf",
+          "page": 1,
+          "chunk_index": 3,
+          "text": "Create a GPU Instance \nCreate a Linux virtual machine with an NVIDIA GPU on a Cloud. Part 6 runs Docker, so you need a full \nvirtual machine, not a GPU container. On Google Cloud we suggest: \n\u25cf GPU: NVIDIA L4 (G2 machine type, such as g2-standard-4). A T4 from Laboratory #6 also \nworks for Parts 1 to 6. \n\u25cf OS: Ubuntu 22.04 LTS \n\u25cf Boot disk: 100 GB, because the DOCA container in Part 6 is large \n \nInstall the NVIDIA driver with Google's guide: https://cloud.google.com/compute/docs/gpus/install-\nd",
+          "score": 0.6728
+        },
+        {
+          "document_id": "88458f96-fbdd-40fa-9522-1707c4fbc5c5",
+          "filename": "lab8.pdf",
+          "page": 1,
+          "chunk_index": 4,
+          "text": "Install the NVIDIA driver with Google's guide: https://cloud.google.com/compute/docs/gpus/install-\ndrivers-gpu. Use driver 580 or newer, because the default pip builds of PyTorch and TensorRT use \nCUDA 13, which requires it. Stop the instance whenever you are not using it, because you pay for every \nhour it runs. \nCUDA, TensorRT, and DPDK do not run on macOS, so Mac users, including M1 and other Apple Silicon \nMacs, must use the Cloud instance. On Windows with an NVIDIA GPU, you can do Parts 1 t",
+          "score": null,
+          "match_type": "adjacent"
+        },
+        {
+          "document_id": "88458f96-fbdd-40fa-9522-1707c4fbc5c5",
+          "filename": "lab8.pdf",
+          "page": 5,
+          "chunk_index": 31,
+          "text": "els.html \nCheck that each received image gets the same class as its original. Measure the CPU-to-GPU copy time \nwith pinned memory. This is the copy GPUNetIO removes. \nPart 6: NVIDIA DOCA Container \nDOCA is NVIDIA's SDK for its ConnectX network cards and BlueField DPUs. NVIDIA publishes it as a \ncontainer: https://catalog.ngc.nvidia.com/orgs/nvidia/teams/doca/containers/doca \nStep 6.1: Docker with GPU Access \nInstall Docker and the NVIDIA Container Toolkit: https://docs.nvidia.com/datacenter/clo",
+          "score": 0.5809
+        },
+        {
+          "document_id": "88458f96-fbdd-40fa-9522-1707c4fbc5c5",
+          "filename": "lab8.pdf",
+          "page": 5,
+          "chunk_index": 32,
+          "text": " GPU Access \nInstall Docker and the NVIDIA Container Toolkit: https://docs.nvidia.com/datacenter/cloud-\nnative/container-toolkit/latest/install-guide.html. Check GPU access: \nsudo docker run --rm --gpus all ubuntu nvidia-smi -L \nStep 6.2: Explore DOCA \nIMG=nvcr.io/nvidia/doca/doca:devel-cuda13.0.0-3.5.0-devel-host \nsudo docker pull $IMG \nsudo docker run --rm -it --gpus all --privileged --net=host $IMG bash \n# inside the container: \ndoca_caps --version \ndoca_caps --list-libs \ndoca_caps --list-dev",
+          "score": 0.5977
+        },
+        {
+          "document_id": "88458f96-fbdd-40fa-9522-1707c4fbc5c5",
+          "filename": "lab8.pdf",
+          "page": 5,
+          "chunk_index": 33,
+          "text": "$IMG bash \n# inside the container: \ndoca_caps --version \ndoca_caps --list-libs \ndoca_caps --list-devs \nThis image needs NVIDIA driver 580 or newer: https://docs.nvidia.com/deploy/cuda-\ncompatibility/index.html. DOCA 3.5 has no CUDA 12 image, so update an older driver. Record the \ninstalled DOCA libraries and the devices DOCA finds. \nStep 6.3: GPUNetIO Receive Sample \ngpunetio_simple_receive receives UDP packets into GPU memory with a CUDA kernel. Before building, \nadd your GPU's architecture to ",
+          "score": null,
+          "match_type": "adjacent"
+        },
+        {
+          "document_id": "88458f96-fbdd-40fa-9522-1707c4fbc5c5",
+          "filename": "lab8.pdf",
+          "page": 7,
+          "chunk_index": 48,
+          "text": "from \napt. \n\u25cf GDRCopy v2.5.2 built in /opt/mellanox/gdrcopy, with its gdrdrv module loaded by its insmod.sh \nscript: https://github.com/NVIDIA/gdrcopy. The commands later in Part 7 expect this path. \n\u25cf 2,048 hugepages of 2 MB for gpunetio_simple_receive in Step 7.5, and GPU persistence mode \n(nvidia-smi -pm 1). \n\u25cf ACS turned off on the PCIe bridges above the GPU and the network card. You cannot reach the \nBIOS on CloudLab, so use the setpci method from the installation guide. \n\u25cf Docker and the N",
+          "score": null,
+          "match_type": "adjacent"
+        },
+        {
+          "document_id": "88458f96-fbdd-40fa-9522-1707c4fbc5c5",
+          "filename": "lab8.pdf",
+          "page": 7,
+          "chunk_index": 49,
+          "text": "ach the \nBIOS on CloudLab, so use the setpci method from the installation guide. \n\u25cf Docker and the NVIDIA Container Toolkit from Step 6.1, with Docker's data-root on /mydata, \nbecause the root disk is 64 GB and the DOCA image from Step 6.2 is about 22 GB. \nThe hugepages, the gdrdrv module, persistence mode, and the ACS settings are lost when a node reboots, \nso set them again after every reboot. Do not flash the network card's firmware or change its settings with \nmlxconfig, because the change s",
+          "score": 0.5938
+        },
+        {
+          "document_id": "88458f96-fbdd-40fa-9522-1707c4fbc5c5",
+          "filename": "lab8.pdf",
+          "page": 7,
+          "chunk_index": 50,
+          "text": "o not flash the network card's firmware or change its settings with \nmlxconfig, because the change stays on the node after your experiment ends. \nStep 7.4: Check the Hardware \nCheck each node against the GPUNetIO installation guide from Step 6.3. Find the network interface with \nthe 10.10.1.x address, its PCI address and firmware, the RDMA devices, the NVIDIA network cards, the \nkernel version, and the PCIe path between the GPU and the network card: \nip -br addr \nethtool -i <interface> \nibv_devi",
+          "score": null,
+          "match_type": "adjacent"
+        },
+        {
+          "document_id": "88458f96-fbdd-40fa-9522-1707c4fbc5c5",
+          "filename": "lab8.pdf",
+          "page": 5,
+          "chunk_index": 30,
+          "text": "te images. \nPart 5: Classifying the Received Images \nCopy the rebuilt images to GPU memory and classify them with your FP16 engine. Do the preprocessing \non the GPU: convert the height x width x channel bytes to the channel-first float layout and normalize \nthem the way the pretrained weights expect. torchvision bundles these transforms with the weights: \nhttps://docs.pytorch.org/vision/stable/models.html \nCheck that each received image gets the same class as its original. Measure the CPU-to-GPU",
+          "score": null,
+          "match_type": "adjacent"
+        }
+      ]
+    },
+    {
+      "name": "lab9_chunking",
+      "question": "In Part 3, what text chunk size and LangChain splitter are required?",
+      "passed": true,
+      "conversation_id": "e7332405-64f0-40c4-83df-f19bcd6b8b5d",
+      "answer": "Use chunks of size 500 with LangChain\u2019s `CharacterTextSplitter`. [1][2]",
+      "sources": [
+        {
+          "document_id": "f4ebdd22-0df1-4a1b-b4ed-57dee2f56fd1",
+          "filename": "lab9.pdf",
+          "page": 4,
+          "chunk_index": 13,
+          "text": "3. Provide a sidebar option where the user can upload single or multiple PDF documents for \nanalysis. \n \nII. Data Processing and Storage. \n1. PDF Text Extraction \nYour task is to write a Python script to iterate over the PDF in the folder, extract the \ninformation from the PDF, and store it in your database tables. \n2. Get Text Chunks \nProcess the extracted data into chunks of size 500. Use the CharacterTextSplitter provided \nby langChain to split the text. Read about the different parameters th",
+          "score": 0.3907
+        },
+        {
+          "document_id": "f4ebdd22-0df1-4a1b-b4ed-57dee2f56fd1",
+          "filename": "lab9.pdf",
+          "page": 4,
+          "chunk_index": 14,
+          "text": "aracterTextSplitter provided \nby langChain to split the text. Read about the different parameters the function takes and \nset appropriate values for those parameters to split the extracted data into chunks \nefficiently. \n3. Create Vector Datastore \nWrite a function that would take the chunks generated in the above step as input and use \nthe OpenAI Embeddings to create word embeddings for those chunks and store them in a \nvector database. \n4. Create a Conversation Chain \nWrite a function that wou",
+          "score": 0.5923
+        },
+        {
+          "document_id": "f4ebdd22-0df1-4a1b-b4ed-57dee2f56fd1",
+          "filename": "lab9.pdf",
+          "page": 4,
+          "chunk_index": 15,
+          "text": "nks and store them in a \nvector database. \n4. Create a Conversation Chain \nWrite a function that would take an LLM model, and the vector store created above as input \nand create a conversation chain to understand user questions and generate responses based \non its knowledge from the vector database. \n(Take a look at the ConversationMemoryBuffer function provided by langchain for \nwriting this function) \n \nIII. Driver Function \n1. Write a driver function that calls the above functions and then ge",
+          "score": 0.3657
+        },
+        {
+          "document_id": "f4ebdd22-0df1-4a1b-b4ed-57dee2f56fd1",
+          "filename": "lab9.pdf",
+          "page": 4,
+          "chunk_index": 16,
+          "text": "tion) \n \nIII. Driver Function \n1. Write a driver function that calls the above functions and then gets questions from the user, \nruns it through the conversation chain to get a response, prints the response on the screen, \nand then asks the user for the next question. The user must type in \u2018exit\u2019 to quit the program. \nUse OpenAI to create conversation chains.  \n2. Take the converted text contents into Embeddings using OpenAI\u2019s embeddings library and \nstore them in a vector database. The LLM mode",
+          "score": null,
+          "match_type": "adjacent"
+        },
+        {
+          "document_id": "f4ebdd22-0df1-4a1b-b4ed-57dee2f56fd1",
+          "filename": "lab9.pdf",
+          "page": 4,
+          "chunk_index": 17,
+          "text": "into Embeddings using OpenAI\u2019s embeddings library and \nstore them in a vector database. The LLM model should generate custom answer to \nquestions only based on the closest matching context to the question found in the databse. \n3. Summary \na) Collect: Convert PDF into Text document suitable for embeddings and GPT \nb) Chunk: The text document will need to be split into short, mostly self-contained \nsections to be embedded \nc) Embed: Each section is embedded with the OpenAI API \nd) Store: Embeddin",
+          "score": 0.3607
+        },
+        {
+          "document_id": "f4ebdd22-0df1-4a1b-b4ed-57dee2f56fd1",
+          "filename": "lab9.pdf",
+          "page": 4,
+          "chunk_index": 18,
+          "text": "\nsections to be embedded \nc) Embed: Each section is embedded with the OpenAI API \nd) Store: Embeddings are saved (for large datasets, use a vector database) \ne) Given a user question, generate an embedding for the query from the OpenAI API \nf) Using the embeddings, rank the text sections by relevance to the query. \ng) Insert the question and the most relevant sections into a message to GPT. \nh) Return GPT's answer.",
+          "score": null,
+          "match_type": "adjacent"
+        }
+      ]
+    },
+    {
+      "name": "lab9_server_options",
+      "question": "Which two self-hosted Llama server options are described in lab9.pdf?",
+      "passed": true,
+      "conversation_id": "e7332405-64f0-40c4-83df-f19bcd6b8b5d",
+      "answer": "The two options are:\n\n- **Option A:** `llama.cpp` with a GGUF model, served using `llama-server`. [1][4]\n- **Option B:** **vLLM**, using its OpenAI-compatible API server. [2]",
+      "sources": [
+        {
+          "document_id": "f4ebdd22-0df1-4a1b-b4ed-57dee2f56fd1",
+          "filename": "lab9.pdf",
+          "page": 2,
+          "chunk_index": 5,
+          "text": "owski/Meta-Llama-3.1-70B-Instruct-GGUF \n4. (If needed) Convert to GGUF using llama.cpp\u2019s conversion tools (see llama.cpp docs). \n5. Start the HTTP server (OpenAI-compatible): \ncd llama.cpp/build/bin \n./llama-server -m /path/to/model.gguf --host 0.0.0.0 --port 8001 --ctx-size \n4096 \n6. Optionally enforce an API key: \n# ./server -m /path/to/model.gguf --host 0.0.0.0 --port 8001 --api-key MYKEY \n7. In the chat app .env set: \nLLM_API_BASE=http://localhost:8001/v1 \nLLM_MODEL=<your model name or leave",
+          "score": 0.5135
+        },
+        {
+          "document_id": "f4ebdd22-0df1-4a1b-b4ed-57dee2f56fd1",
+          "filename": "lab9.pdf",
+          "page": 2,
+          "chunk_index": 6,
+          "text": "n the chat app .env set: \nLLM_API_BASE=http://localhost:8001/v1 \nLLM_MODEL=<your model name or leave as placeholder> \nLLM_API_KEY=MYKEY   (only if you set --api-key) \n \n8. Restart the FastAPI app and test by sending a question in chat. \n \nVI. Self-Hosted Llama 3 Endpoint (Option B) \n1. Install vLLM in a Python environment with CUDA (if using GPU). \n2. Launch OpenAI-compatible server, e.g.: \npython -m vllm.entrypoints.openai.api_server --model <your-llama3-model>     \n--host 0.0.0.0 --port 8001 \n",
+          "score": 0.5778
+        },
+        {
+          "document_id": "f4ebdd22-0df1-4a1b-b4ed-57dee2f56fd1",
+          "filename": "lab9.pdf",
+          "page": 2,
+          "chunk_index": 7,
+          "text": " -m vllm.entrypoints.openai.api_server --model <your-llama3-model>     \n--host 0.0.0.0 --port 8001 \n3. Configure the chat app .env similarly to Option A. \n \nVII. Frontend \nThe frontend is plain HTML/CSS/JS served by FastAPI as static files. It connects via REST for \nlogin and message posting, and via WebSocket for real-time message broadcast.",
+          "score": 0.4878
+        },
+        {
+          "document_id": "f4ebdd22-0df1-4a1b-b4ed-57dee2f56fd1",
+          "filename": "lab9.pdf",
+          "page": 2,
+          "chunk_index": 4,
+          "text": "LLM_MODEL=llama-3-8b-instruct \nLLM_API_KEY= \nAPP_HOST=0.0.0.0 \nAPP_PORT=8000 \n \nV. Self-Hosted Llama 3 Endpoint (Option A) \n1. Build llama.cpp: \ngit clone https://github.com/ggerganov/llama.cpp \ncd llama.cpp \ncmake -B build \ncmake --build build --config Release \n \n2. Obtain Llama 3 weights from Meta/Hugging Face. Accept the license. Download the \nmodel.  \n3. One option: https://huggingface.co/bartowski/Meta-Llama-3.1-70B-Instruct-GGUF \n4. (If needed) Convert to GGUF using llama.cpp\u2019s conversion ",
+          "score": 0.5685
+        }
+      ]
+    },
+    {
+      "name": "unknown_answer",
+      "question": "What is the instructor's favorite ice cream flavor?",
+      "passed": true,
+      "conversation_id": "097510d7-6f3e-4a99-b93e-585c2f004844",
+      "answer": "I do not know based on the uploaded documents.",
+      "sources": []
+    }
+  ],
+  "configuration": {
+    "openai_configured": true,
+    "qdrant_ready": true,
+    "embedding_model": "text-embedding-3-small",
+    "chat_model": "gpt-6-luna",
+    "chunk_size": 500,
+    "chunk_overlap": 100
+  },
+  "browser_verification": {
+    "passed": true,
+    "question": "What text chunk size is required for Part 3?",
+    "answer": "Document Assistant\nPart 3 requires text chunks of size **500**. [1]\n[1] lab9.pdf / page 5 / chunk 22 / adjacent context\n[2] lab9.pdf / page 5 / chunk 23 / score 0.4168\n[3] lab9.pdf / page 5 / chunk 24 / adjacent context\n[4] lab9.pdf / page 4 / chunk 14 / adjacent context\n[5] lab9.pdf / page 4 / chunk 15 / score 0.4042\n[6] lab9.pdf / page 4 / chunk 16 / adjacent context\n[7] lab9.pdf / page 3 / chunk 12 / adjacent context\n[8] lab9.pdf / page 3 / chunk 13 / score 0.3994\n[9] lab9.pdf / page 4 / chunk 17 / adjacent context\n[10] lab9.pdf / page 4 / chunk 18 / score 0.3713\n[11] lab9.pdf / page 4 / chunk 19 / adjacent context",
+    "conversation_id": "e7332405-64f0-40c4-83df-f19bcd6b8b5d",
+    "desktop_screenshot": "Part3-real-desktop.png",
+    "mobile_screenshot": "Part3-real-mobile.png"
+  },
+  "cli_verification": {
+    "passed": true,
+    "authenticated_driver_loop": true,
+    "output": "Ask questions about your documents. Type exit to quit.\nAssistant: Part 3 requires chunks of size 500, using LangChain\u2019s `CharacterTextSplitter`. [1][2]\n[1] lab9.pdf, page 4, chunk 14\n[2] lab9.pdf, page 4, chunk 15\n[3] lab9.pdf, page 4, chunk 16\n[4] lab9.pdf, page 4, chunk 17\n[5] lab9.pdf, page 3, chunk 12\n[6] lab9.pdf, page 3, chunk 13\nGoodbye.\n"
+  },
+  "vector_verification": {
+    "collection": "ee542_documents",
+    "points": 97,
+    "dimensions": 1536,
+    "survived_container_restart": true,
+    "example": {
+      "point_id": "0457daf7-67b4-5a44-ad44-90861ad9e440",
+      "filename": "lab8.pdf",
+      "page": 4,
+      "chunk_index": 25,
+      "text": "X queue \n  rte_eth_rx_queue_setup(0, 0, 1024, rte_socket_id(), NULL, pool); \n  rte_eth_tx_queue_setup(0, 0, 1024, rte_socket_id(), NULL); \n  rte_eth_dev_start(0); \n \n  struct rte_mbuf *bufs[32]; \n  for (;;) { \n    uint16_t n = rte_eth_rx_burst(0, 0, bufs, 32); \n    for (uint16_t i = 0; i < n; i++) { \n      uint8_t *pkt = rte_pktmbuf_mtod(bufs[i], uint8_t *); \n      // TODO: check the Ethernet, IPv4 and UDP headers, \n      //       then copy the chunk into its image \n      rte_pktmbuf_free(bufs[i",
+      "vector_first_8_dimensions": [
+        -0.030346941,
+        -0.028088849,
+        -0.0205517,
+        -0.024610166,
+        -0.03695339,
+        -0.008666196,
+        0.021909608,
+        0.038662218
+      ]
+    }
+  }
+}
