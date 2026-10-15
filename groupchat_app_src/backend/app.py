@@ -3,28 +3,22 @@ import logging
 import os
 from contextlib import asynccontextmanager
 from datetime import datetime, timedelta, timezone
-from pathlib import Path
 
 import httpx
 import jwt
-from dotenv import load_dotenv
 from fastapi import Depends, FastAPI, HTTPException, WebSocket, WebSocketDisconnect
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from fastapi.staticfiles import StaticFiles
 from pwdlib import PasswordHash
 from pydantic import BaseModel, Field
-from sqlalchemy import Boolean, DateTime, ForeignKey, String, Text, select
+from sqlalchemy import select
 from sqlalchemy.exc import IntegrityError
-from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine
-from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
-ROOT = Path(__file__).resolve().parent.parent
-load_dotenv(ROOT / '.env')
+from database import ROOT, Base, Message, User, engine, sessions
+from rag_routes import create_rag_router, get_rag_service
 SECRET = os.environ['JWT_SECRET']
 if len(SECRET) < 32 or SECRET == 'please_change_me_to_a_long_random_value':
     raise RuntimeError('Set JWT_SECRET to a random string of at least 32 characters.')
-engine = create_async_engine(os.environ['DATABASE_URL'], pool_pre_ping=True)
-sessions = async_sessionmaker(engine, expire_on_commit=False)
 passwords = PasswordHash.recommended()
 bearer = HTTPBearer()
 logger = logging.getLogger('groupchat')
@@ -32,36 +26,17 @@ clients: set[WebSocket] = set()
 tasks: set[asyncio.Task] = set()
 
 
-class Base(DeclarativeBase):
-    pass
-
-
-class User(Base):
-    __tablename__ = 'users'
-    id: Mapped[int] = mapped_column(primary_key=True)
-    username: Mapped[str] = mapped_column(String(50), unique=True)
-    password_hash: Mapped[str] = mapped_column(String(255))
-    created_at: Mapped[datetime] = mapped_column(DateTime, default=lambda: datetime.now(timezone.utc).replace(tzinfo=None))
-
-
-class Message(Base):
-    __tablename__ = 'messages'
-    id: Mapped[int] = mapped_column(primary_key=True)
-    user_id: Mapped[int | None] = mapped_column(ForeignKey('users.id', ondelete='SET NULL'), nullable=True)
-    content: Mapped[str] = mapped_column(Text)
-    is_bot: Mapped[bool] = mapped_column(Boolean, default=False)
-    created_at: Mapped[datetime] = mapped_column(DateTime, default=lambda: datetime.now(timezone.utc).replace(tzinfo=None))
-
-
 @asynccontextmanager
 async def lifespan(app):
     async with engine.begin() as connection:
         await connection.run_sync(Base.metadata.create_all)
+    await get_rag_service().recover()
     yield
     for task in list(tasks):
         task.cancel()
     if tasks:
         await asyncio.gather(*tasks, return_exceptions=True)
+    await get_rag_service().close()
     await engine.dispose()
 
 
@@ -220,4 +195,5 @@ async def health():
     return {'status': 'ok', 'database': 'ok'}
 
 
+app.include_router(create_rag_router(current_user))
 app.mount('/', StaticFiles(directory=ROOT / 'frontend', html=True), name='frontend')
