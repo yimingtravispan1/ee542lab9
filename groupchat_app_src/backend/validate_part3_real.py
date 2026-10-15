@@ -1,4 +1,4 @@
-"""Opt-in real API validation using the repository's lab8.pdf and lab9.pdf.
+"""Opt-in real API validation using lab8.pdf and lab9.pdf in docs/labs.
 
 Run only when authorized to use the configured OpenAI API key.
 Existing admin-owned uploads are reused; documents and answers remain available.
@@ -17,7 +17,7 @@ from sqlalchemy import select
 from app import token_for
 from database import ROOT, User, engine, sessions
 
-REPORT = ROOT / 'artifacts/Part3-real-validation.json'
+REPORT = ROOT / 'artifacts/reports/Part3-real-validation.json'
 
 
 async def admin_token():
@@ -37,7 +37,7 @@ def call(client, method, path, **kwargs):
 
 
 def save(report):
-    REPORT.parent.mkdir(exist_ok=True)
+    REPORT.parent.mkdir(parents=True, exist_ok=True)
     REPORT.write_text(json.dumps(report, indent=2, ensure_ascii=True) + '\n', encoding='utf-8')
 
 
@@ -56,7 +56,7 @@ def main():
             if matches:
                 doc = matches[0]
             else:
-                with (ROOT.parent / filename).open('rb') as file:
+                with (ROOT.parent / 'docs/labs' / filename).open('rb') as file:
                     uploaded = call(client, 'POST', '/documents', files=[('files', (filename, file, 'application/pdf'))])
                 if uploaded['errors']:
                     raise RuntimeError(str(uploaded['errors']))

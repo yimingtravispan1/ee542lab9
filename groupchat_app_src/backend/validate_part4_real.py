@@ -15,7 +15,7 @@ from sqlalchemy import delete, select
 from app import token_for
 from database import ROOT, User, engine, sessions
 
-REPORT = ROOT / 'artifacts/Part4-real-validation.json'
+REPORT = ROOT / 'artifacts/reports/Part4-real-validation.json'
 
 
 async def admin_token():
@@ -41,6 +41,7 @@ def call(client, method, path, **kwargs):
 
 
 def main():
+    REPORT.parent.mkdir(parents=True, exist_ok=True)
     report = {'cases': []}
     username = 'driving_test_' + uuid4().hex[:16]
     try:

@@ -44,7 +44,9 @@ def main():
     args = parser.parse_args()
     origin = (ROOT / 'logs/tunnel-url.txt').read_text().strip()
     credential = asyncio.run(admin_token())
-    report_path = ROOT / 'artifacts/Part4-ui-validation.json'
+    report_path = ROOT / 'artifacts/reports/Part4-ui-validation.json'
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    (ROOT / 'artifacts/screenshots').mkdir(parents=True, exist_ok=True)
     report = json.loads(report_path.read_text()) if report_path.exists() else {}
     with sync_playwright() as playwright:
         if args.android:
@@ -52,7 +54,7 @@ def main():
             page = next(p for c in browser.contexts for p in c.pages if p.url.startswith(origin))
             prepare(page, credential, origin)
             answer = ask(page, 'What are some English commands an examiner may give during a Class C road test?')
-            page.screenshot(path=str(ROOT / 'artifacts/Part4-android-page.png'), full_page=True)
+            page.screenshot(path=str(ROOT / 'artifacts/screenshots/Part4-android-page.png'), full_page=True)
             report['android'] = {'passed': True, 'origin': origin, 'answer': answer, 'history_after_reload': True, 'no_horizontal_overflow': True}
             # Do not close a user's Chrome browser through the CDP connection.
         else:
@@ -64,7 +66,7 @@ def main():
             prepare(page, credential, origin)
             answer = ask(page, 'What steps should I take before changing lanes?')
             assert 'blind' in answer.lower()
-            page.screenshot(path=str(ROOT / 'artifacts/Part4-desktop.png'), full_page=True)
+            page.screenshot(path=str(ROOT / 'artifacts/screenshots/Part4-desktop.png'), full_page=True)
             page.locator('#documentsTab').click()
             page.locator('#documentsPanel').wait_for(state='visible')
             page.locator('#groupTab').click()
@@ -73,7 +75,7 @@ def main():
             page.locator('#drivingPanel').wait_for(state='visible')
             page.set_viewport_size({'width': 390, 'height': 844})
             assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
-            page.screenshot(path=str(ROOT / 'artifacts/Part4-mobile.png'), full_page=True)
+            page.screenshot(path=str(ROOT / 'artifacts/screenshots/Part4-mobile.png'), full_page=True)
             assert not errors, errors
             report['web'] = {'passed': True, 'origin': origin, 'desktop_and_mobile': True, 'history_after_reload': True, 'all_three_modes': True, 'no_horizontal_overflow': True, 'page_errors': errors}
             browser.close()

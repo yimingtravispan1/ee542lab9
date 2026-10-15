@@ -13,5 +13,5 @@ groupchat_app_src/tools/*.exe
 **/*.jks
 **/*.keystore
 **/.idea/
-groupchat_app_src/artifacts/*.apk
-groupchat_app_src/artifacts/*.png
+groupchat_app_src/artifacts/**/*.apk
+groupchat_app_src/artifacts/**/*.png

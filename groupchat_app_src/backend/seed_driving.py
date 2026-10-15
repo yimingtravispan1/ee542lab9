@@ -33,7 +33,7 @@ async def main():
         fingerprints = {s['filename']: s for s in previous['sources']}
         report = {'collection': service.collection, 'embedding_model': service.embedding_model, 'chunk_size': 500, 'overlap': 100, 'sources': previous['sources'].copy()}
         for source in catalog['sources']:
-            data = (ROOT.parent / source['filename']).read_bytes()
+            data = (ROOT / 'knowledge/dmv/sources' / source['filename']).read_bytes()
             digest = hashlib.sha256(data).hexdigest()
             docs = await service.list_documents(owner.id)
             old = fingerprints.get(source['filename'], {})
