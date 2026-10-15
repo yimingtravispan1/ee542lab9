@@ -16,3 +16,22 @@ button:hover{filter:brightness(1.1)}
 .msg{margin-top:10px;color:#fca5a5}
 .message{overflow-wrap:anywhere;word-wrap:break-word}
 @media(max-width:600px){.container{padding:12px}.auth,.chat{padding:16px}.auth .row{flex-wrap:wrap}.auth .row input{flex-basis:100%}.messages{height:50vh}}
+.tabs{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+.tabs button[aria-pressed="false"]{background:#334155}
+.rag-layout{display:grid;grid-template-columns:minmax(210px,280px) minmax(0,1fr);gap:20px}
+.document-sidebar{border-right:1px solid #334155;padding-right:16px;min-width:0}
+.document-sidebar input[type="file"]{width:100%;padding:10px 0;border:0;background:none}
+.document-sidebar>button{width:100%;margin:8px 0}
+.document-card{border:1px solid #374151;border-radius:10px;padding:12px;margin:12px 0;overflow-wrap:anywhere}
+.document-card label{display:flex;gap:8px;align-items:flex-start}
+.document-card input[type="checkbox"]{flex:0 0 auto;margin-top:4px}
+.document-actions{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.document-actions button{font-size:12px;padding:6px 9px}
+.document-chat{min-width:0}.document-chat .header{gap:12px;flex-wrap:wrap}
+.document-chat .messages{height:50vh}
+.document-chat .message{white-space:pre-wrap}
+.sources{font-size:12px;color:#cbd5e1;white-space:normal;margin-top:12px}
+.sources details{padding:6px 0}.sources p{white-space:pre-wrap}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:320px;overflow:auto;font-size:12px}
+button:disabled{opacity:.55;cursor:wait}
+@media(max-width:700px){.rag-layout{grid-template-columns:1fr}.document-sidebar{border-right:0;border-bottom:1px solid #334155;padding:0 0 16px}.document-chat .messages{height:45vh}}

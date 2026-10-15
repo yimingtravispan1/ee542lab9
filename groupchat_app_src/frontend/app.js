@@ -23,11 +23,13 @@ let waitingAfterMessageId = null;
 function showAuth() {
   authPanel.classList.remove("hidden");
   chatPanel.classList.add("hidden");
+  document.dispatchEvent(new Event("signedout"));
 }
 
 function showChat() {
   authPanel.classList.add("hidden");
   chatPanel.classList.remove("hidden");
+  document.dispatchEvent(new Event("signedin"));
 }
 
 async function callAPI(path, method = "GET", body) {
@@ -36,7 +38,10 @@ async function callAPI(path, method = "GET", body) {
   const res = await fetch(API + path, {
     method, headers, body: body ? JSON.stringify(body) : undefined
   });
-  if (!res.ok) throw new Error((await res.json()).detail || ("HTTP "+res.status));
+  if (!res.ok) {
+    const detail = (await res.json()).detail;
+    throw new Error(typeof detail === "string" ? detail : "Please check the submitted values.");
+  }
   return res.json();
 }
 

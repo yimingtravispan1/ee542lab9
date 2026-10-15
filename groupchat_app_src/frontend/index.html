@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Group Chat + LLM Bot</title>
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
   <div class="container">
@@ -27,6 +27,11 @@
         <h2>Group Chat</h2>
         <button id="logoutBtn">Log Out</button>
       </div>
+      <nav class="tabs" aria-label="Chat mode">
+        <button id="groupTab" aria-pressed="true">Group Chat</button>
+        <button id="documentsTab" aria-pressed="false">Document Q&amp;A</button>
+      </nav>
+      <section id="groupPanel">
       <div id="messages" class="messages"></div>
       <div class="hint">The bot replies to messages containing a question mark (?). CPU inference may take about a minute.</div>
       <div id="chatMsg" class="msg" role="status"></div>
@@ -34,8 +39,40 @@
         <input id="chatInput" placeholder="Type a message…">
         <button id="sendBtn">Send</button>
       </div>
+      </section>
+      <section id="documentsPanel" class="hidden">
+        <div class="rag-layout">
+          <aside class="document-sidebar" aria-label="Your documents">
+            <h3>Your Documents</h3>
+            <p class="hint">Upload up to 10 PDF, TXT, MD, or DOCX files (10 MB each). Documents are private to your account.</p>
+            <input id="documentFiles" type="file" accept=".pdf,.txt,.md,.docx" multiple aria-label="Choose documents" hidden>
+            <button id="chooseDocumentsBtn" type="button">Choose Files</button>
+            <div id="selectedFileNames" class="hint">No files selected.</div>
+            <button id="uploadDocumentsBtn">Upload Documents</button>
+            <p class="hint">Upload extracts and saves text. Indexing sends text to OpenAI to create searchable embeddings.</p>
+            <div id="ragServiceStatus" class="hint" role="status"></div>
+            <div id="uploadStatus" class="msg" role="status"></div>
+            <div id="documentList"></div>
+            <details id="chunkPreview" class="hidden">
+              <summary>Extracted Chunk Preview</summary>
+              <pre id="chunkPreviewText"></pre>
+            </details>
+          </aside>
+          <div class="document-chat">
+            <div class="header"><h3>Document Q&amp;A</h3><button id="newRagChatBtn">New Conversation</button></div>
+            <p class="hint">Select indexed documents. Answers use retrieved passages and include source references. Every question is sent directly; no question mark is required.</p>
+            <div id="ragMessages" class="messages" aria-live="polite"></div>
+            <div id="ragStatus" class="msg" role="status"></div>
+            <form id="ragQuestionForm" class="composer">
+              <input id="ragQuestion" placeholder="Ask about your documents..." maxlength="4000" required aria-label="Document question">
+              <button id="askRagBtn" type="submit">Ask</button>
+            </form>
+          </div>
+        </div>
+      </section>
     </div>
   </div>
-  <script src="app.js?v=3"></script>
+  <script src="app.js?v=4"></script>
+  <script src="rag.js?v=2"></script>
 </body>
 </html>
