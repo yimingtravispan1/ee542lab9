@@ -1,0 +1,20 @@
+{
+  "web": {
+    "passed": true,
+    "origin": "https://characteristics-ave-inventory-worldcat.trycloudflare.com",
+    "desktop_and_mobile": true,
+    "history_after_reload": true,
+    "all_three_modes": true,
+    "no_horizontal_overflow": true,
+    "page_errors": []
+  },
+  "android": {
+    "passed": true,
+    "origin": "https://characteristics-ave-inventory-worldcat.trycloudflare.com",
+    "answer": "Driving Study Assistant\nExamples of examiner commands listed in the DMV materials include:\n\n- \u201cAt the corner, turn left\u201d or \u201cAt the corner, turn right.\u201d\n- \u201cPull over and stop.\u201d\n- \u201cLane change left\u201d or \u201cLane change right.\u201d\n- \u201cIf I don\u2019t say turn, follow the road ahead.\u201d\n- \u201cMake necessary lane changes to follow my directions.\u201d\n- \u201cPerform all maneuvers only when safe.\u201d [19][20]\n\nThese are examples from the **DL 80, revised March 2022**; they are not a guarantee of the exact instructions you\u2019ll hear. [22]\n[1] Driver_Handbook.pdf / PDF page 11\n[2] Driver_Handbook.pdf / PDF page 11\n[3] Driver_Handbook.pdf / PDF page 11\n[4] Driver_Handbook.pdf / PDF page 11\n[5] Driver_Handbook.pdf / PDF page 11\n[6] Driver_Handbook.pdf / PDF page 12\n[7] Driver_Handbook.pdf / PDF page 12\n[8] Driver_Handbook.pdf / PDF page 12\n[9] Driver_Handbook.pdf / PDF page 12\n[10] Driver_Handbook.pdf / PDF page 12\n[11] Driving_Test_Criteria.pdf / PDF page 32\n[12] Driving_Test_Criteria.pdf / PDF page 32\n[13] Driving_Test_Criteria.pdf / PDF page 32\n[14] Driving_Test_Criteria.pdf / PDF page 32\n[15] Driving_Test_Criteria.pdf / PDF page 33\n[16] Driving_Test_Criteria.pdf / PDF page 33\n[17] Driving_Test_Criteria.pdf / PDF page 33\n[18] Additional Testing Materials.pdf / PDF page 1\n[19] Additional Testing Materials.pdf / PDF page 1\n[20] Additional Testing Materials.pdf / PDF page 1\n[21] Additional Testing Materials.pdf / PDF page 1\n[22] Additional Testing Materials.pdf / PDF page 1\n[23] Additional Testing Materials.pdf / PDF page 2",
+    "history_after_reload": true,
+    "no_horizontal_overflow": true,
+    "history_after_app_reopen": true,
+    "no_browser_address_bar": true
+  }
+}

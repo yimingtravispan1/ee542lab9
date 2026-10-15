@@ -1,0 +1,1677 @@
+{
+  "cases": [
+    {
+      "name": "lane_change",
+      "passed": true,
+      "question": "What steps should I take before changing lanes?",
+      "conversation_id": "e5b04628-0ac7-48c7-82c2-24b33070636e",
+      "answer": "Before changing lanes:\n\n- Signal.\n- Check your mirrors and traffic behind and beside you.\n- Look over your shoulder in the direction you plan to move.\n- Check your blind spots, including for motorcycles and bicycles.\n- Make sure the lane is clear and there is enough space, and avoid letting the vehicle drift into it. [1][2]",
+      "sources": [
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 21,
+          "chunk_index": 71,
+          "text": "15 \nChoosing a Lane \nTraffic lanes are often \nreferred to by number. The \nleft (or fast) lane is called the \nNumber 1 Lane. The lane to \nthe right of the Number 1 \nLane is called the Number 2 Lane. Then the Number 3 Lane, etc. \nHere are some tips for choosing a lane: \n\u2022 Use the left lane to pass or turn left. \n\u2022 Use the right lane to enter or exit traffic or when you enter the road \nfrom a curb or shoulder. \nChanging Lanes \nBefore you change lanes: \n\u2022 Signal. \n\u2022 Check your mirrors. \n\u2022 Check traf",
+          "score": 0.6713
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 21,
+          "chunk_index": 72,
+          "text": " shoulder. \nChanging Lanes \nBefore you change lanes: \n\u2022 Signal. \n\u2022 Check your mirrors. \n\u2022 Check traffic behind and beside you. \n\u2022 Look over your shoulder in the direction you plan to move to make \nsure the lane is clear. \n\u2022 Check your blind spots for other vehicles, motorcyclists, and \nbicyclists. Do not let the vehicle drift into another lane. \n\u2022 Be sure there is enough space for your vehicle in the next lane. It is \nnot necessary to slow down before a lane change. \nStay in one lane as much as ",
+          "score": 0.7429
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 21,
+          "chunk_index": 73,
+          "text": "the next lane. It is \nnot necessary to slow down before a lane change. \nStay in one lane as much as possible. Do not weave in and out of traffic. \nLast minute lane or direction changes may increase the risk of collisions. \nOnce you start moving through an intersection, keep going. If you start \nto make a turn, follow through. If you miss a turn, keep driving until you \ncan safely and legally turn around. \nTypes of Lanes \nPassing Lanes \nOn a multilane road, the passing lane (far left lane) is the",
+          "score": 0.6756
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 21,
+          "chunk_index": 74,
+          "text": "around. \nTypes of Lanes \nPassing Lanes \nOn a multilane road, the passing lane (far left lane) is the lane closest to \nthe center divider and is used to pass other vehicles. \nCarpool/High-Occupancy Vehicle (HOV) Lanes \nAn HOV lane is a special lane reserved for carpools, buses, \nmotorcycles, or low-emission vehicles with decals. To use an \nHOV lane, one of these must apply: \nExample of numbered traffic lanes.",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 22,
+          "chunk_index": 75,
+          "text": "16 \n\u2022 You have a certain number of people in your vehicle. There will be \nsigns at the on-ramp or along the road to tell you the minimum \nnumber of people. Road signs also list the hours when the HOV rules \napply. \n\u2022 You are driving a low emission or zero emission vehicle. You must \ndisplay a special DMV-issued decal. \n\u2022 You are riding a motorcycle (unless otherwise posted). \nThe road surface in an HOV lane is marked with a diamond symbol and \nthe words Carpool Lane. Do not cross over double sol",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 22,
+          "chunk_index": 76,
+          "text": "n HOV lane is marked with a diamond symbol and \nthe words Carpool Lane. Do not cross over double solid lines to enter or \nexit an HOV lane. Use designated entrances and exits. \nCenter Left Turn Lanes \nA center left turn lane is located in the middle of a two-way street. It is \nmarked on both sides by two painted lines. The inner line is broken and \nthe outer line is solid. Use the center left turn lane to prepare for and \nmake a left turn or U-turn. It is not a regular traffic lane or passing la",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 22,
+          "chunk_index": 77,
+          "text": " lane to prepare for and \nmake a left turn or U-turn. It is not a regular traffic lane or passing lane. \nYou may only drive for 200 feet in the center \nleft turn lane. To turn left from this lane: \n\u2022 Look for other vehicles coming toward you \nin the center left turn lane. \n\u2022 Signal. \n\u2022 Look over your shoulder to check your blind \nspots. \n\u2022 Merge completely into the center left turn \nlane so you do not block traffic. \n\u2022 Turn when it is safe. \nTurnout Areas or Lanes \nSome two-lane roads have speci",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 22,
+          "chunk_index": 78,
+          "text": " not block traffic. \n\u2022 Turn when it is safe. \nTurnout Areas or Lanes \nSome two-lane roads have special turnout areas or lanes. \nMerge into these areas or lanes to allow cars behind you to \npass. \nYou must use a turnout area or lane to let other vehicles \npass when you are driving slowly on a two-lane road, where \npassing is unsafe, and there are five or more vehicles following you.",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 29,
+          "chunk_index": 102,
+          "text": "23 \nMerging And Exiting \nMerging \nHighway traffic has the right-of-way. For more information, see Right-of-\nWay Rules: Who Goes First in Section 7. When you enter a highway, you \nwill need to: \n\u2022 Be in the proper lane on the on-ramp. \n\u2022 Be at or near the speed of traffic. \n\u2022 Merge into highway traffic when safe to do so. Do not stop unless \nabsolutely necessary. \n\u2022 Merge into a space large enough for your vehicle to safely join the \nlane. \n\u2022 Use your mirrors and turn signals. \n\u2022 Turn your head q",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 29,
+          "chunk_index": 103,
+          "text": "for your vehicle to safely join the \nlane. \n\u2022 Use your mirrors and turn signals. \n\u2022 Turn your head quickly to look over your shoulder before changing \nlanes or merging into traffic. \n\u2022 Make sure you can stop safely by leaving three seconds of space \nbetween you and the vehicle in front of you. \n\u2022 Make sure you do not cross over any solid lines when merging. If \nyou need to cross several lanes, signal and cross them one at a time. \nCheck your blind spots for vehicles, motorcyclists, bicyclists, a",
+          "score": 0.6782
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 29,
+          "chunk_index": 104,
+          "text": "nal and cross them one at a time. \nCheck your blind spots for vehicles, motorcyclists, bicyclists, and \npedestrians each time. \nExiting \nTo exit a highway safely: \n\u2022 Know your exit and be aware of when it is approaching. \n\u2022 If you plan to change lanes, do so one at a time. Signal and look over \nyour shoulder to check your blind spots. \n\u2022 When in the proper lane, signal five seconds (approximately 400 feet) \nbefore you exit. \n\u2022 Make sure you are at a safe speed to exit. \n\u2022 Do not cross over any s",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 29,
+          "chunk_index": 105,
+          "text": "400 feet) \nbefore you exit. \n\u2022 Make sure you are at a safe speed to exit. \n\u2022 Do not cross over any solid lines when exiting.",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 30,
+          "chunk_index": 106,
+          "text": "24 \nCrossing or Entering Traffic \nWhen entering traffic from a full stop, signal and leave a large enough \nspace to get up to the speed of traffic. To merge, enter, or exit traffic, you \nneed a space that is: \n\u2022 Half a block on city streets, which is about 150 feet. \n\u2022 A full block on the highway, which is about 300 feet. \nEven if you have a green light, do not start across the intersection if there \nare pedestrians or vehicles blocking your pathway. \nWhen turning left, do not assume that an onc",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 30,
+          "chunk_index": 107,
+          "text": "re \nare pedestrians or vehicles blocking your pathway. \nWhen turning left, do not assume that an oncoming vehicle with its right \nturn signal on is turning before it reaches you. The driver may have their \nsignal on by mistake or plan to turn just beyond you. Wait for the vehicle \nto start its turn before beginning the left turn. \nPassing \nYou must judge whether you have enough space to pass whenever you \napproach: \n\u2022 An oncoming vehicle or bicyclist. \n\u2022 A hill, curve, intersection, or road obst",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 30,
+          "chunk_index": 108,
+          "text": "ver you \napproach: \n\u2022 An oncoming vehicle or bicyclist. \n\u2022 A hill, curve, intersection, or road obstruction. To safely pass, the hill or \ncurve should be at least one-third of a mile ahead. \nBefore you pass, look ahead for road conditions that may cause other \nvehicles to move into your lane. \nDo not pass: \n\u2022 If you are approaching a hill or curve and cannot see if other traffic is \napproaching. This is very dangerous on one and two lane roads. \n\u2022 Within 100 feet of an intersection, bridge, tunn",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 30,
+          "chunk_index": 109,
+          "text": "his is very dangerous on one and two lane roads. \n\u2022 Within 100 feet of an intersection, bridge, tunnel, railroad crossing, or \nother hazardous area. \n\u2022 At crossroads and driveways. \n\u2022 Unless you have enough space to return to your lane.",
+          "score": null,
+          "match_type": "page_context"
+        }
+      ]
+    },
+    {
+      "name": "safety_check",
+      "passed": true,
+      "question": "What vehicle safety checks does Driving_Test_Criteria.pdf describe before the driving test?",
+      "conversation_id": "e5b04628-0ac7-48c7-82c2-24b33070636e",
+      "answer": "The **2017 edition** of *Driving_Test_Criteria.pdf* describes a pre-drive safety check. The examiner may ask you to locate or demonstrate:\n\n- Driver\u2019s window opens; windshield gives a clear view; mirrors are secure and provide clear visibility.\n- Front and rear left and right turn signals work, and both brake lights work.\n- Tires have adequate tread and are not bald.\n- Foot brake and horn work.\n- Set and release the parking brake; show the required arm signals.\n- Locate the wiper, defroster, hazard-flasher, and headlight controls.\n- Passenger door opens and closes, glove box closes securely, and seat belts work and are used. [6][9][10][11][12][13][14][15][16]\n\nThe document says a failed requirement on items 1\u20138 or 15\u201317 can cause the test to be rescheduled; failing to locate or demonstrate four or more items among 9\u201314 makes the test unsatisfactory. [6][7] This is the 2017 edition, so current DMV procedures may differ.",
+      "sources": [
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 5,
+          "chunk_index": 3,
+          "text": "Introduction \nThis handbook is designed to give you detailed descriptions \nof the driving test criteria that Department of Motor Vehicles \n(DMV) examiners utilize when giving a driving test. The driving \ntest is not designed to trick you and the examiner will not ask \nyou to do anything illegal or unsafe. The examiner only gives \nyou directions on what to do. It is your responsibility to complete \nthe requested action when safe to do so. This driving test criteria \nis the uniform standard by whi",
+          "score": 0.6282
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 5,
+          "chunk_index": 4,
+          "text": "\nthe requested action when safe to do so. This driving test criteria \nis the uniform standard by which the driving skills of all driver \nlicense (DL) applicants are evaluated. See pages 34 and 35 for \nthe Driving Performance Evaluation Score Sheet sample and \nSupplemental/ Area Driving Performance Score Sheet sample \nto follow along with this handbook. \n1",
+          "score": 0.6052
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 6,
+          "chunk_index": 5,
+          "text": "How to Prepare for a Driving Test \nIf you are required to \ntake a driving test, you \nmay be wondering how \nyou can prepare to pass \nyour test. \nThe following informa\u00ad\ntion can help ensure a \nsuccessful driving test. \nReview DMV Information \nThis handbook and the following publications are available \nonline at www.dmv.ca.gov, by calling 1-800-777-0133, and at \nany DMV field office. \n\u2022 Preparing for Your Driving Test (FFDL 22) Fast Facts\u00ad\nThis brochure covers what to bring and expect during the \nd",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 6,
+          "chunk_index": 6,
+          "text": " Your Driving Test (FFDL 22) Fast Facts\u00ad\nThis brochure covers what to bring and expect during the \ndriving test. \n\u2022 California Driver Handbook-This handbook provides \nvaluable information on general driving skills and rules of \nthe road. \n\u2022 California Parent-Teen Training Guide-This guide was \ndeveloped for parents and teen drivers. Reviewing the guide \nprovides an overview of the skills needed for a teen to pass \nthe driving test. \n\u2022 Senior Guide for Safe Driving-A wide-ranging guide \naddressin",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 6,
+          "chunk_index": 7,
+          "text": "r a teen to pass \nthe driving test. \n\u2022 Senior Guide for Safe Driving-A wide-ranging guide \naddressing the needs and concerns of seniors. \n2",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 7,
+          "chunk_index": 8,
+          "text": "Pre-Drive Checklist (Safety Criteria) \nBefore you begin your driving test, the DMV examiner will \nask you to locate and/or demonstrate the following vehicle and \ndriver safety items. If an item listed in the Pre-Drive Checklist \n(Items 1-8 or 15-17) on your vehicle does not pass the criteria \nrequirement (known as a \"mechanical failure\"), your driving \ntest will be rescheduled. \nNOTE: If you cannot locate and/or demonstrate the operation \nof 4 or more items from Items 9-14, your driving test wil",
+          "score": 0.658
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 7,
+          "chunk_index": 9,
+          "text": "t locate and/or demonstrate the operation \nof 4 or more items from Items 9-14, your driving test will be \ncounted as \"unsatisfactory\" (failure). \nInterpreters may be used during the pre-drive inspection for the \nidentification and use of certain controls in the vehicle, but may \nnot accompany you during the driving test. \nOnly the examiner is allowed to accompany you during the \ndriving test. Exceptions are made for training, service animals, \nand certain law enforcement situations. \nThe require",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 7,
+          "chunk_index": 10,
+          "text": "ptions are made for training, service animals, \nand certain law enforcement situations. \nThe requirements for each Pre-Drive Checklist item (Safety Criteria) \nare as follows: \n3",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 8,
+          "chunk_index": 11,
+          "text": "Item Requirement \n1. Driver window \n2. ,vindshield \n3. Rear-view \nmirrors \n4. Turn signals \n5. Brake lights \n6. Tires \nThe window on the driver side must \nopen. You will be asked to open the \nwindow if the window is closed. \nThe windshield must provide a full \nunobstructed field of view for you and \nthe examiner. \nThe vehicle must have at least 2 \nm1rrors. \n\u2022 1 must be located outside on the \nleft side of the vehicle. \n\u2022 The other mirror may be located \ninside in the center or outside on \nthe ri",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 8,
+          "chunk_index": 12,
+          "text": " side of the vehicle. \n\u2022 The other mirror may be located \ninside in the center or outside on \nthe right side of the vehicle. \n\u2022 Mirrors must be secure, unbroken, \nand provide clear visibility. \nBoth right and left turn signals on the \nfront and back of the vehicle must be \noperational. \nBoth brake lights (1 on the right side \nand l on the left side of the vehicle) \nmust be operational. \nNOTE: This does not include the center \nlight (usually on the rear window). \nEach tire must have 1/32 inch tre",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 8,
+          "chunk_index": 13,
+          "text": " does not include the center \nlight (usually on the rear window). \nEach tire must have 1/32 inch tread \ndepth in any 2 adjacent grooves. \nNOTE: The vehicle cannot have bald \ntires. \n4",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 9,
+          "chunk_index": 14,
+          "text": "Item Requirement \n7. Foot brake \n8. Horn \n9. Emergency \n(Parking brake) \n10. Arm signals \n*ll. \\Vindshield \nwipers \n* 12. Defroster \nThere must be at least I inch of \nclearance between the pedal and \nthe floor board when the pedal is \ndepressed. \nThe horn must be: \n\u2022 Designed for the vehicle and in \nproper working condition. \n\u2022 l_./ot1d enot1gh to l1ear from. a \ndistance of at least 200 feet. \nNon;: The horn cannot be a bicycle \nhorn. \nYou must be able to locate and \ndemonstrate how to use the p",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 9,
+          "chunk_index": 15,
+          "text": ";: The horn cannot be a bicycle \nhorn. \nYou must be able to locate and \ndemonstrate how to use the parking \nbrake (set and release). \nNOTE: Your driving test will be \nrescheduled as a mechanical failure \nif your parking brake does not work \nor if the brake does not set during the \ncheck. \nYou must correctly demonstrate arm \nsignals for: \n\u2022 I.,eft turn .. \n\u2022 Right turn. \n\u2022 Slowing down or stopping. \nYou must correctly locate the \nwindshield wiper switch and/or control. \nYou must correctly locate ",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 9,
+          "chunk_index": 16,
+          "text": " \nYou must correctly locate the \nwindshield wiper switch and/or control. \nYou must correctly locate the front \nwindshield defroster button. \n5",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 10,
+          "chunk_index": 17,
+          "text": "Item Requirement \n*1.3. Emergency You must correctly locate the \nHasher (Hazard emergency flasher switch/button if the \nwarning lights) vehicle is equipped with emergency \nflashers. \n* 1.4. Headlights You must correctly locate the headlight \nswitch. \n1.5. Passenger door The front passenger side door must \nopen and close properly. \n1.6. Glove box The glove box door must be securely \nclosed. \n1.7. Seat (Safety) All vehicles designed with seat Gsafety) \nbelts belts must have seat (safety) belts for",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 10,
+          "chunk_index": 18,
+          "text": "eat (Safety) All vehicles designed with seat Gsafety) \nbelts belts must have seat (safety) belts for \nboth you and the examiner. \nAll seat (safety) belts must work \nproperly and be used by the individualGs) \nin the car. \n*During inclement weather, the driver must demonstrate that \nitems 11-14 work properly or the driving test will be rescheduled. \n6",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "bc5856c3-9960-456c-a2f9-75445e8afccb",
+          "filename": "Additional Testing Materials.pdf",
+          "page": 1,
+          "chunk_index": 0,
+          "text": "WORDS AND PHRASES FOR CLASS C DRIVING  TESTS \nSECTION 1 \u2014 VEHICLE  SAFETY  CHECK \nRoll down your window. Show me arm signals for: \n\u2022 Lef\nt turn. \n\u2022 Right turn. \n\u2022 Slow or stop. \nTurn on the key\u2013do not start the engine and turn on the: \n\u2022 Left turn signal. \n\u2022 Rig\nht turn signal. \nStep on the brake pedal. \nHonk the horn. \nHow do you set the emer\ngency/parking brake? \nHow do you turn on the eme\nrgency flashers? \nHow do you turn on the headlights? \nHow do you turn on the windshield wipers? \nHow do y",
+          "score": 0.5906
+        },
+        {
+          "document_id": "bc5856c3-9960-456c-a2f9-75445e8afccb",
+          "filename": "Additional Testing Materials.pdf",
+          "page": 1,
+          "chunk_index": 1,
+          "text": "y flashers? \nHow do you turn on the headlights? \nHow do you turn on the windshield wipers? \nHow do you turn on the de\nfroster? \nIs your vehicle equipped with automated technology? \nSECTION 2 \u2014 PRE-DRIVE  INSTRUCTIONS \nYou will be evaluated on your ability to drive safely and \nskillfully in differ\nent driving situations. \nI will not trick you or ask you to do anything illegal. \nI will give you directions: \n\u2022 At the corner, turn left. \n\u2022 At the corner, turn right. \n\u2022 Pull over and stop. \n\u2022 Lane ch",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "bc5856c3-9960-456c-a2f9-75445e8afccb",
+          "filename": "Additional Testing Materials.pdf",
+          "page": 1,
+          "chunk_index": 2,
+          "text": "ctions: \n\u2022 At the corner, turn left. \n\u2022 At the corner, turn right. \n\u2022 Pull over and stop. \n\u2022 Lane change left. \n\u2022 Lane change right. \nDo you have any questions? \nDo not rely on any of the vehicle\u2019s automated features.  \nThe use of conveni\nence technology, such as adaptive \ncruise control, is prohibited. \nSECTION 3 \u2014 DURING  THE  DRIVE  TEST \nIf I don\u2019t say turn, follow the road ahead. Make necessary lane changes to follow my directions. \nPerform all ma\nneuvers only when safe. \nSECTION 4 \u2014 DRIVIN",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "bc5856c3-9960-456c-a2f9-75445e8afccb",
+          "filename": "Additional Testing Materials.pdf",
+          "page": 1,
+          "chunk_index": 3,
+          "text": "ry lane changes to follow my directions. \nPerform all ma\nneuvers only when safe. \nSECTION 4 \u2014 DRIVING  TEST  COMMENTS \n\u2022 Didn\u2019t check for traffic.  \n\u2022 You need m\nore practice. \n\u2022  Blind intersection. \n\u2022  (He/She) Drove too fast. \n\u2022  Didn\u2019t l\nook for cross traffic. \n\u2022  (H\ne/S\nhe\n) Drove too slow. \n\u2022  Di\ndn\u2019t look both ways.\n\u2022  Fo\nllow basic speed law. \n\u2022  Didn\u2019t\n check blind spot before changing lanes or  \npulling away from the curb. \n\u2022  Made unnecessary stops. \nSECTION 5 \u2014 TEST  RES ULTS \nSatisf",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "bc5856c3-9960-456c-a2f9-75445e8afccb",
+          "filename": "Additional Testing Materials.pdf",
+          "page": 1,
+          "chunk_index": 4,
+          "text": "nes or  \npulling away from the curb. \n\u2022  Made unnecessary stops. \nSECTION 5 \u2014 TEST  RES ULTS \nSatisfactory. \nUnsatisfactory. \nSECTION 6 \u2014 WORDS  AND PHRASES \nBack up \u2013 straight \nBr\nake pedal \nCurb \nDrive \u2013 straight \nDrive \u2013 to the side of the road \nDrive \u2013 into the traffic lane \nGo \nInterpreter \nLan\ne \nLef\nt \nLook \nPark \nPark on your right Rearview mirror \nReverse \nRight (hand, turn) \nSide mirror \nSidewalk \nSignal \nStop \nStreet \nTraffic \nTurn \nVehicle \nWait \nDL 80 (REV. 3/2022) WWW",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "bc5856c3-9960-456c-a2f9-75445e8afccb",
+          "filename": "Additional Testing Materials.pdf",
+          "page": 2,
+          "chunk_index": 5,
+          "text": "SECTION 7 \u2014 GRAPHICS \nReview with customer before administering the driving test: \nStep on the brake pedal \n Hon k the horn  \nEmergency  flashers \n Win dshield defroster \nLow beam headlights \n Win dshield wipers \nLef t turn arm signal \n Ri ght turn arm signal\nSl ow or stop arm signal \nDL 80 (REV. 3/2022) WWW",
+          "score": null,
+          "match_type": "page_context"
+        }
+      ]
+    },
+    {
+      "name": "examiner_vocabulary",
+      "passed": true,
+      "question": "What does the examiner mean by pull over and stop?",
+      "conversation_id": "e5b04628-0ac7-48c7-82c2-24b33070636e",
+      "answer": "\u201cPull over and stop\u201d means move to the side of the road and bring the vehicle to a stop. The phrase list also uses \u201cdrive to the side of the road\u201d for this direction. [1]",
+      "sources": [
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 35,
+          "chunk_index": 124,
+          "text": "29 \n\u2022 On the wrong side of the street or on a freeway, except: \n\u2014 In an emergency. \n\u2014 When a law enforcement officer requires a stop. \n\u2014 Where a stop is specifically permitted. \nIf you must stop on a freeway, park completely off the pavement and stay \nin your vehicle with the doors locked until help arrives. A vehicle that is \nstopped, parked, or left standing on a freeway for more than four hours \nmay be removed. \nElectric Vehicles \nLocal authorities can reserve parking spaces on public   \nstre",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 35,
+          "chunk_index": 125,
+          "text": " \nmay be removed. \nElectric Vehicles \nLocal authorities can reserve parking spaces on public   \nstreets for electric vehicle charging. \nDriving Green \nMaximize your fuel efficiency while helping to lower emissions by \nfollowing these practices: \n\u2022 Speed up and slow down smoothly. Drive at a steady speed. \n\u2022 Regularly inflate your tires, get oil changes, and check filters. \n\u2022 Get rid of extra weight in your vehicle. \nFor more information, visit fueleconomy.gov. \nLaw Enforcement Stops \nDuring a La",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 35,
+          "chunk_index": 126,
+          "text": "t in your vehicle. \nFor more information, visit fueleconomy.gov. \nLaw Enforcement Stops \nDuring a Law Enforcement Stop \n\u2022 Turn on your right turn signal to acknowledge that you see the officer. \n\u2022 Move completely onto the right shoulder, even if in the carpool/HOV \nlane. Stop in a well-lit area when possible. \n\u2022 Turn off your radio. \n\u2022 Remain inside your vehicle unless directed to get out by the officer. \n\u2022 Roll down your window after stopping your vehicle and before the \nofficer makes contact w",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 35,
+          "chunk_index": 127,
+          "text": "fficer. \n\u2022 Roll down your window after stopping your vehicle and before the \nofficer makes contact with you. \n\u2022 The driver and all passengers should place their hands in clear view \nbefore the officer makes contact with them. \nLaw enforcement officers must state the reason for a traffic or \npedestrian stop before they begin any questioning related to a criminal \ninvestigation or traffic violation. An exception is made if an officer \nreasonably believes withholding the reason is necessary to prot",
+          "score": 0.5226
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 35,
+          "chunk_index": 128,
+          "text": " An exception is made if an officer \nreasonably believes withholding the reason is necessary to protect \nlife or property from imminent threat. The reason for the stop must be \ndocumented on the traffic citation also known as a traffic ticket issued or \nlaw enforcement report completed for violating traffic laws. \nG66-21B (CA)",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 36,
+          "chunk_index": 129,
+          "text": "30 \nYour Rights During the Enforcement Stop \nIf an officer asks your permission to do something, you have a right to \nsay no. However, if you say no and the officer says they are going to do it \nanyway, you do not have a right to interfere with their actions. For example, \nan officer may request to search part or all of your vehicle. You have a \nright to decline that request, but the officer may have the legal authority \nto search your vehicle under certain circumstances. If you do not want the ",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 36,
+          "chunk_index": 130,
+          "text": "ave the legal authority \nto search your vehicle under certain circumstances. If you do not want the \nofficer to search your vehicle, you should clearly say that you do not give \nyour permission, but you do not have a right to resist or obstruct the officer \nif they search your vehicle. \nThe driver of a stopped vehicle must produce a driver\u2019s license, \nproof of insurance, and vehicle registration when stopped by law \nenforcement. If a driver does not produce these documents, officers \nmay conduct",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 36,
+          "chunk_index": 131,
+          "text": "hen stopped by law \nenforcement. If a driver does not produce these documents, officers \nmay conduct a limited search for them. An officer may also request the \nnames or identification of passengers. Passengers can decline that \nrequest, but under some circumstances the passengers may be required \nto identify themselves. If passengers do not want to produce their \nidentification, they should clearly say so. Passengers should not interfere \nwith the officer\u2019s duties in conducting the traffic stop",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 36,
+          "chunk_index": 132,
+          "text": "ly say so. Passengers should not interfere \nwith the officer\u2019s duties in conducting the traffic stop, and if an officer \ndemands identification, passengers should not interfere with the officer\u2019s \nactions. During a traffic stop, an officer can legally require the driver and \nall passengers to exit or stay inside the vehicle. If you are told to exit the \nvehicle or stay inside, you must do so. \nIn California, only federal law enforcement officers can ask you about \nyour immigration status. Califo",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 36,
+          "chunk_index": 133,
+          "text": "California, only federal law enforcement officers can ask you about \nyour immigration status. California law prohibits state and local officers \nfrom asking drivers or passengers about their immigration status. If a \nCalifornia law enforcement officer asks you about your immigration status, \nyou can decline to answer.",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 16,
+          "chunk_index": 32,
+          "text": "Action: Stop \n\u2022 You stop within 6 feet (about halt:a-car length): \nBehind the limit line. \nFrom the corner of the intersection if there is no \nlimit line. \n\u2022 You stop without the front-most part of the vehicle: \nIn an intersection. \nOver the limit line. \nBeyond the sidewalk or stop sign. \nAction: Start \nTraffic check \n\u2022 You observe traffic ( vehicles, bicyclists, and pedestrians): \nAhead. \nTo the left and right. \nNoTE: This may be indicated by head and/or eye \nmovement to the left and right as a",
+          "score": 0.5162
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 16,
+          "chunk_index": 33,
+          "text": "left and right. \nNoTE: This may be indicated by head and/or eye \nmovement to the left and right as appropriate. \n\u2022 You look toward other vehicles, bicyclists, and \npedestrians when necessary. \n\u2022 You react safely to traffic situations. \nYield \n\u2022 You yield the right-of:way to vehicles or pedestrians, \nwhen necessary for safety. \n\u2022 You accept the right-of-way: \nWithout causing confusion or impeding traffic \nflow. \nWhen it is safe to start. \nSpeed \nYou accelerate smoothly. \nNOTE: If your vehicle has",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 16,
+          "chunk_index": 34,
+          "text": "raffic \nflow. \nWhen it is safe to start. \nSpeed \nYou accelerate smoothly. \nNOTE: If your vehicle has a manual transmission, you must \nuse the proper gear and smoothly use the clutch. \n12",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 17,
+          "chunk_index": 35,
+          "text": "Turns Scoring Criteria \nCriteria used to evaluate your performance in turning. \nAction: Approach \nTraffic check \n\u2022 You observe traffic (vehicles, bicyclists, and pedestrians): \nAhead and behind you. \nTo the left or right \n\u2022 You check the blind spot by looking over your right or \nleft shoulder before merging into the bike lane or center \nleft turn lane. \n\u2022 You look toward other vehicles, bicyclists, and \npedestrians when necessary. \n\u2022 You react safely to traffic situations. \nSignal \nYou activate ",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 17,
+          "chunk_index": 36,
+          "text": ", and \npedestrians when necessary. \n\u2022 You react safely to traffic situations. \nSignal \nYou activate the turn signal at least 100 feet prior to the \nturn, but not so early that other drivers will not understand \nyour intentions. \nDeceleration/braking \n\u2022 You decelerate and brake smoothly. \n\u2022 Do not depress the brake and accelerator (gas pedal) at \nthe same time. \n\u2022 If the vehicle has a manual transmission, you change \ngears as necessary to: \nMaintain power. \nKeep the gear engaged. \n13",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 19,
+          "chunk_index": 39,
+          "text": "Action: Stop \nTraffic check \n\u2022 You observe traffic (vehicles, bicyclists, and pedestrians): \nAhead and behind you. \nTo the left or right. \n\u2022 You look toward other vehicles, bicyclists, and \npedestrians when necessary. \n\u2022 You react safely to traffic situations. \nFull stop \n\u2022 You bring the vehicle to a full stop. \n\u2022 You make no unnecessary movement forward or roll \nbackward. \nGap or limit line \n\u2022 You are able to see the rear wheels of the vehicle in \nfront of you, or have enough room to move aroun",
+          "score": 0.5224
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 19,
+          "chunk_index": 40,
+          "text": "u are able to see the rear wheels of the vehicle in \nfront of you, or have enough room to move around the \nvehicle without backing up. \n\u2022 You stop about half a car length from the vehicle in \nfront of you (no excessive gap). \n\u2022 You stop within 6 feet (about half a car length): \nBehind the limit line. \nFrom the corner of the intersection if there is no \nlimit line. \n\u2022 You stop without the front-most part of the vehicle \nbeing: \nIn an intersection. \nOver the limit line. \nBeyond the sidewalk or sto",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 19,
+          "chunk_index": 41,
+          "text": "t part of the vehicle \nbeing: \nIn an intersection. \nOver the limit line. \nBeyond the sidewalk or stop sign. \nWheels straight (left turns only) \nThe wheels of the vehicle are straight ahead when stopped. \n15",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 20,
+          "chunk_index": 42,
+          "text": "Action: Turn/Complete \nTraffic check \n\u2022 You observe traffic (vehicles, bicyclists, and pedestrians): \nAhead and behind you. \nTb the left or right. \n\u2022 You look toward other vehicles, bicyclists, and \npedestrians when necessary. \n\u2022 You react safely to traffic situations. \nYield \n\u2022 You yield the right-of-way to vehicles, bicyclists. or \npedestrians when necessary for safety. \n\u2022 You accept the right-of-way: \nWithout causing confusion or blocking traffic flow. \nWhen it is safe to start. \nSteering con",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 20,
+          "chunk_index": 43,
+          "text": "f-way: \nWithout causing confusion or blocking traffic flow. \nWhen it is safe to start. \nSteering control \nYou tum the steering wheel: \n\u2022 Smoothly and with full control of the vehicle. \n\u2022 Only the necessary amount (do not over or under-steer). \n16",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "bc5856c3-9960-456c-a2f9-75445e8afccb",
+          "filename": "Additional Testing Materials.pdf",
+          "page": 1,
+          "chunk_index": 0,
+          "text": "WORDS AND PHRASES FOR CLASS C DRIVING  TESTS \nSECTION 1 \u2014 VEHICLE  SAFETY  CHECK \nRoll down your window. Show me arm signals for: \n\u2022 Lef\nt turn. \n\u2022 Right turn. \n\u2022 Slow or stop. \nTurn on the key\u2013do not start the engine and turn on the: \n\u2022 Left turn signal. \n\u2022 Rig\nht turn signal. \nStep on the brake pedal. \nHonk the horn. \nHow do you set the emer\ngency/parking brake? \nHow do you turn on the eme\nrgency flashers? \nHow do you turn on the headlights? \nHow do you turn on the windshield wipers? \nHow do y",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "bc5856c3-9960-456c-a2f9-75445e8afccb",
+          "filename": "Additional Testing Materials.pdf",
+          "page": 1,
+          "chunk_index": 1,
+          "text": "y flashers? \nHow do you turn on the headlights? \nHow do you turn on the windshield wipers? \nHow do you turn on the de\nfroster? \nIs your vehicle equipped with automated technology? \nSECTION 2 \u2014 PRE-DRIVE  INSTRUCTIONS \nYou will be evaluated on your ability to drive safely and \nskillfully in differ\nent driving situations. \nI will not trick you or ask you to do anything illegal. \nI will give you directions: \n\u2022 At the corner, turn left. \n\u2022 At the corner, turn right. \n\u2022 Pull over and stop. \n\u2022 Lane ch",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "bc5856c3-9960-456c-a2f9-75445e8afccb",
+          "filename": "Additional Testing Materials.pdf",
+          "page": 1,
+          "chunk_index": 2,
+          "text": "ctions: \n\u2022 At the corner, turn left. \n\u2022 At the corner, turn right. \n\u2022 Pull over and stop. \n\u2022 Lane change left. \n\u2022 Lane change right. \nDo you have any questions? \nDo not rely on any of the vehicle\u2019s automated features.  \nThe use of conveni\nence technology, such as adaptive \ncruise control, is prohibited. \nSECTION 3 \u2014 DURING  THE  DRIVE  TEST \nIf I don\u2019t say turn, follow the road ahead. Make necessary lane changes to follow my directions. \nPerform all ma\nneuvers only when safe. \nSECTION 4 \u2014 DRIVIN",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "bc5856c3-9960-456c-a2f9-75445e8afccb",
+          "filename": "Additional Testing Materials.pdf",
+          "page": 1,
+          "chunk_index": 3,
+          "text": "ry lane changes to follow my directions. \nPerform all ma\nneuvers only when safe. \nSECTION 4 \u2014 DRIVING  TEST  COMMENTS \n\u2022 Didn\u2019t check for traffic.  \n\u2022 You need m\nore practice. \n\u2022  Blind intersection. \n\u2022  (He/She) Drove too fast. \n\u2022  Didn\u2019t l\nook for cross traffic. \n\u2022  (H\ne/S\nhe\n) Drove too slow. \n\u2022  Di\ndn\u2019t look both ways.\n\u2022  Fo\nllow basic speed law. \n\u2022  Didn\u2019t\n check blind spot before changing lanes or  \npulling away from the curb. \n\u2022  Made unnecessary stops. \nSECTION 5 \u2014 TEST  RES ULTS \nSatisf",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "bc5856c3-9960-456c-a2f9-75445e8afccb",
+          "filename": "Additional Testing Materials.pdf",
+          "page": 1,
+          "chunk_index": 4,
+          "text": "nes or  \npulling away from the curb. \n\u2022  Made unnecessary stops. \nSECTION 5 \u2014 TEST  RES ULTS \nSatisfactory. \nUnsatisfactory. \nSECTION 6 \u2014 WORDS  AND PHRASES \nBack up \u2013 straight \nBr\nake pedal \nCurb \nDrive \u2013 straight \nDrive \u2013 to the side of the road \nDrive \u2013 into the traffic lane \nGo \nInterpreter \nLan\ne \nLef\nt \nLook \nPark \nPark on your right Rearview mirror \nReverse \nRight (hand, turn) \nSide mirror \nSidewalk \nSignal \nStop \nStreet \nTraffic \nTurn \nVehicle \nWait \nDL 80 (REV. 3/2022) WWW",
+          "score": 0.5104
+        },
+        {
+          "document_id": "bc5856c3-9960-456c-a2f9-75445e8afccb",
+          "filename": "Additional Testing Materials.pdf",
+          "page": 2,
+          "chunk_index": 5,
+          "text": "SECTION 7 \u2014 GRAPHICS \nReview with customer before administering the driving test: \nStep on the brake pedal \n Hon k the horn  \nEmergency  flashers \n Win dshield defroster \nLow beam headlights \n Win dshield wipers \nLef t turn arm signal \n Ri ght turn arm signal\nSl ow or stop arm signal \nDL 80 (REV. 3/2022) WWW",
+          "score": null,
+          "match_type": "page_context"
+        }
+      ]
+    },
+    {
+      "name": "unknown_fact",
+      "passed": true,
+      "question": "What is the name of my assigned DMV examiner tomorrow?",
+      "conversation_id": "e5b04628-0ac7-48c7-82c2-24b33070636e",
+      "answer": "I do not know based on the uploaded documents.",
+      "sources": [
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 87,
+          "chunk_index": 341,
+          "text": "81 \nPriority Reexamination \nIf you come in contact with law enforcement and receive a Notice \nof Priority Reexamination of Driver with a check mark in the top box, \ncarefully read the form. You have five working days to contact DMV \nto initiate the process or your driving privilege will be automatically \nsuspended. \nREQUEST FOR REGULAR RE-EXAMINATION OF DRIVER (Officer\u2019s Instructions on reverse.) \nThe driver listed below should be re-examined by DMV, but does not require a Priority Re-examinatio",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 87,
+          "chunk_index": 342,
+          "text": "\nThe driver listed below should be re-examined by DMV, but does not require a Priority Re-examination. \nFOR DMV USE ONLY \nX - ( ) \nNOTICE OF PRIORITY RE-EXAMINATION OF DRIVER (Driver Incapacity) \nThe driver listed below committed a violation of the California Vehicle Code (CVC) \u00a7\u00a721000 through 23336 and should be \nre-examined pursuant to CVC \u00a721061. At the time of the violation, the driver exhibited evidence of incapacity which reasonably \nled me to believe that this person is not capable of ope",
+          "score": 0.4726
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 87,
+          "chunk_index": 343,
+          "text": "ed evidence of incapacity which reasonably \nled me to believe that this person is not capable of operating a motor vehicle without presenting a clear or potential danger, or \nrisk of injury to himself/herself or others. As required by law, on the date below, I issued a copy of this Notice of Priority \nRe-examination/Notice of Suspension for Non-Compliance to the driver listed below. \nThe driver does not have to be cited for one of the above CVC sections. Please indicate evidence of the incapacit",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 87,
+          "chunk_index": 344,
+          "text": "es not have to be cited for one of the above CVC sections. Please indicate evidence of the incapacity in the \nSummary area below. If the driver was involved in a traffic accident, attach a copy of the report. You must give a copy of \nthis form to the driver. \nIf this form is being issued as a Notice of Priority Re-examination/Notice of Suspension for Non-Compliance, immediately \nfax the document (if fax available) to the Driver Safety Office nearest the driver\u2019s home (see reverse), then mail the",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 87,
+          "chunk_index": 345,
+          "text": "if fax available) to the Driver Safety Office nearest the driver\u2019s home (see reverse), then mail the original \nNotice to the same office. \nNOTICE OF SUSPENSION FOR NON-COMPLIANCE \nINSTRUCTIONS TO DRIVER \nIf the above box is checked, you must contact the Department of Motor Vehicles (DMV) for a re-examination under CVC \u00a7\u00a712818 \nand 12819. If you do not call or appear within five (5) working days, your privilege to drive in this state will be suspended until you \nsatisfactorily complete a re-exami",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 87,
+          "chunk_index": 346,
+          "text": "our privilege to drive in this state will be suspended until you \nsatisfactorily complete a re-examination. SEE IMPORTANT PRIORITY RE-EXAMINATION INFORMATION ON THE REVERSE \nSIDE OF THIS FORM. \nDestroy all previous versions of this form. \nOBSERVED DRIVING BEHAVIOR\u2014Check appropriate boxes for driving problems you observed: (Use space below if needed for additional comments.)\nDATE TIME DRIVER LICENSE NO. STATE BIRTHDATE\nNAME (FIRST, MIDDLE, LAST)\nMAILING ADDRESS\nCITY STATE ZIP CODE DRIVER\u2019S DAYTIM",
+          "score": 0.4555
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 87,
+          "chunk_index": 347,
+          "text": "E NO. STATE BIRTHDATE\nNAME (FIRST, MIDDLE, LAST)\nMAILING ADDRESS\nCITY STATE ZIP CODE DRIVER\u2019S DAYTIME PHONE NO.\nLOCATION OF INCIDENT\nANY NOTICE TO APPEAR NO. (IF CITATION ISSUED, ATTACH COPY)\nACCIDENT/ARREST NO. (ATTACH COPY IF APPLICABLE) CITY COUNTY\nDS 427 (REV. 10/2018)\nYes No\n( )\nAGENCY TELEPHONE NO.\nSTREET ADDRESS CITY ZIP CODE\nOFFICER NAME (PLEASE PRINT ) BADGE OR I.D. NUMBER\nOFFICER\u2019S SIGNATURE DATE DATE FAXED DO YOU WISH TO BE NOTIFIED OF RESULTS?\nI certify (or declare) under penalty of ",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 87,
+          "chunk_index": 348,
+          "text": "TURE DATE DATE FAXED DO YOU WISH TO BE NOTIFIED OF RESULTS?\nI certify (or declare) under penalty of perjury under the laws of the State of California that the information I have \nprovided is true and correct.\nX\nSUMMARY: You may use the space below to further describe actions of the driver which led you to believe a re-examination \nis needed - describe any impairment, serious physical injury or illness, mental impairment or disorientation. Describe any \ntraffic law violations whether or not a cit",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 87,
+          "chunk_index": 349,
+          "text": "ness, mental impairment or disorientation. Describe any \ntraffic law violations whether or not a citation was issued.\nConfused, disoriented, incoherent, or unaware of actions\nReported/Observed Medical Condition\nLittle or no recollection of incident\nMedicated\nVision Condition/Visual Impairment\nMental/Emotional Condition\nDriver reported he/she did not see cars, pedestrians, etc.\nDifficulty Walking\nWeakness or Coordination Problems\nResponding incorrectly to Emergency Signal/Lights\nDrifting or weavi",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 87,
+          "chunk_index": 350,
+          "text": "eakness or Coordination Problems\nResponding incorrectly to Emergency Signal/Lights\nDrifting or weaving in and out of lanes\nCaused, or nearly caused, collision\nNot reacting to other cars, pedestrians, etc.\nDriving on wrong side of road\nDriving on sidewalk\nDriving in wrong lane\nDriving too slow, impeding traffic\nFailed to stop at red light/stop sign\nUnsafe/inappropriate lane change\nInappropriately stopped \nFailed to yield right-of-way\nLost control of vehicle\nStruck stationary object\nFailed to go o",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 87,
+          "chunk_index": 351,
+          "text": "topped \nFailed to yield right-of-way\nLost control of vehicle\nStruck stationary object\nFailed to go on green light\nDriving without lights during darkness\nMade turn from wrong lane \nFell asleep while driving\nViolent or aggressive driving \nNot adequately controlling vehicle\nOther Observations _________________________________________\n____________________________________________________________\nDRIVER CONDITION (Observations after Stop/Collision)\u2014 Check all appropriate boxes below. Please use the sp",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 87,
+          "chunk_index": 352,
+          "text": " CONDITION (Observations after Stop/Collision)\u2014 Check all appropriate boxes below. Please use the space below to provide specific \ndetails, if known, and the driver\u2019s medical (physical or mental) condition such as name of disease or illness, any medications taken, etc.\nAlcohol/Drug Use (Describe below)\nConfused by traffic\nLost or confused while driving near home\nBlackout/Seizure/Fainting\nDriver appears to need help with hygiene\nand/or dressing appropriately\nOther Observations ___________________",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 87,
+          "chunk_index": 353,
+          "text": "pears to need help with hygiene\nand/or dressing appropriately\nOther Observations _________________________________________\n____________________________________________________________\nWhite: DMV Canary: Law Enforcement Pink: Driver (Priority Re-Exam Only)\nDriver\u2019s License Restrictions \nDMV places restrictions on a driver\u2019s license to ensure a driver is \noperating a vehicle within their ability. Restrictions may be imposed by \nDMV or required by law. Restrictions placed on your driving privilege ",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 87,
+          "chunk_index": 354,
+          "text": "strictions may be imposed by \nDMV or required by law. Restrictions placed on your driving privilege will \nbe reasonable and necessary for your safety and the safety of others. \nRestrictions and conditions may include: \n\u2022 Requiring a driver to place special mechanical devices on their \nvehicle, such as hand controls. \n\u2022 Limiting when and where a person may drive, such as no night or \nfreeway driving. \n\u2022 Requiring eyeglasses or corrective contact lenses. \n\u2022 Requiring additional devices, such as ou",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 87,
+          "chunk_index": 355,
+          "text": "g. \n\u2022 Requiring eyeglasses or corrective contact lenses. \n\u2022 Requiring additional devices, such as outside mirrors. \nNOTE: There are no specific restrictions for seniors. All restrictions are \nbased on conditions, not age. \nAny restriction placed on your driver\u2019s license is based on the examiner\u2019s \nfindings and recommendations.",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 88,
+          "chunk_index": 356,
+          "text": "82 \nSECTION 13. Seniors and Driving \nSenior drivers often have unique needs and concerns about driving. \nDriving requires certain physical, visual, and mental abilities. We all want \nto continue driving as long as we can. However, the time may come when \nwe must limit or stop driving temporarily or permanently. Here are some \nwarning signs of an unsafe driver: \n\u2022 Getting lost in familiar places. \n\u2022 Dents and scrapes on the car, fences, mailbox, garage doors, etc. \n\u2022 Frequent close calls or colli",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 88,
+          "chunk_index": 357,
+          "text": "\u2022 Dents and scrapes on the car, fences, mailbox, garage doors, etc. \n\u2022 Frequent close calls or collisions. \nSenior drivers may consider: \n\u2022 Limiting or not driving at night. \n\u2014 If night driving is necessary, choose a well-lit route. \n\u2022 Driving during the time of day when traffic is light. \n\u2022 Avoiding difficult intersections. \n\u2022 Driving for short distances or limiting driving to essential places. \n\u2022 No freeway driving. \n\u2022 Installing an additional right-side mirror. \nTo get the Driver Skills Self-",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 88,
+          "chunk_index": 358,
+          "text": "\u2022 No freeway driving. \n\u2022 Installing an additional right-side mirror. \nTo get the Driver Skills Self-Assessment Questionnaire, visit \ndmv.ca.gov/driver-skills. \nDriver\u2019s License Renewal \nIf you are 70 years old or older at the time your driver\u2019s license expires, \nyou are required to renew your driver\u2019s license in person and pass a \nvision test. In some cases, other exams may be required. If a knowledge \ntest is required, you may be eligible to select \u201ceLearning\u201d when \ncompleting your application ",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 88,
+          "chunk_index": 359,
+          "text": "edge \ntest is required, you may be eligible to select \u201ceLearning\u201d when \ncompleting your application online. DMV sends a renewal notice to your \naddress of record about 90 days before your driver\u2019s license expires. \nIf you do not receive a renewal notice, complete a Driver License or \nIdentification Card Application at dmv.ca.gov/dlservices or at a DMV \noffice. Visit dmv.ca.gov/driver-ed for more information and sample tests. \nDMV\u2019s Community Liaison and Outreach \nThe Community Liaison\u2019s primary ",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 88,
+          "chunk_index": 360,
+          "text": "nformation and sample tests. \nDMV\u2019s Community Liaison and Outreach \nThe Community Liaison\u2019s primary function is to represent public safety \ninterests for all Californians, with a focus in addressing the concerns \nof senior drivers and teens. The liaison can assist as a go-between to \nensure drivers are treated fairly, consistently with laws and regulations, \nand with dignity and respect. While the Community Liaison cannot \nrepresent you in a DMV hearing or reexamination, they can provide you \nwi",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 88,
+          "chunk_index": 361,
+          "text": " Community Liaison cannot \nrepresent you in a DMV hearing or reexamination, they can provide you \nwith useful tools and information.",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 31,
+          "chunk_index": 69,
+          "text": "DMV Driving Test \nDriving tests are given to first time DL applicants and other \nindividuals who require a driving test. \nThe purpose of a driving test is to determine whether you: \n\u2022 Have the ability to operate a vehicle safely. \n\u2022 Exhibit safe driving habits. \n\u2022 Can apply your knowledge of traffic laws in real life \nsituations. \n\u2022 Can make up for any physical condition, such as loss of a \nlimb, poor hearing, or a vision condition . \nThe driving test is divided \ninto 2 parts: the Pre-Drive \nSaf",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 31,
+          "chunk_index": 70,
+          "text": "poor hearing, or a vision condition . \nThe driving test is divided \ninto 2 parts: the Pre-Drive \nSafety Check and Driving \nPerformance Evaluation \n(DPE). The Pre -Drive Safety \nCheck determines whether \nyour vehicle meets the DMV \nminimum safety standard \nand whether you are familiar \nwith the operation of your \nvehicle. The DPE portion is the behind-the -wheel driving test \nwhen you drive your car with a DMV examiner who evaluates \nyour driving skills. \nThere are 2 other types of driving tests ",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 31,
+          "chunk_index": 71,
+          "text": "r with a DMV examiner who evaluates \nyour driving skills. \nThere are 2 other types of driving tests given by DMV. One \nis called a Supplemental Driving Performance Evaluation \n(SDPE). This driving test has additional test elements and is \ngiven to applicants of any age who have a physical, mental, \nor vision condition, and/or a referral due to a lack of skill that \nmay impact their ability to safely operate a vehicle . The other \nis called an Area Driving Performance Evaluation (ADPE). \nThis dri",
+          "score": 0.4754
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 31,
+          "chunk_index": 72,
+          "text": "ly operate a vehicle . The other \nis called an Area Driving Performance Evaluation (ADPE). \nThis driving test limits you to drive in only specified areas. If \nyou are successful with the ADPE , your DL will be restricted to \nonly the specified areas where you were tested . Both the SDPE \nand ADPE are referral driving tests. \n27",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 32,
+          "chunk_index": 73,
+          "text": "What is the difference between a DPE \nand a SDPE driving tests? \nAn SDPE includes all the features of the DPE driving tests \n(Pre-Drive Safety Check and the driving test). It may include \nadditional testing elements designed to evaluate your cognitive \nfunction (memory, awareness, perception, etc.) and ability to \noperate a motor vehicle safely. \nThe additional test elements may include: \nMultiple Directions-The examiner will give 2 or more \ninstructions at one time to determine whether you can ",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 32,
+          "chunk_index": 74,
+          "text": " Directions-The examiner will give 2 or more \ninstructions at one time to determine whether you can understand \nand properly follow both directions. For example, \"At the next \nstreet, make a left turn, and then at the first intersection make \nanother left turn.\" \nAdditional lane changes-The examiner will evaluate your \nperformance when making lane changes. \nConcentration The examiner talks with you at certain times \nduring the driving test. You must be able to respond briefly \nwithout making any",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 32,
+          "chunk_index": 75,
+          "text": "u at certain times \nduring the driving test. You must be able to respond briefly \nwithout making any driving errors. \nFreeway or Highway Driving-The examiner will ask you \nto merge into freeway traffic and drive a short distance on the \nfreeway. If you do not drive on freeways and have no intention \nof ever driving on freeways, inform the examiner. The freeway \ndriving portion will not be part of the driving test. The examiner \nwill add a restriction to your DL that prohibits driving on the \nfre",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 32,
+          "chunk_index": 76,
+          "text": "the driving test. The examiner \nwill add a restriction to your DL that prohibits driving on the \nfreeway. \nDestination trip The examiner directs you to a location a few \nblocks from the DMV office. You must return to the DMV office \nusing the same route without assistance or direction from the \nexaminer. This is usually performed at the end ofthe driving test. \n28",
+          "score": 0.4913
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 33,
+          "chunk_index": 77,
+          "text": "Additional Testing Elements \nfor the SDPE \nThe following additional test element criteria is designed \nto evaluate your cognitive function (memory, awareness, \nperception, etc.) and ability to operate a motor vehicle safely. \nMultiple directions scoring criteria \nThe examiner evaluates the following 2 items: \n\u2022 Cues needed \n- You understand directions given \\Vithout the need for \nadditional explanation. \n- You may ask 1 confirming question (a question that can \nbe answered with either a yes or n",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 33,
+          "chunk_index": 78,
+          "text": "ation. \n- You may ask 1 confirming question (a question that can \nbe answered with either a yes or no), but the examiner \nshould not have to repeat the directions. \n\u2022 Follo,vs directio11s \n- You can properly follow directions and complete the \naction safely or acknowledge an error in following \ndirections. \nDestination trip scoring criteria \nThe examiner evaluates if you can complete the destination trip \nwithout any directional assistance from the examiner. \nAdditional lane changes \nThe lane ch",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 33,
+          "chunk_index": 79,
+          "text": "on trip \nwithout any directional assistance from the examiner. \nAdditional lane changes \nThe lane change scoring criteria is used, but you will be asked \nto make more lane changes on the SDPE test than you did on \nthe regular driving test. \nConcentration \nThe examiner wil 1 talk \\vith you at certain times during the \ndriving test to ensure that you are able to respond briefly without \nmaking any driving errors. \n29",
+          "score": null,
+          "match_type": "page_context"
+        }
+      ]
+    },
+    {
+      "name": "unofficial_practice",
+      "passed": true,
+      "question": "Give me one unofficial practice question about changing lanes, with its answer and cited explanation.",
+      "conversation_id": "e5b04628-0ac7-48c7-82c2-24b33070636e",
+      "answer": "**Unofficial practice question:** What should you do before moving into another lane?\n\n**Answer:** Signal, check your mirrors and nearby traffic, look over your shoulder toward the lane, check your blind spot, and make sure there is enough space.\n\n**Explanation:** The California Driver Handbook lists these checks before a lane change and says not to let the vehicle drift into another lane. [1][2]",
+      "sources": [
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 21,
+          "chunk_index": 71,
+          "text": "15 \nChoosing a Lane \nTraffic lanes are often \nreferred to by number. The \nleft (or fast) lane is called the \nNumber 1 Lane. The lane to \nthe right of the Number 1 \nLane is called the Number 2 Lane. Then the Number 3 Lane, etc. \nHere are some tips for choosing a lane: \n\u2022 Use the left lane to pass or turn left. \n\u2022 Use the right lane to enter or exit traffic or when you enter the road \nfrom a curb or shoulder. \nChanging Lanes \nBefore you change lanes: \n\u2022 Signal. \n\u2022 Check your mirrors. \n\u2022 Check traf",
+          "score": 0.5514
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 21,
+          "chunk_index": 72,
+          "text": " shoulder. \nChanging Lanes \nBefore you change lanes: \n\u2022 Signal. \n\u2022 Check your mirrors. \n\u2022 Check traffic behind and beside you. \n\u2022 Look over your shoulder in the direction you plan to move to make \nsure the lane is clear. \n\u2022 Check your blind spots for other vehicles, motorcyclists, and \nbicyclists. Do not let the vehicle drift into another lane. \n\u2022 Be sure there is enough space for your vehicle in the next lane. It is \nnot necessary to slow down before a lane change. \nStay in one lane as much as ",
+          "score": 0.5368
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 21,
+          "chunk_index": 73,
+          "text": "the next lane. It is \nnot necessary to slow down before a lane change. \nStay in one lane as much as possible. Do not weave in and out of traffic. \nLast minute lane or direction changes may increase the risk of collisions. \nOnce you start moving through an intersection, keep going. If you start \nto make a turn, follow through. If you miss a turn, keep driving until you \ncan safely and legally turn around. \nTypes of Lanes \nPassing Lanes \nOn a multilane road, the passing lane (far left lane) is the",
+          "score": 0.5556
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 21,
+          "chunk_index": 74,
+          "text": "around. \nTypes of Lanes \nPassing Lanes \nOn a multilane road, the passing lane (far left lane) is the lane closest to \nthe center divider and is used to pass other vehicles. \nCarpool/High-Occupancy Vehicle (HOV) Lanes \nAn HOV lane is a special lane reserved for carpools, buses, \nmotorcycles, or low-emission vehicles with decals. To use an \nHOV lane, one of these must apply: \nExample of numbered traffic lanes.",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 22,
+          "chunk_index": 75,
+          "text": "16 \n\u2022 You have a certain number of people in your vehicle. There will be \nsigns at the on-ramp or along the road to tell you the minimum \nnumber of people. Road signs also list the hours when the HOV rules \napply. \n\u2022 You are driving a low emission or zero emission vehicle. You must \ndisplay a special DMV-issued decal. \n\u2022 You are riding a motorcycle (unless otherwise posted). \nThe road surface in an HOV lane is marked with a diamond symbol and \nthe words Carpool Lane. Do not cross over double sol",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 22,
+          "chunk_index": 76,
+          "text": "n HOV lane is marked with a diamond symbol and \nthe words Carpool Lane. Do not cross over double solid lines to enter or \nexit an HOV lane. Use designated entrances and exits. \nCenter Left Turn Lanes \nA center left turn lane is located in the middle of a two-way street. It is \nmarked on both sides by two painted lines. The inner line is broken and \nthe outer line is solid. Use the center left turn lane to prepare for and \nmake a left turn or U-turn. It is not a regular traffic lane or passing la",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 22,
+          "chunk_index": 77,
+          "text": " lane to prepare for and \nmake a left turn or U-turn. It is not a regular traffic lane or passing lane. \nYou may only drive for 200 feet in the center \nleft turn lane. To turn left from this lane: \n\u2022 Look for other vehicles coming toward you \nin the center left turn lane. \n\u2022 Signal. \n\u2022 Look over your shoulder to check your blind \nspots. \n\u2022 Merge completely into the center left turn \nlane so you do not block traffic. \n\u2022 Turn when it is safe. \nTurnout Areas or Lanes \nSome two-lane roads have speci",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 22,
+          "chunk_index": 78,
+          "text": " not block traffic. \n\u2022 Turn when it is safe. \nTurnout Areas or Lanes \nSome two-lane roads have special turnout areas or lanes. \nMerge into these areas or lanes to allow cars behind you to \npass. \nYou must use a turnout area or lane to let other vehicles \npass when you are driving slowly on a two-lane road, where \npassing is unsafe, and there are five or more vehicles following you.",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 23,
+          "chunk_index": 48,
+          "text": "Lane Change Scoring Criteria \nCriteria used to evaluate your performance when making a lane \nchange. \nTraffic check \n\u2022 You observe traffic (vehicles, bicyclists, and pedestrians). \nFor a: \nLeft lane change, look to the left, behind you, and \nat your left side blind spot (check your left hand \nmirror and look over your left shoulder). \nRight lane change, look to the right, behind you, \nand at your right side blind spot ( check your right \nhand mirror and look over your right shoulder). \n\u2022 You rea",
+          "score": 0.5562
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 23,
+          "chunk_index": 49,
+          "text": "right side blind spot ( check your right \nhand mirror and look over your right shoulder). \n\u2022 You react safely to traffic situations. \nSignal \n\u2022 You activate the turn signal before making a lane \nchange. \n\u2022 You caned the turn signal after the lane change. \nSpeed \nYou use an appropriate speed: \n\u2022 To change lanes without exceeding the speed limit. \nNOTE: It is not necessary to slow your speed before a lane \nchange. \n\u2022 For traffic conditions. \nSpacing \n\u2022 You wait for an adequate gap. \n\u2022 You create a",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 23,
+          "chunk_index": 50,
+          "text": "a lane \nchange. \n\u2022 For traffic conditions. \nSpacing \n\u2022 You wait for an adequate gap. \n\u2022 You create a safe distance to the front, sides, and rear of \nvehicles moving in the same direction. \n\u2022 You create a safe distance in front of your vehicle after \na lane change. \nSteering control \n\u2022 You change lanes by turning the steering wheel \nsmoothly \n\u2022 You move to the center of the lane. \n19",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 24,
+          "chunk_index": 51,
+          "text": "Freeway (FWY) or Highway (HWY) \nScoring Criteria \nNOTE: Only appropriate for Supplemental Drive Tests. \nCriteria used to evaluate your performance in FWY or HWY \ndriving. \nAction: Entering \nOn ramp or access way to a freeway or highway. \nTraffic check \n\u2022 You observe traffic (vehicles, bicyclists, and pedestrians): \nAhead. \nTo the left and right. \nNOTE: Checking the blind spot may be required on a \ntwo-lane or freeway-metered ramp. \n\u2022 You look toward other vehicles, bicyclists, and \npedestrians w",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 24,
+          "chunk_index": 52,
+          "text": "\ntwo-lane or freeway-metered ramp. \n\u2022 You look toward other vehicles, bicyclists, and \npedestrians when necessary. \n\u2022 You react safely to traffic situations. \nSignal \n\u2022 You activate the turn signal at least 100 feet before \nentering traffic, but not so early that other drivers will \nnot understand your intentions. \n\u2022 You cancel the turn signal after entering. \nSpeed \nYou use an appropriate speed for traffic conditions. \nSpacing \n\u2022 You wait for an adequate gap. \n\u2022 You leave a safe distance to the",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 24,
+          "chunk_index": 53,
+          "text": "or traffic conditions. \nSpacing \n\u2022 You wait for an adequate gap. \n\u2022 You leave a safe distance to the front and sides of \nmoving vehicles. \nLane position \nYou keep the vehicle in the center of the lane. \n20",
+          "score": null,
+          "match_type": "page_context"
+        }
+      ]
+    },
+    {
+      "name": "version_limit",
+      "passed": true,
+      "question": "Are these documents the latest 2026 DMV rules and test requirements?",
+      "conversation_id": "e5b04628-0ac7-48c7-82c2-24b33070636e",
+      "answer": "No. The uploaded materials are dated: the California Driver\u2019s Handbook is June 2025, *Driving_Test_Criteria.pdf* is the 2017 edition, and DL 80 is March 2022. They do not establish the latest 2026 rules or test procedures. Check the official California DMV website for current requirements.",
+      "sources": [
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 1,
+          "chunk_index": 0,
+          "text": "English \nCALIFORNIA \nDRIVER\u2019S HANDBOOK \nThis handbook is available at   \ndmv.ca.gov \nGavin Newsom, Governor \nState of California \nToks Omishakin, Secretary \nCalifornia State Transportation Agency \nSteve Gordon, Director \nCalifornia Department of Motor Vehicles",
+          "score": 0.5019
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 2,
+          "chunk_index": 1,
+          "text": "\u2022 Renew driver\u2019s license  \nand vehicle registration  \n\u2022 Replace sticker or registration \n\u2022 Change address \n\u2022 Request driver\u2019s record \n\u2022 Request vehicle record \n\u2022 And more\u2026 \nWe know your time is \nvaluable",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 11,
+          "chunk_index": 32,
+          "text": "5 \nSECTION 3. The Testing Process \nDriver\u2019s License Tests \nHere is an overview of the driver\u2019s license tests: \n1. Vision Test \nDMV tests all applicants to ensure they can see well enough to drive \nsafely. If you take your vision test with corrective or contact lenses, your \ndriver\u2019s license will have a corrective lenses restriction. If you do not pass \nyour vision test, you will be asked to have your eye doctor complete a \nReport of Vision Examination (DL 62) form. For more information, visit \nd",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 11,
+          "chunk_index": 33,
+          "text": "our eye doctor complete a \nReport of Vision Examination (DL 62) form. For more information, visit \ndmv.ca.gov/vision-standards. \n2. Knowledge Test \nWhen you apply for an original driver\u2019s license, you must pass a \nknowledge test with multiple choice questions. You are allowed three \nattempts to pass before you must reapply. Minors must wait seven days \nto retake a failed knowledge test, not including the day of the failure. \nWhen renewing your driver\u2019s license, eLearning may be an alternative \nt",
+          "score": 0.5143
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 11,
+          "chunk_index": 34,
+          "text": "ing the day of the failure. \nWhen renewing your driver\u2019s license, eLearning may be an alternative \ntesting option. This is a no-fail, self-paced interactive modulated course \nwith quizzes after each module. The course can be taken on a computer, \nlaptop, tablet, or mobile device. \nTesting options will be available once you complete your application at \ndmv.ca.gov/dl. \nIMPORTANT: You are not allowed to use any testing aids during \nknowledge tests, such as a California Driver\u2019s Handbook or cell ph",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 11,
+          "chunk_index": 35,
+          "text": "d to use any testing aids during \nknowledge tests, such as a California Driver\u2019s Handbook or cell phone.   \n3. Behind-the-Wheel Drive Test \nWhen you apply for an original driver\u2019s license, you will be tested on your \nability to safely drive a vehicle. Upon renewal, drivers with a vision or \nmedical condition may be required to take a behind-the-wheel test. The \nexaminer may give two or more instructions at one time to determine \nwhether you can understand and properly follow both directions. \nFo",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 11,
+          "chunk_index": 36,
+          "text": "ctions at one time to determine \nwhether you can understand and properly follow both directions. \nFor example, \u201cAt the next street, make a left turn, and then at the first \nintersection make another left turn.\u201d \nVisit dmv.ca.gov/make-an-appointment to schedule a behind-the-\nwheel drive test appointment.",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 12,
+          "chunk_index": 37,
+          "text": "6 \nOn the day of your behind-the-wheel test, you must bring: \n1. Your instruction permit or driver\u2019s license (if you have one). \n2. Another California-licensed driver who is at least 18 years old (25 for \nminors), unless you are already licensed to drive. \n3. A vehicle that is safe to drive for your test. \n4. Valid proof of insurance and vehicle registration. \n5. If you plan to use a rental vehicle for your drive test, your name must \nbe listed on the rental contract. The contract must not exclu",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 12,
+          "chunk_index": 38,
+          "text": "e for your drive test, your name must \nbe listed on the rental contract. The contract must not exclude \nbehind-the-wheel drive tests. \nNOTE: Minors must wait 14 days to retake a failed behind-the-wheel \ndrive test, not including the day of the failure. \nBefore you begin, the DMV examiner will ask you to locate and \ndemonstrate the following: \n\u2022 Driver window \u2013 The window on the driver side must open. \n\u2022 Windshield \u2013 The windshield must allow a full, clear, unblocked view \nfor you and the DMV exa",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 12,
+          "chunk_index": 39,
+          "text": "en. \n\u2022 Windshield \u2013 The windshield must allow a full, clear, unblocked view \nfor you and the DMV examiner. Windshield cracks may postpone your \ntest. \n\u2022 Rearview mirrors \u2013 At least two rearview mirrors. One of them must \nbe on the left side of your vehicle. \n\u2022 Brake lights \u2013 The right and left brake lights must be operational. \n\u2022 Tires \u2013 The tires must have at least 1/32-inch of uniformed tread \ndepth. The use of a donut tire is not allowed during a drive test. \n\u2022 Foot brake \u2013 There must be at l",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 12,
+          "chunk_index": 40,
+          "text": "epth. The use of a donut tire is not allowed during a drive test. \n\u2022 Foot brake \u2013 There must be at least one inch of clearance between \nthe bottom of the brake pedal and the floorboard when depressed. \n\u2022 Horn \u2013 Designed for the vehicle, in proper working condition, and \nloud enough to be heard from a distance of at least 200 feet. \n\u2022 Emergency (parking brake) \u2013 How to set and release the parking \nbrake. \n\u2022 Turn/Arm signals \na. Left turn. \nb. Right turn. \nc. Slowing down or stopping. \n\u2022 Windshiel",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 12,
+          "chunk_index": 41,
+          "text": "brake. \n\u2022 Turn/Arm signals \na. Left turn. \nb. Right turn. \nc. Slowing down or stopping. \n\u2022 Windshield wipers: control arm or switch \u2013 You may be required to \nshow they function. \n\u2022 Seat belts \u2013 All seat belts must work properly and be used by the \nindividual(s) in the vehicle. \nNOTE: If your vehicle does not meet the requirements, your drive test \nwill be rescheduled.",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 88,
+          "chunk_index": 356,
+          "text": "82 \nSECTION 13. Seniors and Driving \nSenior drivers often have unique needs and concerns about driving. \nDriving requires certain physical, visual, and mental abilities. We all want \nto continue driving as long as we can. However, the time may come when \nwe must limit or stop driving temporarily or permanently. Here are some \nwarning signs of an unsafe driver: \n\u2022 Getting lost in familiar places. \n\u2022 Dents and scrapes on the car, fences, mailbox, garage doors, etc. \n\u2022 Frequent close calls or colli",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 88,
+          "chunk_index": 357,
+          "text": "\u2022 Dents and scrapes on the car, fences, mailbox, garage doors, etc. \n\u2022 Frequent close calls or collisions. \nSenior drivers may consider: \n\u2022 Limiting or not driving at night. \n\u2014 If night driving is necessary, choose a well-lit route. \n\u2022 Driving during the time of day when traffic is light. \n\u2022 Avoiding difficult intersections. \n\u2022 Driving for short distances or limiting driving to essential places. \n\u2022 No freeway driving. \n\u2022 Installing an additional right-side mirror. \nTo get the Driver Skills Self-",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 88,
+          "chunk_index": 358,
+          "text": "\u2022 No freeway driving. \n\u2022 Installing an additional right-side mirror. \nTo get the Driver Skills Self-Assessment Questionnaire, visit \ndmv.ca.gov/driver-skills. \nDriver\u2019s License Renewal \nIf you are 70 years old or older at the time your driver\u2019s license expires, \nyou are required to renew your driver\u2019s license in person and pass a \nvision test. In some cases, other exams may be required. If a knowledge \ntest is required, you may be eligible to select \u201ceLearning\u201d when \ncompleting your application ",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 88,
+          "chunk_index": 359,
+          "text": "edge \ntest is required, you may be eligible to select \u201ceLearning\u201d when \ncompleting your application online. DMV sends a renewal notice to your \naddress of record about 90 days before your driver\u2019s license expires. \nIf you do not receive a renewal notice, complete a Driver License or \nIdentification Card Application at dmv.ca.gov/dlservices or at a DMV \noffice. Visit dmv.ca.gov/driver-ed for more information and sample tests. \nDMV\u2019s Community Liaison and Outreach \nThe Community Liaison\u2019s primary ",
+          "score": 0.5264
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 88,
+          "chunk_index": 360,
+          "text": "nformation and sample tests. \nDMV\u2019s Community Liaison and Outreach \nThe Community Liaison\u2019s primary function is to represent public safety \ninterests for all Californians, with a focus in addressing the concerns \nof senior drivers and teens. The liaison can assist as a go-between to \nensure drivers are treated fairly, consistently with laws and regulations, \nand with dignity and respect. While the Community Liaison cannot \nrepresent you in a DMV hearing or reexamination, they can provide you \nwi",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 88,
+          "chunk_index": 361,
+          "text": " Community Liaison cannot \nrepresent you in a DMV hearing or reexamination, they can provide you \nwith useful tools and information.",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 89,
+          "chunk_index": 362,
+          "text": "83 \nFor information about outreach services in your area or to speak to a \nliaison, contact Community Liaison and Outreach at (833) 493-0675. \nCognitive Impairment \nSeniors suffering from dementia present a significant challenge to \nsafe driving. Individuals with progressive dementia ultimately lose their \nability to drive safely. It is often up to caregivers, physicians, and law \nenforcement, to stop these seniors from driving and arrange alternative \ntransportation. For more information about ",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 89,
+          "chunk_index": 363,
+          "text": "stop these seniors from driving and arrange alternative \ntransportation. For more information about the reexamination process, \nvisit dmv.ca.gov/reexamination. \nMature Driver Program \nThe Mature Driver Improvement Program is an eight-hour course for \ndrivers 55 years old and older. It covers a range of topics that are of \nspecial interest to mature drivers. \nYour insurance company may offer discounts if you complete the \nprogram. Contact your insurance provider with a copy of your \ncompletion ce",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 89,
+          "chunk_index": 364,
+          "text": "nts if you complete the \nprogram. Contact your insurance provider with a copy of your \ncompletion certificate. Your certificate is valid for three years. You can \nrenew it by completing another four-hour course. \nYou can take the course through DMV-approved providers. Visit \ndmv.ca.gov/seniors for more information, including locations near you. \nSenior ID Cards \nIf you are 62 years old or older, you are eligible for a no-fee Senior ID \ncard. Drivers of any age who are unable to continue driving ",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 89,
+          "chunk_index": 365,
+          "text": "ou are eligible for a no-fee Senior ID \ncard. Drivers of any age who are unable to continue driving safely due to \na physical or mental condition may be eligible to exchange their driver\u2019s \nlicense for a no-fee ID card. The ID card serves as identification only. \nDetails may be found at dmv.ca.gov/id-cards.",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 1,
+          "chunk_index": 0,
+          "text": "For additional information, watch our \nvideos available at www.dmv.ca.gov. \nDL 955 (REV 10/2017) WWW",
+          "score": 0.5572
+        }
+      ]
+    },
+    {
+      "name": "new_learner_shared_library",
+      "passed": true,
+      "conversation_id": "7845930c-1bb2-460a-ac90-3762daaf9e80",
+      "answer": "The instruction sheet lists these commands:\n\n- \u201cAt the corner, turn left.\u201d\n- \u201cAt the corner, turn right.\u201d\n- \u201cPull over and stop.\u201d [2]\n\nIt also says to perform maneuvers only when safe. [2]",
+      "sources": [
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 11,
+          "chunk_index": 32,
+          "text": "5 \nSECTION 3. The Testing Process \nDriver\u2019s License Tests \nHere is an overview of the driver\u2019s license tests: \n1. Vision Test \nDMV tests all applicants to ensure they can see well enough to drive \nsafely. If you take your vision test with corrective or contact lenses, your \ndriver\u2019s license will have a corrective lenses restriction. If you do not pass \nyour vision test, you will be asked to have your eye doctor complete a \nReport of Vision Examination (DL 62) form. For more information, visit \nd",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 11,
+          "chunk_index": 33,
+          "text": "our eye doctor complete a \nReport of Vision Examination (DL 62) form. For more information, visit \ndmv.ca.gov/vision-standards. \n2. Knowledge Test \nWhen you apply for an original driver\u2019s license, you must pass a \nknowledge test with multiple choice questions. You are allowed three \nattempts to pass before you must reapply. Minors must wait seven days \nto retake a failed knowledge test, not including the day of the failure. \nWhen renewing your driver\u2019s license, eLearning may be an alternative \nt",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 11,
+          "chunk_index": 34,
+          "text": "ing the day of the failure. \nWhen renewing your driver\u2019s license, eLearning may be an alternative \ntesting option. This is a no-fail, self-paced interactive modulated course \nwith quizzes after each module. The course can be taken on a computer, \nlaptop, tablet, or mobile device. \nTesting options will be available once you complete your application at \ndmv.ca.gov/dl. \nIMPORTANT: You are not allowed to use any testing aids during \nknowledge tests, such as a California Driver\u2019s Handbook or cell ph",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 11,
+          "chunk_index": 35,
+          "text": "d to use any testing aids during \nknowledge tests, such as a California Driver\u2019s Handbook or cell phone.   \n3. Behind-the-Wheel Drive Test \nWhen you apply for an original driver\u2019s license, you will be tested on your \nability to safely drive a vehicle. Upon renewal, drivers with a vision or \nmedical condition may be required to take a behind-the-wheel test. The \nexaminer may give two or more instructions at one time to determine \nwhether you can understand and properly follow both directions. \nFo",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 11,
+          "chunk_index": 36,
+          "text": "ctions at one time to determine \nwhether you can understand and properly follow both directions. \nFor example, \u201cAt the next street, make a left turn, and then at the first \nintersection make another left turn.\u201d \nVisit dmv.ca.gov/make-an-appointment to schedule a behind-the-\nwheel drive test appointment.",
+          "score": 0.5951
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 12,
+          "chunk_index": 37,
+          "text": "6 \nOn the day of your behind-the-wheel test, you must bring: \n1. Your instruction permit or driver\u2019s license (if you have one). \n2. Another California-licensed driver who is at least 18 years old (25 for \nminors), unless you are already licensed to drive. \n3. A vehicle that is safe to drive for your test. \n4. Valid proof of insurance and vehicle registration. \n5. If you plan to use a rental vehicle for your drive test, your name must \nbe listed on the rental contract. The contract must not exclu",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 12,
+          "chunk_index": 38,
+          "text": "e for your drive test, your name must \nbe listed on the rental contract. The contract must not exclude \nbehind-the-wheel drive tests. \nNOTE: Minors must wait 14 days to retake a failed behind-the-wheel \ndrive test, not including the day of the failure. \nBefore you begin, the DMV examiner will ask you to locate and \ndemonstrate the following: \n\u2022 Driver window \u2013 The window on the driver side must open. \n\u2022 Windshield \u2013 The windshield must allow a full, clear, unblocked view \nfor you and the DMV exa",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 12,
+          "chunk_index": 39,
+          "text": "en. \n\u2022 Windshield \u2013 The windshield must allow a full, clear, unblocked view \nfor you and the DMV examiner. Windshield cracks may postpone your \ntest. \n\u2022 Rearview mirrors \u2013 At least two rearview mirrors. One of them must \nbe on the left side of your vehicle. \n\u2022 Brake lights \u2013 The right and left brake lights must be operational. \n\u2022 Tires \u2013 The tires must have at least 1/32-inch of uniformed tread \ndepth. The use of a donut tire is not allowed during a drive test. \n\u2022 Foot brake \u2013 There must be at l",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 12,
+          "chunk_index": 40,
+          "text": "epth. The use of a donut tire is not allowed during a drive test. \n\u2022 Foot brake \u2013 There must be at least one inch of clearance between \nthe bottom of the brake pedal and the floorboard when depressed. \n\u2022 Horn \u2013 Designed for the vehicle, in proper working condition, and \nloud enough to be heard from a distance of at least 200 feet. \n\u2022 Emergency (parking brake) \u2013 How to set and release the parking \nbrake. \n\u2022 Turn/Arm signals \na. Left turn. \nb. Right turn. \nc. Slowing down or stopping. \n\u2022 Windshiel",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 12,
+          "chunk_index": 41,
+          "text": "brake. \n\u2022 Turn/Arm signals \na. Left turn. \nb. Right turn. \nc. Slowing down or stopping. \n\u2022 Windshield wipers: control arm or switch \u2013 You may be required to \nshow they function. \n\u2022 Seat belts \u2013 All seat belts must work properly and be used by the \nindividual(s) in the vehicle. \nNOTE: If your vehicle does not meet the requirements, your drive test \nwill be rescheduled.",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 24,
+          "chunk_index": 84,
+          "text": "18 \nTurns \nRight Turns \nTo make a right turn: \n\u2022 Drive close to the right edge of the \nroad. \n\u2014 If a designated right turn lane is \navailable, enter at the opening. \n\u2014 You can drive in a bike lane \nwithin 200 feet from the turn. Check for bicyclists in your blind \nspots. \n\u2022 Watch for pedestrians, bicyclists, or motorcyclists between your \nvehicle and the curb. \n\u2022 Start signaling about 100 feet before the turn. \n\u2022 Look over your right shoulder and reduce your speed. \n\u2022 Stop behind the limit line.",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 24,
+          "chunk_index": 85,
+          "text": "ore the turn. \n\u2022 Look over your right shoulder and reduce your speed. \n\u2022 Stop behind the limit line. A limit line is a wide white line that shows \nthe drivers where to stop before an intersection or crosswalk. If there \nis no limit line, stop before you enter the crosswalk. If there is no \ncrosswalk, stop before you enter the intersection. \n\u2022 Look both ways (left-right-left) and turn when it is safe. \n\u2022 Complete your turn in the right lane. Do not turn wide into another \nlane. \nRight Turn Agains",
+          "score": 0.6033
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 24,
+          "chunk_index": 86,
+          "text": "fe. \n\u2022 Complete your turn in the right lane. Do not turn wide into another \nlane. \nRight Turn Against a Red Light \nYou may turn right at a red light after a complete stop unless there is a \nNO TURN ON RED sign. Follow the same steps listed above for right turns. \nRight Turn Against a Red Arrow \nYou may not turn right if you are stopped at a red arrow light. Wait until \nthe light changes to green before making your turn. \nRight Turn at a Public Transit Bus Lane \nIt is illegal to drive, stop, park",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 24,
+          "chunk_index": 87,
+          "text": "efore making your turn. \nRight Turn at a Public Transit Bus Lane \nIt is illegal to drive, stop, park, or leave a vehicle in an area designated for \npublic transit buses. Signs will be posted to indicate the lanes are for bus \nonly use. However, you may cross a bus lane to make a right turn. \nExample of a right turn.",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 25,
+          "chunk_index": 88,
+          "text": "19 \nRight Turn onto a Road with a Dedicated Lane \nA dedicated right turn lane does not \nmerge into another lane and allows you \nto make a right turn without stopping. \nYou may make your turn even if there \nis a red light for vehicles going straight \nthrough the intersection. If there is a \ntraffic light or sign on the right curb of \nthe right turn lane, you must obey that \nlight or sign. Always yield to pedestrians \nin a crosswalk when turning. \nLeft Turns \nTo turn left: \n\u2022 Drive close to the ce",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 25,
+          "chunk_index": 89,
+          "text": "eld to pedestrians \nin a crosswalk when turning. \nLeft Turns \nTo turn left: \n\u2022 Drive close to the center divider \nor into the left turn lane. \n\u2014 Enter a designated left turn \nlane at the opening. Do not \ncross any solid line. \n\u2014 Enter a two-way center left turn lane within 200 feet of the turn. \nRespect the right-of-way of any vehicle, bicyclist, or motorcyclist \nalready in the lane. Always yield to pedestrians. \n\u2022 Start signaling 100 feet before the turn. \n\u2022 Look over your left shoulder and red",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 25,
+          "chunk_index": 90,
+          "text": "to pedestrians. \n\u2022 Start signaling 100 feet before the turn. \n\u2022 Look over your left shoulder and reduce your speed. \n\u2022 Stop behind the limit line. If there is no limit line, stop before you \nenter the crosswalk. If there is no crosswalk, stop before you enter the \nintersection. \n\u2022 Look both ways (left-right-left) and begin your turn when it is safe. \n\u2022 Proceed into the intersection while turning to complete your turn in \nthe left lane. \n\u2022 Do not turn the steering wheel too soon and enter the lan",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 25,
+          "chunk_index": 91,
+          "text": "o complete your turn in \nthe left lane. \n\u2022 Do not turn the steering wheel too soon and enter the lane of \noncoming vehicles. \n\u2014 Keep your wheels pointed straight ahead until it is safe to start \nyour turn. If your wheels are pointed to the left and a vehicle hits \nyou from behind, you could be pushed into oncoming traffic. \n\u2022 Accelerate smoothly during and after the turn. \n\u2022 Allow the steering wheel to straighten in the new lane. \nExample of a left turn.",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 32,
+          "chunk_index": 73,
+          "text": "What is the difference between a DPE \nand a SDPE driving tests? \nAn SDPE includes all the features of the DPE driving tests \n(Pre-Drive Safety Check and the driving test). It may include \nadditional testing elements designed to evaluate your cognitive \nfunction (memory, awareness, perception, etc.) and ability to \noperate a motor vehicle safely. \nThe additional test elements may include: \nMultiple Directions-The examiner will give 2 or more \ninstructions at one time to determine whether you can ",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 32,
+          "chunk_index": 74,
+          "text": " Directions-The examiner will give 2 or more \ninstructions at one time to determine whether you can understand \nand properly follow both directions. For example, \"At the next \nstreet, make a left turn, and then at the first intersection make \nanother left turn.\" \nAdditional lane changes-The examiner will evaluate your \nperformance when making lane changes. \nConcentration The examiner talks with you at certain times \nduring the driving test. You must be able to respond briefly \nwithout making any",
+          "score": 0.605
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 32,
+          "chunk_index": 75,
+          "text": "u at certain times \nduring the driving test. You must be able to respond briefly \nwithout making any driving errors. \nFreeway or Highway Driving-The examiner will ask you \nto merge into freeway traffic and drive a short distance on the \nfreeway. If you do not drive on freeways and have no intention \nof ever driving on freeways, inform the examiner. The freeway \ndriving portion will not be part of the driving test. The examiner \nwill add a restriction to your DL that prohibits driving on the \nfre",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 32,
+          "chunk_index": 76,
+          "text": "the driving test. The examiner \nwill add a restriction to your DL that prohibits driving on the \nfreeway. \nDestination trip The examiner directs you to a location a few \nblocks from the DMV office. You must return to the DMV office \nusing the same route without assistance or direction from the \nexaminer. This is usually performed at the end ofthe driving test. \n28",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 33,
+          "chunk_index": 77,
+          "text": "Additional Testing Elements \nfor the SDPE \nThe following additional test element criteria is designed \nto evaluate your cognitive function (memory, awareness, \nperception, etc.) and ability to operate a motor vehicle safely. \nMultiple directions scoring criteria \nThe examiner evaluates the following 2 items: \n\u2022 Cues needed \n- You understand directions given \\Vithout the need for \nadditional explanation. \n- You may ask 1 confirming question (a question that can \nbe answered with either a yes or n",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 33,
+          "chunk_index": 78,
+          "text": "ation. \n- You may ask 1 confirming question (a question that can \nbe answered with either a yes or no), but the examiner \nshould not have to repeat the directions. \n\u2022 Follo,vs directio11s \n- You can properly follow directions and complete the \naction safely or acknowledge an error in following \ndirections. \nDestination trip scoring criteria \nThe examiner evaluates if you can complete the destination trip \nwithout any directional assistance from the examiner. \nAdditional lane changes \nThe lane ch",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+          "filename": "Driving_Test_Criteria.pdf",
+          "page": 33,
+          "chunk_index": 79,
+          "text": "on trip \nwithout any directional assistance from the examiner. \nAdditional lane changes \nThe lane change scoring criteria is used, but you will be asked \nto make more lane changes on the SDPE test than you did on \nthe regular driving test. \nConcentration \nThe examiner wil 1 talk \\vith you at certain times during the \ndriving test to ensure that you are able to respond briefly without \nmaking any driving errors. \n29",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "bc5856c3-9960-456c-a2f9-75445e8afccb",
+          "filename": "Additional Testing Materials.pdf",
+          "page": 1,
+          "chunk_index": 0,
+          "text": "WORDS AND PHRASES FOR CLASS C DRIVING  TESTS \nSECTION 1 \u2014 VEHICLE  SAFETY  CHECK \nRoll down your window. Show me arm signals for: \n\u2022 Lef\nt turn. \n\u2022 Right turn. \n\u2022 Slow or stop. \nTurn on the key\u2013do not start the engine and turn on the: \n\u2022 Left turn signal. \n\u2022 Rig\nht turn signal. \nStep on the brake pedal. \nHonk the horn. \nHow do you set the emer\ngency/parking brake? \nHow do you turn on the eme\nrgency flashers? \nHow do you turn on the headlights? \nHow do you turn on the windshield wipers? \nHow do y",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "bc5856c3-9960-456c-a2f9-75445e8afccb",
+          "filename": "Additional Testing Materials.pdf",
+          "page": 1,
+          "chunk_index": 1,
+          "text": "y flashers? \nHow do you turn on the headlights? \nHow do you turn on the windshield wipers? \nHow do you turn on the de\nfroster? \nIs your vehicle equipped with automated technology? \nSECTION 2 \u2014 PRE-DRIVE  INSTRUCTIONS \nYou will be evaluated on your ability to drive safely and \nskillfully in differ\nent driving situations. \nI will not trick you or ask you to do anything illegal. \nI will give you directions: \n\u2022 At the corner, turn left. \n\u2022 At the corner, turn right. \n\u2022 Pull over and stop. \n\u2022 Lane ch",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "bc5856c3-9960-456c-a2f9-75445e8afccb",
+          "filename": "Additional Testing Materials.pdf",
+          "page": 1,
+          "chunk_index": 2,
+          "text": "ctions: \n\u2022 At the corner, turn left. \n\u2022 At the corner, turn right. \n\u2022 Pull over and stop. \n\u2022 Lane change left. \n\u2022 Lane change right. \nDo you have any questions? \nDo not rely on any of the vehicle\u2019s automated features.  \nThe use of conveni\nence technology, such as adaptive \ncruise control, is prohibited. \nSECTION 3 \u2014 DURING  THE  DRIVE  TEST \nIf I don\u2019t say turn, follow the road ahead. Make necessary lane changes to follow my directions. \nPerform all ma\nneuvers only when safe. \nSECTION 4 \u2014 DRIVIN",
+          "score": 0.6818
+        },
+        {
+          "document_id": "bc5856c3-9960-456c-a2f9-75445e8afccb",
+          "filename": "Additional Testing Materials.pdf",
+          "page": 1,
+          "chunk_index": 3,
+          "text": "ry lane changes to follow my directions. \nPerform all ma\nneuvers only when safe. \nSECTION 4 \u2014 DRIVING  TEST  COMMENTS \n\u2022 Didn\u2019t check for traffic.  \n\u2022 You need m\nore practice. \n\u2022  Blind intersection. \n\u2022  (He/She) Drove too fast. \n\u2022  Didn\u2019t l\nook for cross traffic. \n\u2022  (H\ne/S\nhe\n) Drove too slow. \n\u2022  Di\ndn\u2019t look both ways.\n\u2022  Fo\nllow basic speed law. \n\u2022  Didn\u2019t\n check blind spot before changing lanes or  \npulling away from the curb. \n\u2022  Made unnecessary stops. \nSECTION 5 \u2014 TEST  RES ULTS \nSatisf",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "bc5856c3-9960-456c-a2f9-75445e8afccb",
+          "filename": "Additional Testing Materials.pdf",
+          "page": 1,
+          "chunk_index": 4,
+          "text": "nes or  \npulling away from the curb. \n\u2022  Made unnecessary stops. \nSECTION 5 \u2014 TEST  RES ULTS \nSatisfactory. \nUnsatisfactory. \nSECTION 6 \u2014 WORDS  AND PHRASES \nBack up \u2013 straight \nBr\nake pedal \nCurb \nDrive \u2013 straight \nDrive \u2013 to the side of the road \nDrive \u2013 into the traffic lane \nGo \nInterpreter \nLan\ne \nLef\nt \nLook \nPark \nPark on your right Rearview mirror \nReverse \nRight (hand, turn) \nSide mirror \nSidewalk \nSignal \nStop \nStreet \nTraffic \nTurn \nVehicle \nWait \nDL 80 (REV. 3/2022) WWW",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "bc5856c3-9960-456c-a2f9-75445e8afccb",
+          "filename": "Additional Testing Materials.pdf",
+          "page": 2,
+          "chunk_index": 5,
+          "text": "SECTION 7 \u2014 GRAPHICS \nReview with customer before administering the driving test: \nStep on the brake pedal \n Hon k the horn  \nEmergency  flashers \n Win dshield defroster \nLow beam headlights \n Win dshield wipers \nLef t turn arm signal \n Ri ght turn arm signal\nSl ow or stop arm signal \nDL 80 (REV. 3/2022) WWW",
+          "score": null,
+          "match_type": "page_context"
+        }
+      ]
+    },
+    {
+      "name": "out_of_scope",
+      "passed": true,
+      "conversation_id": "7b079e11-65cc-4289-8cae-113caedf7458",
+      "answer": "I can help only with California driving rules, test preparation, and examiner instructions.",
+      "sources": [
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 1,
+          "chunk_index": 0,
+          "text": "English \nCALIFORNIA \nDRIVER\u2019S HANDBOOK \nThis handbook is available at   \ndmv.ca.gov \nGavin Newsom, Governor \nState of California \nToks Omishakin, Secretary \nCalifornia State Transportation Agency \nSteve Gordon, Director \nCalifornia Department of Motor Vehicles",
+          "score": 0.344
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 2,
+          "chunk_index": 1,
+          "text": "\u2022 Renew driver\u2019s license  \nand vehicle registration  \n\u2022 Replace sticker or registration \n\u2022 Change address \n\u2022 Request driver\u2019s record \n\u2022 Request vehicle record \n\u2022 And more\u2026 \nWe know your time is \nvaluable",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 4,
+          "chunk_index": 7,
+          "text": "ii \nCopyright \n\u00a9 Copyright, Department of Motor Vehicles 2025 \nThis publication is licensed under the Creative Commons Attribution-\nNon Commercial 4.0 International License (CC BY-NC 4.0). You are \nfree to copy, distribute, and adapt the material for non-commercial \neducational purposes, as long as you give appropriate credit to the \nCalifornia Department of Motor Vehicles. Commercial use is prohibited \nwithout prior written permission. \nAttribution should be provided as follows: \u201cCalifornia Dri",
+          "score": 0.3986
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 4,
+          "chunk_index": 8,
+          "text": "bited \nwithout prior written permission. \nAttribution should be provided as follows: \u201cCalifornia Driver\u2019s Handbook, \nCalifornia Department of Motor Vehicles, licensed under CC BY-NC 4.0.\u201d \nDisclaimer \nThis handbook is a summary of the laws and regulations in the Vehicle \nCode available at leginfo.legislature.ca.gov. DMV, law enforcement, and \nthe courts follow the full, exact language. \nContact Us \nSend comments or suggestions for this driver\u2019s handbook to \ndmv.ca.gov/customerservice.",
+          "score": 0.3564
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 5,
+          "chunk_index": 9,
+          "text": "iii \nTable of Contents \nSECTION 1.   The California Driver\u2019s License......................................................1 \nSECTION 2.   Getting an Instruction Permit and Driver\u2019s   \nLicense ........................................................................................................... 2 \nSECTION 3.   The Testing Process ............................................................................ 5 \nSECTION 4.   Changing, Replacing, and Renewing Your \nDriver\u2019s License ..............",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 5,
+          "chunk_index": 10,
+          "text": "............ 5 \nSECTION 4.   Changing, Replacing, and Renewing Your \nDriver\u2019s License ...................................................................................... 8 \nSECTION 5.   An Introduction to Driving ............................................................. 9 \nSECTION 6.   Navigating the Roads ...................................................................... 13 \nSECTION 7.   Laws and Rules of the Road ...................................................... 33 \nSECTION 8. ",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 5,
+          "chunk_index": 11,
+          "text": "   Laws and Rules of the Road ...................................................... 33 \nSECTION 8.   Safe Driving ...............................................................................................57 \nSECTION 9.   Alcohol and Drugs...............................................................................72 \nSECTION 10.   Financial Responsibility, Insurance \nRequirements, and Collisions .................................................. 76 \nSECTION 11.   Vehicle Registration Req",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 5,
+          "chunk_index": 12,
+          "text": "isions .................................................. 76 \nSECTION 11.   Vehicle Registration Requirements................................... 79 \nSECTION 12.   Driver Safety..........................................................................................80 \nSECTION 13.   Seniors and Driving ......................................................................... 82 \nSECTION 14.   Glossary ...............................................................................................",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 5,
+          "chunk_index": 13,
+          "text": "sary .................................................................................................... 84 \nConnect with us on social media! @CA_DMV #CADMV",
+          "score": null,
+          "match_type": "page_context"
+        },
+        {
+          "document_id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+          "filename": "Driver_Handbook.pdf",
+          "page": 92,
+          "chunk_index": 372,
+          "text": "Opt-in for paperless notices  \nfor your driver\u2019s license, ID card, \nor vehicle registration. \nGO PAPERLESS! \nMake your selection at \ndmv.ca.gov/paperless \nReduce, reuse, recycle this handbook. \nDL 600 ENGLISH (REV. 6/2025) WWW",
+          "score": 0.3525
+        }
+      ]
+    }
+  ],
+  "library": {
+    "title": "California Driving Test Assistant",
+    "audience": "New California noncommercial Class C drivers and learners studying English examiner instructions",
+    "scope": "Driving rules, road-test preparation, and examiner vocabulary",
+    "notice": "Independent study project, not affiliated with DMV. Source editions: 2025 handbook, 2017 test criteria, and 2022 examiner phrases. Procedures may have changed; check the official DMV website for current requirements. Practice questions are unofficial.",
+    "sources": [
+      {
+        "filename": "Driver_Handbook.pdf",
+        "title": "California Driver's Handbook",
+        "edition": "DL 600, June 2025",
+        "url": "https://www.dmv.ca.gov/portal/driver-handbooks/",
+        "purpose": "Primary reference for driving rules and safe driving"
+      },
+      {
+        "filename": "Driving_Test_Criteria.pdf",
+        "title": "Driving Test Criteria",
+        "edition": "DL 955, October 2017; historical edition",
+        "url": "https://www.dmv.ca.gov/portal/file/driving-test-criteria-dl-955-pdf",
+        "current_reference": "https://www.dmv.ca.gov/portal/handbook/driving-test-criteria/",
+        "purpose": "Pre-drive checks and road-test scoring; verify current procedures online"
+      },
+      {
+        "filename": "Additional Testing Materials.pdf",
+        "title": "Words and Phrases for Class C Driving Tests",
+        "edition": "DL 80, March 2022",
+        "url": "https://www.dmv.ca.gov/portal/file/dl80-pdf/",
+        "purpose": "English examiner instructions and vehicle-control vocabulary"
+      }
+    ],
+    "documents": [
+      {
+        "id": "bc5856c3-9960-456c-a2f9-75445e8afccb",
+        "filename": "Additional Testing Materials.pdf",
+        "pages": 2,
+        "chunks": 6,
+        "status": "indexed",
+        "error": null,
+        "embedding_model": "text-embedding-3-small",
+        "created_at": "2026-10-15T19:52:11Z"
+      },
+      {
+        "id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+        "filename": "Driving_Test_Criteria.pdf",
+        "pages": 40,
+        "chunks": 104,
+        "status": "indexed",
+        "error": null,
+        "embedding_model": "text-embedding-3-small",
+        "created_at": "2026-10-15T19:52:09Z"
+      },
+      {
+        "id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+        "filename": "Driver_Handbook.pdf",
+        "pages": 92,
+        "chunks": 373,
+        "status": "indexed",
+        "error": null,
+        "embedding_model": "text-embedding-3-small",
+        "created_at": "2026-10-15T19:51:22Z"
+      }
+    ],
+    "ready": true
+  },
+  "privacy": {
+    "new_learner_has_no_uploads": true,
+    "other_conversation_read_blocked": true,
+    "other_conversation_write_blocked": true
+  },
+  "passed": true
+}
