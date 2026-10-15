@@ -1,0 +1,30 @@
+{
+  "title": "California Driving Test Assistant",
+  "audience": "New California noncommercial Class C drivers and learners studying English examiner instructions",
+  "scope": "Driving rules, road-test preparation, and examiner vocabulary",
+  "notice": "Independent study project, not affiliated with DMV. Source editions: 2025 handbook, 2017 test criteria, and 2022 examiner phrases. Procedures may have changed; check the official DMV website for current requirements. Practice questions are unofficial.",
+  "sources": [
+    {
+      "filename": "Driver_Handbook.pdf",
+      "title": "California Driver's Handbook",
+      "edition": "DL 600, June 2025",
+      "url": "https://www.dmv.ca.gov/portal/driver-handbooks/",
+      "purpose": "Primary reference for driving rules and safe driving"
+    },
+    {
+      "filename": "Driving_Test_Criteria.pdf",
+      "title": "Driving Test Criteria",
+      "edition": "DL 955, October 2017; historical edition",
+      "url": "https://www.dmv.ca.gov/portal/file/driving-test-criteria-dl-955-pdf",
+      "current_reference": "https://www.dmv.ca.gov/portal/handbook/driving-test-criteria/",
+      "purpose": "Pre-drive checks and road-test scoring; verify current procedures online"
+    },
+    {
+      "filename": "Additional Testing Materials.pdf",
+      "title": "Words and Phrases for Class C Driving Tests",
+      "edition": "DL 80, March 2022",
+      "url": "https://www.dmv.ca.gov/portal/file/dl80-pdf/",
+      "purpose": "English examiner instructions and vehicle-control vocabulary"
+    }
+  ]
+}

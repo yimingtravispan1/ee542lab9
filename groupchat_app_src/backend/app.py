@@ -16,6 +16,7 @@ from sqlalchemy.exc import IntegrityError
 
 from database import ROOT, Base, Message, User, engine, sessions
 from rag_routes import create_rag_router, get_rag_service
+from driving import create_driving_router, get_driving_service
 SECRET = os.environ['JWT_SECRET']
 if len(SECRET) < 32 or SECRET == 'please_change_me_to_a_long_random_value':
     raise RuntimeError('Set JWT_SECRET to a random string of at least 32 characters.')
@@ -37,6 +38,7 @@ async def lifespan(app):
     if tasks:
         await asyncio.gather(*tasks, return_exceptions=True)
     await get_rag_service().close()
+    await get_driving_service().close()
     await engine.dispose()
 
 
@@ -196,4 +198,5 @@ async def health():
 
 
 app.include_router(create_rag_router(current_user))
+app.include_router(create_driving_router(current_user))
 app.mount('/', StaticFiles(directory=ROOT / 'frontend', html=True), name='frontend')

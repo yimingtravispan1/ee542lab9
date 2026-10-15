@@ -11,21 +11,22 @@ MAX_TEXT_CHARS = 1_000_000
 SUPPORTED_SUFFIXES = {'.pdf', '.txt', '.md', '.docx'}
 
 
-def extract_pages(filename: str, data: bytes) -> list[tuple[int, str]]:
+def extract_pages(filename: str, data: bytes, *, max_file_bytes=MAX_FILE_BYTES) -> list[tuple[int, str]]:
     suffix = Path(filename).suffix.lower()
     if suffix not in SUPPORTED_SUFFIXES:
         raise ValueError('Supported file types: PDF, TXT, MD, and DOCX.')
     if not data:
         raise ValueError('The uploaded file is empty.')
-    if len(data) > MAX_FILE_BYTES:
-        raise ValueError('Each file must be 10 MB or smaller.')
+    if len(data) > max_file_bytes:
+        raise ValueError(f'Each file must be {max_file_bytes // (1024 * 1024)} MB or smaller.')
     try:
         if suffix == '.pdf':
             if not data.lstrip().startswith(b'%PDF-'):
                 raise ValueError('The file does not contain a valid PDF header.')
             reader = PdfReader(BytesIO(data))
-            if reader.is_encrypted:
-                raise ValueError('Encrypted PDFs are not supported. Upload an unlocked copy.')
+            # Public DMV PDFs may restrict editing while allowing password-free reading.
+            if reader.is_encrypted and not reader.decrypt(''):
+                raise ValueError('Password-protected PDFs are not supported. Upload an unlocked copy.')
             if len(reader.pages) > 1000:
                 raise ValueError('PDFs must contain no more than 1000 pages.')
             pages = [(i + 1, page.extract_text() or '') for i, page in enumerate(reader.pages)]

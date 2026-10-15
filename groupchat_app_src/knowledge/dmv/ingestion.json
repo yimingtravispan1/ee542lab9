@@ -1,0 +1,54 @@
+{
+  "collection": "ee542_driving",
+  "embedding_model": "text-embedding-3-small",
+  "chunk_size": 500,
+  "overlap": 100,
+  "sources": [
+    {
+      "filename": "Driver_Handbook.pdf",
+      "title": "California Driver's Handbook",
+      "edition": "DL 600, June 2025",
+      "url": "https://www.dmv.ca.gov/portal/driver-handbooks/",
+      "purpose": "Primary reference for driving rules and safe driving",
+      "id": "1aab057b-c3d2-4705-b191-12ed396ad10c",
+      "pages": 92,
+      "chunks": 373,
+      "status": "indexed",
+      "error": null,
+      "embedding_model": "text-embedding-3-small",
+      "created_at": "2026-10-15T19:51:22Z",
+      "sha256": "b29cbf3566b0886e208cdea6aa8eb82af96db61ed72a8b965d7ff4843016fefd"
+    },
+    {
+      "filename": "Driving_Test_Criteria.pdf",
+      "title": "Driving Test Criteria",
+      "edition": "DL 955, October 2017; historical edition",
+      "url": "https://www.dmv.ca.gov/portal/file/driving-test-criteria-dl-955-pdf",
+      "current_reference": "https://www.dmv.ca.gov/portal/handbook/driving-test-criteria/",
+      "purpose": "Pre-drive checks and road-test scoring; verify current procedures online",
+      "id": "806a60dc-6c7b-4351-b94b-57238c4ccc80",
+      "pages": 40,
+      "chunks": 104,
+      "status": "indexed",
+      "error": null,
+      "embedding_model": "text-embedding-3-small",
+      "created_at": "2026-10-15T19:52:09Z",
+      "sha256": "60b1b31f479944c976ba76707f8ab66c88970ae0749e57f97694f900d37162c8"
+    },
+    {
+      "filename": "Additional Testing Materials.pdf",
+      "title": "Words and Phrases for Class C Driving Tests",
+      "edition": "DL 80, March 2022",
+      "url": "https://www.dmv.ca.gov/portal/file/dl80-pdf/",
+      "purpose": "English examiner instructions and vehicle-control vocabulary",
+      "id": "bc5856c3-9960-456c-a2f9-75445e8afccb",
+      "pages": 2,
+      "chunks": 6,
+      "status": "indexed",
+      "error": null,
+      "embedding_model": "text-embedding-3-small",
+      "created_at": "2026-10-15T19:52:11Z",
+      "sha256": "3c40191b4075f6019bcacb5e241de39c8057c803711c9e3db9f4a0dd0638e932"
+    }
+  ]
+}
