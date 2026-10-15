@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Group Chat + LLM Bot</title>
-  <link rel="stylesheet" href="styles.css?v=4">
+  <title>California Driving Test Assistant</title>
+  <link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
   <div class="container">
     <div class="auth" id="auth">
-      <h1>Group Chat</h1>
-      <p>Create an account or log in to join the chat.</p>
+      <h1>California Driving Test Assistant</h1>
+      <p>Study California driving rules, road-test skills, and examiner instructions. Create an account or log in to get started.</p>
       <div class="row">
         <input id="username" placeholder="Username">
         <input id="password" placeholder="Password (at least 8 characters)" type="password" minlength="8">
@@ -24,13 +24,34 @@
     </div>
     <div class="chat hidden" id="chat">
       <div class="header">
-        <h2>Group Chat</h2>
+        <h2>California Driving Test Assistant</h2>
         <button id="logoutBtn">Log Out</button>
       </div>
       <nav class="tabs" aria-label="Chat mode">
+        <button id="drivingTab" aria-pressed="false">Driving Study</button>
         <button id="groupTab" aria-pressed="true">Group Chat</button>
         <button id="documentsTab" aria-pressed="false">Document Q&amp;A</button>
       </nav>
+      <section id="drivingPanel" class="hidden">
+        <p class="eyebrow">CALIFORNIA / CLASS C / STUDY &amp; PREPARE</p>
+        <h3>Your next step toward confident driving</h3>
+        <p>Ask about driving rules, prepare for the road test, or learn what an examiner means. Each answer links back to the source passages.</p>
+        <div class="study-prompts" aria-label="Suggested questions">
+          <button type="button" data-study-question="What steps should I take before changing lanes?">Driving rules</button>
+          <button type="button" data-study-question="Which vehicle safety items are checked before the driving test?">Road-test preparation</button>
+          <button type="button" data-study-question="What does the examiner mean by pull over and stop?">Examiner instructions</button>
+          <button type="button" data-study-question="Give me one unofficial practice question about changing lanes, with the answer and a cited explanation.">Practice a question</button>
+        </div>
+        <details class="study-library"><summary>Knowledge library and source editions</summary><div id="drivingLibrary"></div></details>
+        <p id="drivingNotice" class="hint">Independent study project, not affiliated with DMV. Check current requirements with DMV.</p>
+        <div class="header"><h3>Driving Study</h3><button id="newDrivingChatBtn" type="button">New Conversation</button></div>
+        <div id="drivingMessages" class="messages" aria-live="polite"></div>
+        <div id="drivingStatus" class="msg" role="status"></div>
+        <form id="drivingQuestionForm" class="composer">
+          <input id="drivingQuestion" placeholder="Ask a California driving question..." maxlength="4000" required aria-label="Driving study question">
+          <button id="askDrivingBtn" type="submit">Ask</button>
+        </form>
+      </section>
       <section id="groupPanel">
       <div id="messages" class="messages"></div>
       <div class="hint">The bot replies to messages containing a question mark (?). CPU inference may take about a minute.</div>
@@ -72,7 +93,8 @@
       </section>
     </div>
   </div>
-  <script src="app.js?v=4"></script>
-  <script src="rag.js?v=2"></script>
+  <script src="app.js?v=5"></script>
+  <script src="rag.js?v=3"></script>
+  <script src="driving.js?v=2"></script>
 </body>
 </html>

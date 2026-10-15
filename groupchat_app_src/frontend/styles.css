@@ -34,4 +34,13 @@ button:hover{filter:brightness(1.1)}
 .sources details{padding:6px 0}.sources p{white-space:pre-wrap}
 pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:320px;overflow:auto;font-size:12px}
 button:disabled{opacity:.55;cursor:wait}
+.eyebrow{color:#93c5fd;font-size:12px;letter-spacing:.1em}
+.study-prompts{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
+.study-prompts button{background:#1e3a5f;border:1px solid #2563eb;font-size:13px}
+.study-library{padding:12px;border:1px solid #334155;border-radius:12px;font-size:13px;margin-bottom:12px}
+.study-library summary{cursor:pointer}.study-library p{line-height:1.6}
+a{color:#93c5fd}#drivingPanel .message{white-space:pre-wrap}
+#drivingPanel .messages{height:43vh}.header{gap:12px;flex-wrap:wrap}
+@media(max-width:600px){h1,h2{font-size:23px}.composer{gap:6px}.composer input{padding:10px}.composer button{padding:10px}#drivingPanel .messages{height:40vh}}
+@media(max-width:600px){.chat>.header{flex-wrap:nowrap;align-items:flex-start}.chat>.header h2{font-size:18px;flex:1;margin:0}.chat>.header button,.tabs button{padding:9px 10px;font-size:12px}.eyebrow{display:none}#drivingPanel>h3{font-size:17px;margin:12px 0}#drivingPanel>p:not(.hint){font-size:14px}.study-prompts{gap:6px;margin:12px 0}.study-prompts button{font-size:12px;padding:9px}.study-library{font-size:12px}.sources>summary{cursor:pointer}}
 @media(max-width:700px){.rag-layout{grid-template-columns:1fr}.document-sidebar{border-right:0;border-bottom:1px solid #334155;padding:0 0 16px}.document-chat .messages{height:45vh}}

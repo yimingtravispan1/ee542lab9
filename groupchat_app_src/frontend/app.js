@@ -173,11 +173,13 @@ chatInput.addEventListener("keydown", (event) => {
   if (event.key === "Enter" && !event.isComposing && !sendBtn.disabled) sendBtn.click();
 });
 
-if (token) {
-  loadMessages().then(()=>{
-    connectWS();
-    showChat();
-  }).catch(()=>showAuth());
-} else {
-  showAuth();
-}
+document.addEventListener("DOMContentLoaded", () => {
+  if (token) {
+    loadMessages().then(() => {
+      connectWS();
+      showChat();
+    }).catch(() => showAuth());
+  } else {
+    showAuth();
+  }
+});

@@ -14,6 +14,8 @@
 
   function setMode(showDocuments) {
     active = showDocuments;
+    $("drivingPanel").classList.add("hidden");
+    $("drivingTab").setAttribute("aria-pressed", "false");
     $("groupPanel").classList.toggle("hidden", active);
     $("documentsPanel").classList.toggle("hidden", !active);
     $("groupTab").setAttribute("aria-pressed", String(!active));
@@ -237,6 +239,7 @@
     $("ragMessages").replaceChildren();
     $("ragStatus").textContent = "New conversation started.";
   };
+  document.addEventListener("drivingmode", () => { active = false; clearTimeout(timer); });
   $("groupTab").onclick = () => setMode(false);
   $("documentsTab").onclick = () => setMode(true);
   document.addEventListener("signedin", () => {

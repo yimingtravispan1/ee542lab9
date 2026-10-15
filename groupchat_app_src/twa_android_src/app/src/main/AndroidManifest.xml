@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
-        android:label="GroupChat"
+        android:label="CA Driving Study"
         android:icon="@drawable/ic_groupchat"
         android:allowBackup="true"
         android:supportsRtl="true"
