@@ -56,3 +56,132 @@ The shared `ee542_driving` library powers Driving Study on the website and Andro
 Docker Compose runs FastAPI, MySQL, and Qdrant; Llama is optional for group chat. The **3.36 MiB** DMV bundle restores existing vectors without re-embedding or sharing accounts/keys. Fresh setup, repeat initialization, recovery, data preservation, source reload, four regression tests, and real cited answers passed; see the [handoff evidence](groupchat_app_src/artifacts/reports/Backend-handoff-validation.json) and [startup instructions](README.md).
 
 **Parts 1–4 functionality is complete.** No video log was found in the project, so the PDF's required video demonstration cannot be claimed as submitted. **Part 5 Word2Vec, clustering, histogram embeddings, and improvement results remain outside this report.** Final APKs/screenshots are local ignored artifacts; attach them separately if required.
+## Part 5: Custom Word-Cluster Histogram Embeddings
+
+### Contribution and Reused Components
+
+My contribution was the custom embedding pipeline, retrieval experiments,
+and integration of the selected retriever into the driving chatbot.
+
+I used Gensim Word2Vec to train word vectors and implemented the K-means
+assignment and centroid-update steps in custom code. I also implemented
+normalized word-cluster histograms, query encoding, cluster-level IDF
+weighting, and comparison experiments.
+
+The DMV knowledge base, original website, database, answer-generation
+pipeline, and Android wrapper were reused from the team's earlier work.
+I updated the Android launch URL and tested the application on a physical
+vivo X200s connected to the modified backend.
+
+### Implementation
+
+The embedding pipeline reused 483 DMV text chunks. Word2Vec was configured
+to learn 100-dimensional word vectors using the Skip-gram architecture.
+
+Custom K-means groups the vocabulary vectors into K clusters. Each
+iteration assigns vectors to their nearest centroid and updates each
+centroid by averaging its assigned vectors.
+
+For each chunk, the encoder counts the tokens assigned to each cluster.
+The K-dimensional count vector is divided by the total number of tokens
+in the chunk:
+
+h_j(d) = count of tokens assigned to cluster j / total tokens in d
+
+Thus, the word-vector dimension N=100 is different from the final
+chunk-vector dimension K. We tested K=32 and K=64.
+
+Queries use the same saved Word2Vec model and cluster mapping as the
+documents. Unknown query tokens do not contribute to cluster counts.
+Because normalization uses the total token count, a query histogram can
+sum to less than one when it contains unknown tokens.
+
+The main implementation files are:
+
+| File | Purpose |
+| --- | --- |
+| word_histogram.py | Word2Vec training, custom K-means, histogram encoding |
+| build_word_histogram.py | Build and save embeddings from the existing chunks |
+| query_word_histogram.py | Query encoding, IDF weighting, similarity ranking |
+| evaluate_word_histogram.py | Run the comparison experiments |
+| rag_service.py and driving.py | Integrate custom retrieval into the existing RAG pipeline |
+| app.py | Expose the active retrieval method through the health endpoint |
+
+### Improvements and Experimental Setup
+
+We compared three configurations on the same 12 questions:
+
+| Configuration | Description |
+| --- | --- |
+| k32_plain | Normalized histogram with 32 word clusters |
+| k64_plain | Normalized histogram with 64 word clusters |
+| k64_idf | 64-cluster histogram with cluster-level IDF weighting |
+
+Increasing K tests whether a finer grouping of words improves retrieval.
+Cluster-level IDF gives relatively greater weight to clusters occurring
+in fewer chunks. The same IDF weights are applied to document and query
+vectors before cosine-similarity ranking.
+
+Each configuration retrieves the top four chunks for each question,
+producing 36 retrieval runs. Retrieved text, document metadata, scores,
+and query details are saved for inspection.
+
+### Observed Retrieval Results
+
+The following cases were checked against retrieval_results.json.
+Page numbers refer to the page metadata stored with the chunks.
+
+| Question | K=32 | K=64 | K=64 + IDF |
+| --- | --- | --- | --- |
+| Driving in fog | No direct fog guidance in Top-4 | No direct fog guidance in Top-4 | Direct fog guidance at rank 4, Driver_Handbook.pdf, page 70 |
+| School bus flashing red lights | Related school-bus content, but no explicit red-light rule in Top-4 | No direct school-bus red-light rule in Top-4 | Explicit rule at rank 4, Driver_Handbook.pdf, page 57 |
+| Parking uphill beside a curb | Correct wheel-direction guidance at rank 1 | Correct guidance at rank 3 | Correct guidance at rank 1 |
+
+These examples show that IDF can recover useful evidence missed by the
+unweighted 64-cluster representation. Increasing K alone does not
+consistently improve ranking: the uphill-parking result moved from
+rank 1 with K=32 to rank 3 with K=64.
+
+This is a small, qualitative retrieval comparison rather than a
+measurement of final-answer accuracy. It does not establish that the
+custom embeddings outperform OpenAI embeddings.
+
+### Integration into the RAG System
+
+The driving chatbot uses the word2vec_k64_idf retriever. It encodes the
+question, applies IDF weights, and ranks chunk vectors using cosine
+similarity to select four initial chunks.
+
+The existing pipeline then expands the retrieved context and supplies
+it to the language model for answer generation. Therefore, the final
+source list can contain more than four passages. Retrieval comparisons
+use the original Top-4 results before context expansion.
+
+For the website fog-driving demonstration, the backend reported:
+
+- method=word2vec_k64_idf
+- chunks=483
+- dimension=64
+- known_words=8/8
+- POST /api/driving/ask returned 200 OK
+
+The website displayed an answer with citations and 17 source passages
+after context expansion.
+
+### Website and Android Validation
+
+The website was tested against the modified backend. The health endpoint
+reported status=ok, database=ok, and
+driving_retrieval_method=word2vec_k64_idf.
+
+For mobile validation, a temporary HTTPS tunnel forwarded requests to
+the local Docker backend. The Android wrapper's launch URL and website
+association string were updated to the new origin.
+
+The application was built and run on a physical vivo X200s. Mobile
+question answering was successfully tested against this backend.
+The embeddings and language-model requests remain on the backend;
+the Android application provides the mobile interface.
+
+The temporary tunnel must remain active during the demonstration.
+Its address is a test endpoint rather than a permanent deployment.
