@@ -1,23 +1,34 @@
 """Read-only shared DMV library; conversations remain private to each learner."""
 from functools import lru_cache
 import json
+import asyncio
+import logging
+import os
 import re
 
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy import and_, or_, select
 
-from database import ROOT, DocumentChunk, User, sessions
+from database import ROOT, DocumentChunk, DocumentRecord, User, sessions
 from rag_routes import RagQuestion, api_call
 from rag_service import RagError, RagService
 
 LIBRARY_USER = '__dmv_curated_library__'
 COLLECTION = 'ee542_driving'
 CATALOG = ROOT / 'knowledge/dmv/catalog.json'
+logger = logging.getLogger('uvicorn.error')
 
 
 class DrivingService(RagService):
     def __init__(self, **kwargs):
         super().__init__(collection=COLLECTION, **kwargs)
+        self.retrieval_method = os.getenv(
+            'DRIVING_RETRIEVER', 'word2vec_k64_idf'
+        ).strip().lower()
+        if self.retrieval_method not in {'openai', 'word2vec_k64_idf'}:
+            raise ValueError('DRIVING_RETRIEVER must be openai or word2vec_k64_idf.')
+        self._histogram_index = None
+        self._histogram_lock = asyncio.Lock()
 
     async def library_owner(self):
         async with sessions() as session:
@@ -27,7 +38,103 @@ class DrivingService(RagService):
         return owner.id
 
     async def _ask(self, user_id, conversation_id, question, document_ids):
-        return await super()._ask(user_id, conversation_id, question, [], knowledge_user_id=await self.library_owner())
+        result = await super()._ask(
+            user_id, conversation_id, question, [],
+            knowledge_user_id=await self.library_owner(),
+        )
+        result['retrieval_method'] = self.retrieval_method
+        return result
+
+    async def histogram_index(self):
+        # Lazy loading keeps the original OpenAI mode usable without artifacts.
+        async with self._histogram_lock:
+            if self._histogram_index is None:
+                from query_word_histogram import load_index
+                path = ROOT / 'artifacts/part5/baseline_k64'
+                try:
+                    index = await asyncio.to_thread(load_index, path)
+                except (OSError, ValueError, KeyError) as error:
+                    logger.exception('Part 5 index could not be loaded')
+                    raise RagError(
+                        'Part 5 index is missing or invalid. Run '
+                        'python build_word_histogram.py --k 64 inside the backend.',
+                        503,
+                    ) from error
+                if index[0].k != 64:
+                    raise RagError('Part 5 requires the K=64 index.', 503)
+                self._histogram_index = index
+                logger.info('Part5 index loaded: method=%s chunks=%d dimension=64',
+                            self.retrieval_method, len(index[2]))
+            return self._histogram_index
+
+    async def retrieve_sources(self, owner_id, query, document_ids):
+        if self.retrieval_method == 'openai':
+            return await super().retrieve_sources(owner_id, query, document_ids)
+
+        from query_word_histogram import retrieve
+        embedder, histograms, chunks = await self.histogram_index()
+        _, details = embedder.encode(query)
+        if details['known_words'] == 0:
+            logger.info('Part5 retrieval: method=%s known_words=0 sources=0',
+                        self.retrieval_method)
+            return []
+
+        report = await asyncio.to_thread(
+            retrieve, query, embedder, histograms, chunks,
+            top_k=4, use_idf=True,
+        )
+        matches = report['results']
+
+        # Validate persisted IDs and text against the CURRENT shared SQL library.
+        # This detects stale artifacts and prevents private uploads being used.
+        filenames = {
+            source['filename'] for source in
+            json.loads(CATALOG.read_text(encoding='utf-8'))['sources']
+        }
+        ids = [match['id'] for match in matches]
+        async with sessions() as session:
+            rows = (await session.execute(
+                select(DocumentChunk, DocumentRecord.filename)
+                .join(DocumentRecord,
+                      DocumentChunk.document_id == DocumentRecord.id)
+                .where(
+                    DocumentChunk.id.in_(ids),
+                    DocumentRecord.user_id == owner_id,
+                    DocumentRecord.filename.in_(filenames),
+                    DocumentRecord.status == 'indexed',
+                )
+            )).all()
+        actual = {chunk.id: (chunk, filename) for chunk, filename in rows}
+        sources = []
+        for match in matches:
+            current = actual.get(match['id'])
+            if current is None:
+                raise RagError('Part 5 index does not match the shared library. '
+                               'Rebuild it from the current database.', 409)
+            chunk, filename = current
+            if (chunk.document_id != match['document_id']
+                    or chunk.content != match['text']
+                    or chunk.page != match['page']
+                    or chunk.chunk_index != match['chunk_index']
+                    or filename != match['filename']):
+                raise RagError('Part 5 index is stale. Rebuild it from the '
+                               'current database.', 409)
+            sources.append({
+                'document_id': chunk.document_id,
+                'filename': filename,
+                'page': chunk.page,
+                'chunk_index': chunk.chunk_index,
+                'text': chunk.content,
+                'score': round(match['score'], 4),
+                'match_type': 'word2vec_histogram_idf',
+            })
+
+        logger.info(
+            'Part5 retrieval: method=%s known_words=%d/%d seeds=%s',
+            self.retrieval_method, details['known_words'], details['total_words'],
+            [(s['filename'], s['page'], s['chunk_index']) for s in sources],
+        )
+        return sources
 
     def retrieval_query(self, turns, question):
         # "Give a question with its answer" is a standalone request, not a
@@ -72,7 +179,7 @@ def create_driving_router(current_user):
         docs = await api_call(service.list_documents(owner))
         # Expose only curated records, never another learner's uploads.
         docs = [d for d in docs if d['filename'] in {s['filename'] for s in catalog['sources']}]
-        return {**catalog, 'documents': docs, 'ready': len(docs) == len(catalog['sources']) and all(d['status'] == 'indexed' for d in docs)}
+        return {**catalog, 'retrieval_method': service.retrieval_method, 'documents': docs, 'ready': len(docs) == len(catalog['sources']) and all(d['status'] == 'indexed' for d in docs)}
 
     @router.post('/ask')
     async def ask(data: RagQuestion, user=Depends(current_user), service=Depends(get_driving_service)):

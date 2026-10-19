@@ -17,3 +17,22 @@ groupchat_app_src/tools/*.exe
 **/.idea/
 groupchat_app_src/artifacts/**/*.apk
 groupchat_app_src/artifacts/**/*.png
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+!.env.sample
+local.properties
+
+# Local build and editor files
+.gradle/
+.idea/
+**/build/
+__pycache__/
+*.pyc
+.venv/
+
+# Downloaded tools and signing keys
+tools/cloudflared.exe
+*.jks
+*.keystore

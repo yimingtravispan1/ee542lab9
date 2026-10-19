@@ -250,9 +250,8 @@ class RagService:
                 del self._conversation_users[conversation_id]
                 self._conversation_locks.pop(conversation_id, None)
 
-    async def _ask(self, user_id, conversation_id, question, document_ids, *, knowledge_user_id=None):
-        turns = await self.conversation_history(user_id, conversation_id)
-        owner_id = user_id if knowledge_user_id is None else knowledge_user_id
+    async def retrieve_sources(self, owner_id, query, document_ids):
+        """Default private-document/OpenAI retrieval; subclasses may override."""
         async with sessions() as session:
             docs = (await session.scalars(select(DocumentRecord).where(DocumentRecord.user_id == owner_id, DocumentRecord.status == 'indexed', DocumentRecord.embedding_model == self.embedding_model, DocumentRecord.vector_collection == self.collection))).all()
         allowed = {doc.id for doc in docs}
@@ -261,13 +260,16 @@ class RagService:
         selected = document_ids or sorted(allowed)
         if not selected:
             raise RagError('Index at least one document before asking questions.', 409)
-        # Standalone questions must not inherit unrelated earlier topics.
-        # Only explicit references use the preceding question for retrieval;
-        # the answer chain still receives bounded conversation memory.
-        query = self.retrieval_query(turns, question)
         vector = await self.embeddings().aembed_query(query)
         results = await self.qdrant.query_points(self.collection, query=vector, query_filter=qm.Filter(must=[qm.FieldCondition(key='user_id', match=qm.MatchValue(value=owner_id)), qm.FieldCondition(key='document_id', match=qm.MatchAny(any=selected)), qm.FieldCondition(key='embedding_model', match=qm.MatchValue(value=self.embedding_model))]), limit=int(os.getenv('RAG_TOP_K', '4')), score_threshold=float(os.getenv('RAG_MIN_SCORE', '0.25')), with_payload=True)
         sources = [{'document_id': point.payload['document_id'], 'filename': point.payload['filename'], 'page': point.payload['page'], 'chunk_index': point.payload['chunk_index'], 'text': point.payload['text'], 'score': round(point.score, 4)} for point in results.points]
+        return sources
+
+    async def _ask(self, user_id, conversation_id, question, document_ids, *, knowledge_user_id=None):
+        turns = await self.conversation_history(user_id, conversation_id)
+        owner_id = user_id if knowledge_user_id is None else knowledge_user_id
+        query = self.retrieval_query(turns, question)
+        sources = await self.retrieve_sources(owner_id, query, document_ids)
         sources = await self.expand_sources(sources)
         if sources:
             history = []

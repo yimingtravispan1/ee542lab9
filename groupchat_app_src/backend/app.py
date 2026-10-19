@@ -194,7 +194,8 @@ async def health():
     async with engine.connect() as connection:
         from sqlalchemy import text
         await connection.execute(text('SELECT 1'))
-    return {'status': 'ok', 'database': 'ok'}
+    return {'status': 'ok', 'database': 'ok',
+            'driving_retrieval_method': get_driving_service().retrieval_method}
 
 
 app.include_router(create_rag_router(current_user))

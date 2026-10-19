@@ -1,0 +1,2 @@
+﻿backend-1  | INFO:     Part5 retrieval: method=word2vec_k64_idf known_words=8/8 seeds=[('Driver_Handbook.pdf', 68, 261), ('Driver_Handbook.pdf', 68, 257), ('Driver_Handbook.pdf', 68, 258), ('Driver_Handbook.pdf', 70, 266)]
+backend-1  | INFO:     172.19.0.1:51526 - "POST /api/driving/ask HTTP/1.1" 200 OK
