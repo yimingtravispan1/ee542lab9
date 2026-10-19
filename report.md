@@ -182,6 +182,3 @@ The application was built and run on a physical vivo X200s. Mobile
 question answering was successfully tested against this backend.
 The embeddings and language-model requests remain on the backend;
 the Android application provides the mobile interface.
-
-The temporary tunnel must remain active during the demonstration.
-Its address is a test endpoint rather than a permanent deployment.
