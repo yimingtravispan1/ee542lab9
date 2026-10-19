@@ -14,3 +14,6 @@ langchain-core>=1,<2
 langchain-openai>=1,<2
 langchain-text-splitters>=1,<2
 qdrant-client>=1.16,<2
+gensim==4.4.0
+numpy==2.5.4
+scipy==1.18.1

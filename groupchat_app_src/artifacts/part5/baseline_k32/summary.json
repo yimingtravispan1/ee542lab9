@@ -1,0 +1,18 @@
+{
+  "vocabulary_size": 3244,
+  "word_vector_dimension": 100,
+  "histogram_dimension": 32,
+  "iterations": 32,
+  "inertia": 19700.07421875,
+  "chunk_count": 483,
+  "epochs": 50,
+  "seed": 42,
+  "corpus_sha256": "746096ac3d8204e1dd0afb03d88593a7c68613ef4ab27c80f84270f5c5552d6f",
+  "histogram_shape": [
+    483,
+    32
+  ],
+  "histogram_sum_min": 0.9999998807907104,
+  "histogram_sum_max": 1.0000001192092896,
+  "normalization": "cluster counts / total token count"
+}

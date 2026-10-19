@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-  <string name="defaultUrl" translatable="false">https://everything-betty-brook-elected.trycloudflare.com/</string>
-  <string name="assetStatements" translatable="false">[{\"relation\": [\"delegate_permission/common.handle_all_urls\"], \"target\": {\"namespace\": \"web\", \"site\": \"https://everything-betty-brook-elected.trycloudflare.com\"}}]</string>
+  <string name="defaultUrl" translatable="false">https://onto-homepage-developments-lee.trycloudflare.com/</string>
+  <string name="assetStatements" translatable="false">[{\"relation\": [\"delegate_permission/common.handle_all_urls\"], \"target\": {\"namespace\": \"web\", \"site\": \"https://onto-homepage-developments-lee.trycloudflare.com\"}}]</string>
 </resources>

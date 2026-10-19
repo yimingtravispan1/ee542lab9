@@ -1,0 +1,7 @@
+﻿backend-1  | INFO:     Part5 index loaded: method=word2vec_k64_idf chunks=483 dimension=64
+backend-1  | INFO:     Part5 retrieval: method=word2vec_k64_idf known_words=8/8 seeds=[('Driver_Handbook.pdf', 68, 261), ('Driver_Handbook.pdf', 68, 257), ('Driver_Handbook.pdf', 68, 258), ('Driver_Handbook.pdf', 70, 266)]
+backend-1  | INFO:     172.19.0.1:50028 - "POST /api/driving/ask HTTP/1.1" 200 OK
+backend-1  | INFO:     Part5 retrieval: method=word2vec_k64_idf known_words=13/13 seeds=[('Driver_Handbook.pdf', 33, 118), ('Driver_Handbook.pdf', 33, 117), ('Driver_Handbook.pdf', 33, 119), ('Driving_Test_Criteria.pdf', 13, 24)]
+backend-1  | INFO:     172.19.0.1:35934 - "POST /api/driving/ask HTTP/1.1" 200 OK
+backend-1  | INFO:     Part5 retrieval: method=word2vec_k64_idf known_words=5/8 seeds=[('Driver_Handbook.pdf', 88, 361), ('Driver_Handbook.pdf', 88, 360), ('Driver_Handbook.pdf', 66, 248), ('Driver_Handbook.pdf', 67, 256)]
+backend-1  | INFO:     172.19.0.1:58174 - "POST /api/driving/ask HTTP/1.1" 200 OK
