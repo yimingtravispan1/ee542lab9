@@ -1,4 +1,4 @@
-# EE 542 Lab Report: Parts 1–4
+# EE 542 Lab Report
 
 **Project:** California Driving Test Assistant  
 **Date:** October 15, 2026
