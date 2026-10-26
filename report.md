@@ -1,9 +1,6 @@
 # EE 542 Lab Report
 
 **Project:** California Driving Test Assistant  
-
-This report addresses the implementation requirements in [the lab PDF](docs/labs/lab9.pdf). Parts 1–4 contain no separate list of written questions; the required technical points and results are answered below.
-
 ## Part 1: Web Application
 
 - **Database/security:** MySQL 8.4 stores accounts and messages in `groupchat` with utf8mb4. A dedicated database user, generated passwords, Argon2 hashes, and JWT authentication protect access. Secrets remain in the ignored `.env`.
