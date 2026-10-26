@@ -1,7 +1,6 @@
 # EE 542 Lab Report
 
 **Project:** California Driving Test Assistant  
-**Date:** October 15, 2026
 
 This report addresses the implementation requirements in [the lab PDF](docs/labs/lab9.pdf). Parts 1–4 contain no separate list of written questions; the required technical points and results are answered below.
 
@@ -55,23 +54,8 @@ The shared `ee542_driving` library powers Driving Study on the website and Andro
 
 Docker Compose runs FastAPI, MySQL, and Qdrant; Llama is optional for group chat. The **3.36 MiB** DMV bundle restores existing vectors without re-embedding or sharing accounts/keys. Fresh setup, repeat initialization, recovery, data preservation, source reload, four regression tests, and real cited answers passed; see the [handoff evidence](groupchat_app_src/artifacts/reports/Backend-handoff-validation.json) and [startup instructions](README.md).
 
-**Parts 1–4 functionality is complete.** No video log was found in the project, so the PDF's required video demonstration cannot be claimed as submitted. **Part 5 Word2Vec, clustering, histogram embeddings, and improvement results remain outside this report.** Final APKs/screenshots are local ignored artifacts; attach them separately if required.
+
 ## Part 5: Custom Word-Cluster Histogram Embeddings
-
-### Contribution and Reused Components
-
-My contribution was the custom embedding pipeline, retrieval experiments,
-and integration of the selected retriever into the driving chatbot.
-
-I used Gensim Word2Vec to train word vectors and implemented the K-means
-assignment and centroid-update steps in custom code. I also implemented
-normalized word-cluster histograms, query encoding, cluster-level IDF
-weighting, and comparison experiments.
-
-The DMV knowledge base, original website, database, answer-generation
-pipeline, and Android wrapper were reused from the team's earlier work.
-I updated the Android launch URL and tested the application on a physical
-vivo X200s connected to the modified backend.
 
 ### Implementation
 
