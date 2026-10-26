@@ -1,24 +1,43 @@
 # EE 542 Lab Report
 
 **Project:** California Driving Test Assistant  
+
+The screenshots show the website and Android app in operation. Q&A examples contain real model answers, and the embedding figure visualizes actual text and vector values.
+
 ## Part 1: Web Application
+
+This stage implemented a general-purpose group-chat website.
 
 - **Database/security:** MySQL 8.4 stores accounts and messages in `groupchat` with utf8mb4. A dedicated database user, generated passwords, Argon2 hashes, and JWT authentication protect access. Secrets remain in the ignored `.env`.
 - **Interfaces:** FastAPI serves HTML/CSS/JavaScript. REST handles registration, login, history, and message submission; WebSockets broadcast messages. History persists after reconnecting.
 - **Model/server:** We selected llama.cpp, using **Llama 3.2 3B Instruct Q4_K_M** on CPU with a 4096-token context, replacing the PDF's larger examples. Its Docker endpoint is `http://llama:8001/v1`. Messages containing `?` trigger replies. The alternative vLLM option was not needed.
 - **Result:** Authentication, invalid-input rejection, two-client broadcasts, persistence, and real inference passed. “What is 2 + 2?” returned **4**, with the reply saved and broadcast.
 
+![Part 1 website registration and login](docs/screenshots/part1-login.png)
+
+*Figure 1. Group Chat registration and login interface.*
+
+![Part 1 live Llama group-chat reply](docs/screenshots/part1-group-chat.png)
+
+*Figure 2. Group Chat interface with the local Llama reply: “The answer is 4.”*
+
 ## Part 2: Mobile Application Wrapper
 
-Built and installed the Android TWA app **CA Driving Study**, package `com.helloworld.groupchat.twa`. An HTTPS origin and [Digital Asset Links](groupchat_app_src/frontend/.well-known/assetlinks.json) associate the website with the matching package and signing-certificate SHA-256 fingerprint, enabling full TWA without a browser address bar.
+Built and installed the Android TWA app **GroupChat**, package `com.helloworld.groupchat.twa`, wrapping the generic Part 1 website. It was later renamed **CA Driving Study** in Part 4. An HTTPS origin and [Digital Asset Links](groupchat_app_src/frontend/.well-known/assetlinks.json) associate the website with the matching package and signing-certificate SHA-256 fingerprint, enabling full TWA without a browser address bar.
 
 **Result:** Android Studio emulator testing with Chrome verified registration/login, chatbot responses, and restored sessions/history after reopening. The older Android 8.1 phone lacked a compatible browser; full TWA acceptance therefore used the permitted emulator option.
 
-**Fresh verification (October 15, 2026):** The APK was rebuilt for a renewed HTTPS origin; Gradle build/lint passed. Against the Docker backend, emulator registration/login, group-message persistence, a real cited driving answer, and session/history restoration after restarting the app and browser passed. The native UI hierarchy confirmed no browser address bar; see [the fresh Android evidence](groupchat_app_src/artifacts/reports/Android-docker-validation.json).
+Gradle build/lint passed. Additional app validation is recorded in [the Android evidence](groupchat_app_src/artifacts/reports/Android-docker-validation.json).
 
-**Limits:** The temporary Cloudflare hostname may change, requiring Android reconfiguration and rebuilding. ADB screenshots were black in this run; the saved page screenshot uses Chrome DevTools, so fresh native visual screenshot evidence remains unavailable.
+<img src="docs/screenshots/part2-android-native.png" alt="Part 2 GroupChat TWA on the Android emulator showing generic chat and Llama replies" width="400">
+
+*Figure 3. GroupChat TWA without a browser address bar, showing a group-chat question and the Llama reply.*
+
+**Limit:** The temporary Cloudflare hostname may change, requiring Android reconfiguration and rebuilding.
 
 ## Part 3: Content Embeddings and LLM
+
+This stage added general document Q&A, tested with `lab8.pdf` and `lab9.pdf`.
 
 1. **Collect:** A sidebar supports single/multiple PDF uploads plus TXT/MD/DOCX. The CLI processes a document folder. Extracted text, page provenance, and chunks are stored in MySQL.
 2. **Chunk:** LangChain `CharacterTextSplitter` uses a **500-character maximum**, **100-character overlap**, and an empty separator. Overlap preserves boundary context; final chunks may be shorter.
@@ -30,7 +49,21 @@ Built and installed the Android TWA app **CA Driving Study**, package `com.hello
 
 **Actual embedding example:** A chunk from `lab8.pdf`, PDF page 4, contains `rte_eth_rx_burst(...)`; its vector begins `[-0.030346941, -0.028088849, -0.0205517, -0.024610166, ...]`. This previews 1536 dimensions. Full provenance and test results are in the [Part 3 evidence](groupchat_app_src/artifacts/reports/Part3-real-validation.json).
 
+![Part 3 uploaded PDFs and extracted chunk preview](docs/screenshots/part3-document-chunks.png)
+
+*Figure 4. Document Q&A interface with both lab PDFs indexed and extracted chunks visible.*
+
+![Part 3 actual text and embedding values](docs/screenshots/part3-embedding-example.png)
+
+*Figure 5. Actual text chunk and the first eight of 1536 OpenAI embedding values.*
+
+![Part 3 fresh document answer with retrieved source text](docs/screenshots/part3-document-answer.png)
+
+*Figure 6. Document Q&A answer about 500-character chunks and CharacterTextSplitter, with the retrieved PDF passage expanded.*
+
 ## Part 4: Custom Content Chatbot App
+
+This stage introduced the driving topic, curated DMV collection, Driving Study interface, and Android branding, building on the generic components from Parts 1–3.
 
 **Topic/audience:** California Class C driving-test preparation for new drivers, including learners studying English examiner instructions. Official DMV sources provide focused coverage of rules, road-test preparation, and vocabulary.
 
@@ -47,10 +80,9 @@ The shared `ee542_driving` library powers Driving Study on the website and Andro
 
 **Limits:** The historical editions, especially the 2017 criteria, cannot establish current requirements. Users are directed to DMV for updates. Practice is unofficial; image-only content is not indexed.
 
-## Reproducibility and Missing Deliverables
+![Part 4 driving-study website with cited lane-change guidance](docs/screenshots/part4-driving-study.png)
 
-Docker Compose runs FastAPI, MySQL, and Qdrant; Llama is optional for group chat. The **3.36 MiB** DMV bundle restores existing vectors without re-embedding or sharing accounts/keys. Fresh setup, repeat initialization, recovery, data preservation, source reload, four regression tests, and real cited answers passed; see the [handoff evidence](groupchat_app_src/artifacts/reports/Backend-handoff-validation.json) and [startup instructions](README.md).
-
+*Figure 7. Driving Study answer about changing lanes, using OpenAI embedding retrieval and citing 16 source passages.*
 
 ## Part 5: Custom Word-Cluster Histogram Embeddings
 
